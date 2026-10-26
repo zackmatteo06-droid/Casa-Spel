@@ -19,7 +19,7 @@
 <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-uQvg2qQNWL5gNmARTpDnCO+gZZ2L4CP1hLNczhSHYPE=' 'sha256-ojnF2LTNlEa9P8hyzhWz57xVI06YoY+51CbGzg3dbcI='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Bg3mfvnOk8Hdr6oHRW7kukbdhtMhvpjtDVDRwNe5IFs=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "en", "alt": "../", "img": "../img/bilar/", "cars": "../en/cars/", "chat": null, "title": "CarDep – what does the car really cost per month?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/en/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "logo": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/icon-512.png"}]}</script>
 <script src="../assets/site.js" defer></script>
@@ -144,7 +144,7 @@ button,label,select,a{touch-action:manipulation}
   .mfbtn[aria-expanded="true"]::after{transform:rotate(-135deg) translateY(-2px)}
   .mf:not(.open){display:none}
   .chips label > span{padding:8px 13px;min-height:38px}
-  .search input,.inrow input,.inrow select,.cmpsel select,.advg .inrow input{font-size:16px}
+  .search input,.inrow input,.inrow select,.cmpsel select,.cmpsel input,.advg .inrow input{font-size:16px}
   .seg{width:100%}
   .seg button{flex:1;padding:10px 6px;min-height:42px}
   .tools{width:100%}
@@ -372,6 +372,14 @@ dialog.sheet::backdrop{background:rgba(8,14,11,.55)}
 .clg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .cmpsel{display:flex;align-items:center;gap:8px;font-size:.84rem}
 .cmpsel select{font:500 .86rem var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 10px;max-width:min(320px,70vw)}
+.cmpsel input{width:4.4em;font:500 .86rem var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-align:right}
+.lease-v{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;margin:0 0 12px;padding:11px 14px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.lease-v strong{font:700 1rem var(--f-display)}
+.lease-v span{font-size:.85rem;color:var(--muted)}
+.lease-v.win{background:var(--good-soft);border-color:transparent}
+.lease-v.win strong{color:var(--good)}
+tr.sum th{color:var(--ink);font-weight:600}
+tr.sum td{font-weight:700}
 .twrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
 table{width:100%;border-collapse:collapse;font-size:.85rem;font-variant-numeric:tabular-nums}
 th,td{padding:8px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
@@ -516,7 +524,7 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3.5 17a8.5 8.5 0 1 1 17 0"/><path d="M12 17l4.6-5.2"/><circle cx="12" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg>
       CarDep
     </a>
-    <nav class="hnav" aria-label="Main menu"><a href="../en/cars/">All cars</a><a href="../en/rankings/">Rankings</a><a href="../en/method/">How we calculate</a></nav>
+    <nav class="hnav" aria-label="Main menu"><a href="../en/cars/">All cars</a><a href="../en/rankings/">Rankings</a><a href="../en/leasing/">Lease or buy</a><a href="../en/method/">How we calculate</a></nav>
     <div class="tright">
       <div class="search" role="search">
         <div class="sbox">
@@ -653,7 +661,7 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
 
 <footer class="foot gut">
   <div class="shell">
-    <nav class="fnav" aria-label="About the site"><a href="../en/cars/">All cars</a><a href="../en/rankings/">Rankings</a><a href="../en/method/">How we calculate</a><a href="../en/about/">About CarDep</a><a href="../en/privacy/">Privacy</a><a href="../en/terms/">Terms</a><a href="../en/image-credits/">Image credits</a><a href="https://github.com/zackmatteo06-droid/Casa-Spel/issues" rel="noopener">Contact</a></nav>
+    <nav class="fnav" aria-label="About the site"><a href="../en/cars/">All cars</a><a href="../en/rankings/">Rankings</a><a href="../en/leasing/">Lease or buy</a><a href="../en/method/">How we calculate</a><a href="../en/about/">About CarDep</a><a href="../en/privacy/">Privacy</a><a href="../en/terms/">Terms</a><a href="../en/image-credits/">Image credits</a><a href="https://github.com/zackmatteo06-droid/Casa-Spel/issues" rel="noopener">Contact</a></nav>
     <p data-t="foot1">CarDep är en oberoende jämförelsetjänst.</p>
     <p data-t="foot2">Fotona kommer från Wikimedia Commons.</p>
   </div>
@@ -711,6 +719,7 @@ sv:{
   <dt>Prisvärdhetsbetyg</dt><dd>Betyget A–E väger månadskostnaden mot det du får. Bilen får 0–5 poäng vardera för kvalitet, design, komfort, lyx, säkerhet, utrymme och prestanda, alltså högst 35 poäng. Månadskostnaden ger ett minuspoäng för varje 10 procent den ligger över 1 500 kr. Det du får minus månadskostnadens poäng ger betyget, och A är mest prisvärt. Kvalitet bygger på driftsäkerheten i <a href="https://www.adac.de/news/tuev-report-2026/" target="_blank" rel="noopener">TÜV-rapporten 2026</a> och <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">ADAC:s pannstatistik 2025</a> där modellen finns med, annars på vår uppskattning. Den sjunker med bilens ålder, eftersom andelen bilar med allvarliga fel vid besiktning ökar från omkring 10 procent vid 5 år till 33 procent vid 15 år enligt TÜV-rapporten. Säkerhet är stjärnorna i Euro NCAP (3 poäng om bilen inte är testad), minus ett poäng för bilar från före 2016 och två poäng för bilar från före 2010, som saknar moderna säkerhetssystem. Lyx är samma nivå som i reglaget. Design och komfort är vår bedömning utifrån biltester, och bilar som vunnit <a href="https://en.wikipedia.org/wiki/World_Car_Awards" target="_blank" rel="noopener">World Car Design of the Year</a> får högsta poäng för design. Sportversioner får lägre komfort men högre prestanda. Utrymme räknas på bagaget och prestanda på accelerationen. Sorteringen Mest prisvärd följer poängen.</dd>
   <dt>Lyx och sportighet</dt><dd>Varje utförande får en lyxnivå och en sportighet från 1 till 5. Lyxnivån bygger på märke, modell och utrustningsnivå. Sportigheten bygger på acceleration, karosstyp och märke, och sportversioner som GTI, AMG, M och RS ger lite extra. Extremt sportig kräver i praktiken en riktig sportbil eller en av de allra snabbaste versionerna, medan heta halvkombi som Golf GTI och BMW M135 räknas som mycket sportiga. När du väljer en nivå visar vi bilarna som når den och räknar på det billigaste utförandet av varje bil som gör det. Bilar som inte når nivån i något utförande visas inte.</dd>
   <dt>Bränslepriser</dt><dd>Bensin och diesel är de stora kedjornas listpris. Elpriset för hemmaladdning är spotpriset i SE3 plus elhandelspåslag, nätavgift, energiskatt och moms. Priserna uppdateras automatiskt en gång per dag. Du kan skriva in egna priser under Ändra priser.</dd>
+  <dt>Leasa eller köpa</dt><dd>För bilar som är vanliga att privatleasa jämför vi märkets eget privatleasingerbjudande med att köpa samma version ny och sälja den när avtalet går ut, oftast efter 36 månader. Leasing: avgiften vid din körsträcka (märkets pris för fler mil när det finns, annars en uppskattning), uppläggnings- och aviavgift och eventuell förhöjd första hyra utslagna per månad, och service om den inte ingår. Köpa: värdeminskningen från dagens pris för nya bilar till restvärdet enligt annonserna, ränta på pengarna (5 procent om du inte ändrar den) och service. Restvärdet justeras med 2 procent per 1 000 mil som du kör mer eller mindre än en typisk bil i samma ålder; så mycket skiljer annonspriserna för samma modell och årsmodell i oktober 2026. Drivmedel, försäkring och skatt är desamma. Erbjudandena lästes av på märkenas webbplatser den 26 oktober 2026 och kan ha ändrats sedan dess.</dd>
   <dt>Bilder</dt><dd>Fotona visar rätt modell och generation och kommer från <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>, där de är fritt licensierade. Fotograf och licens står på bilden när du öppnar en modell. Utrustning, färg och årsmodell kan skilja sig från versionen i kalkylen. Saknas ett fritt foto visas en datorgenererad bild.</dd>
  </dl>`,
  lDep:"Värdeminskning",lFuel:"Drivmedel",lSvc:"Service och reparationer",lIns:"Försäkring",lTax:"Fordonsskatt",lRun:"Drift och underhåll",
@@ -757,7 +766,23 @@ sv:{
  rDep:"Värdeminskning per månad",rRun:"Drift och underhåll per månad",rFuelMo:"Drivmedel per månad",rTax:"Fordonsskatt år 1–3",perYr:"/år",rFuel:"Drivmedel",rCons:"Förbrukning",rRange:"Räckvidd",
  rTrunk:"Bagageutrymme",rHp:"Effekt",hp:"hk",rAcc:"0–100 km/h",of5:v=>`${v} av 5`,stars:v=>`${v} ${v===1?"stjärna":"stjärnor"}`,steps:v=>`${v} steg`,rWar:"Garanti kvar",yrs:v=>`${v} år`,rValue:"Prisvärdhet",pts:v=>`${v} p`,
  accTxt:v=>`0–100 på ${v} s`,
- qPlace:p=>`Plats ${p}`,qNotSel:"Ej i ditt urval",qOut:"Utanför ramar",qNewFrom:v=>`ny från ${v}`,qShown:y=>`visas som ${y}`,qUsedOnly:(a,b)=>`bara begagnad, ${a}–${b}`,qNone:q=>`Ingen modell matchar ”${q}”`
+ qPlace:p=>`Plats ${p}`,qNotSel:"Ej i ditt urval",qOut:"Utanför ramar",qNewFrom:v=>`ny från ${v}`,qShown:y=>`visas som ${y}`,qUsedOnly:(a,b)=>`bara begagnad, ${a}–${b}`,qNone:q=>`Ingen modell matchar ”${q}”`,
+ leaseH:"Leasa eller köpa ny?",
+ leaseP:(v,f,n,d)=>`${v}: privatleasing från ${f} i månaden i ${n} månader och ${d} per år, jämfört med att köpa samma bil ny och sälja den efter ${n} månader.`,
+ leaseRate:"Ränta på köpet",leaseRateAria:"Ränta på köpet, procent",
+ lsCol:"Per månad",lsLease:"Leasa",lsBuy:"Köpa",
+ lsFee:d=>`Leasingavgift, ${d} per år`,lsFees:"Uppläggnings- och aviavgift",lsFeesFirst:"Avgifter och förhöjd första hyra",
+ lsRent:r=>`Ränta på pengarna, ${r} %`,lsIncl:"ingår",lsTotN:n=>`Totalt på ${n} månader`,
+ lsWinL:"Leasa är billigast",lsWinB:"Köpa är billigast",lsWinS:"Ungefär lika",
+ lsDiff:(a,b,n)=>`${a} mindre per månad, ${b} på ${n} månader`,lsSame:"Skillnaden är under 100 kr i månaden.",
+ lsOffer:(n,v,mo,d,first,svc,fix)=>`${n}: ${v}, ${mo} månader, ${d} per år${first?`, ${first} i förhöjd första hyra`:""}, ${svc?"service ingår":"service ingår inte"}, ${fix?"fast avgift":"rörlig avgift som följer räntan"}.`,
+ lsFeesTxt:(a,b,est)=>`Uppläggningsavgift ${a} och aviavgift ${b} i månaden${est?" (uppskattat, beloppen står inte i erbjudandet)":""}.`,
+ lsSrc:(a,d,u)=>`Källa: ${a}, avläst ${d}${u?`, gäller till och med ${u}`:""}.`,
+ lsMilUp:(d,x,own)=>`Du kör ${d} mer per år än erbjudandet räknar med. ${own?"Märkets":"Uppskattat"} pris för fler mil: ${x} i månaden.`,
+ lsMilDown:d=>`Erbjudandet gäller ${d} per år. Kör du mindre blir leasingavgiften densamma.`,
+ lsBuyTxt:(p,r,y,d,typ)=>`Köpa: ${p} för en ny bil i samma version, och ${r} tillbaka när du säljer den efter ${y} år. Restvärdet bygger på annonspriserna för ${y} år gamla bilar, justerat för att du kör ${d} på ${y} år i stället för typiska ${typ}. Räntan är vad pengarna kostar: ränta på ett billån, eller räntan du går miste om på sparade pengar.`,
+ lsSameTxt:"Drivmedel, försäkring och skatt är desamma. Övermil och onormalt slitage betalas när leasingbilen lämnas tillbaka, och byter du in en köpt bil hos en handlare får du oftast mindre än annonspriset.",
+ leaseChip:v=>`Privatleasing från ${v}`
 },
 en:{
  langBtn:"SV",langAria:"Byt till svenska",
@@ -794,6 +819,7 @@ en:{
   <dt>Value grade</dt><dd>The A–E grade weighs the monthly cost against what you get. A car gets 0–5 points each for quality, design, comfort, luxury, safety, space and performance, so at most 35 points. The monthly cost gives one cost point for every 10 percent it is above SEK 1,500. What you get minus the cost points gives the grade, and A is the best value. Quality is based on reliability in the <a href="https://www.adac.de/news/tuev-report-2026/" target="_blank" rel="noopener">TÜV Report 2026</a> and the <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">ADAC breakdown statistics 2025</a> where the model is included, otherwise on our estimate. It drops as the car gets older, since the share of cars with major defects at inspection rises from about 10 percent at 5 years to 33 percent at 15 years according to the TÜV Report. Safety is the Euro NCAP star rating (3 points if the car has not been tested), minus one point for cars from before 2016 and two points for cars from before 2010, which lack modern safety systems. Luxury is the same level as on the slider. Design and comfort are our judgement based on car reviews, and winners of <a href="https://en.wikipedia.org/wiki/World_Car_Awards" target="_blank" rel="noopener">World Car Design of the Year</a> get top marks for design. Sporty versions get lower comfort but higher performance. Space is based on boot volume and performance on acceleration. The Best value sort follows the points.</dd>
   <dt>Luxury and sportiness</dt><dd>Every version gets a luxury level and a sportiness level from 1 to 5. The luxury level is based on brand, model and trim level. Sportiness is based on acceleration, body type and brand, with a little extra for sporty versions such as GTI, AMG, M and RS. Extremely sporty in practice takes a real sports car or one of the very fastest versions, while hot hatches such as the Golf GTI and BMW M135 count as very sporty. When you choose a level, we show the cars that reach it and calculate with the cheapest version of each car that does. Cars that don't reach the level in any version aren't shown.</dd>
   <dt>Fuel prices</dt><dd>Petrol and diesel are the big chains' list prices. The home-charging price is the SE3 spot price plus the retailer's margin, grid fee, energy tax and VAT. Prices update automatically once a day. You can enter your own prices under Change prices.</dd>
+  <dt>Lease or buy</dt><dd>For cars that are commonly leased privately in Sweden we compare the brand's own private lease offer with buying the same version new and selling it when the lease ends, usually after 36 months. Leasing: the payment at your distance (the brand's price for more distance where given, otherwise an estimate), set-up and invoice fees and any higher first payment spread per month, and servicing if it isn't included. Buying: the depreciation from today's price for new cars to the residual value in ads, interest on the money (5 percent unless you change it) and servicing. The residual value is adjusted by 2 percent per 10,000 km you drive more or less than a typical car of the same age; that is how much ad prices for the same model and model year differed in October 2026. Fuel, insurance and tax are the same. The offers were read on the brands' websites on 26 October 2026 and may have changed since.</dd>
   <dt>Images</dt><dd>The photos show the right model and generation and come from <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>, where they are freely licensed. The photographer and licence are shown on the image when you open a model. Trim, colour and model year can differ from the version in the calculation. Where there is no free photo, a computer-generated image is shown.</dd>
  </dl>`,
  lDep:"Depreciation",lFuel:"Fuel",lSvc:"Servicing and repairs",lIns:"Insurance",lTax:"Vehicle tax",lRun:"Running costs",
@@ -840,7 +866,23 @@ en:{
  rDep:"Depreciation per month",rRun:"Running costs per month",rFuelMo:"Fuel per month",rTax:"Vehicle tax, years 1–3",perYr:"/yr",rFuel:"Fuel",rCons:"Consumption",rRange:"Range",
  rTrunk:"Boot space",rHp:"Power",hp:"hp",rAcc:"0–100 km/h",of5:v=>`${v} of 5`,stars:v=>`${v} ${v===1?"star":"stars"}`,steps:v=>`${v} ${v===1?"step":"steps"}`,rWar:"Warranty left",yrs:v=>`${v} ${v===1?"year":"years"}`,rValue:"Value",pts:v=>`${v} pts`,
  accTxt:v=>`0–100 in ${v} s`,
- qPlace:p=>`No. ${p}`,qNotSel:"Not in your selection",qOut:"Outside limits",qNewFrom:v=>`new from ${v}`,qShown:y=>`shown as ${y}`,qUsedOnly:(a,b)=>`used only, ${a}–${b}`,qNone:q=>`No model matches “${q}”`
+ qPlace:p=>`No. ${p}`,qNotSel:"Not in your selection",qOut:"Outside limits",qNewFrom:v=>`new from ${v}`,qShown:y=>`shown as ${y}`,qUsedOnly:(a,b)=>`used only, ${a}–${b}`,qNone:q=>`No model matches “${q}”`,
+ leaseH:"Lease or buy new?",
+ leaseP:(v,f,n,d)=>`${v}: private lease from ${f} a month for ${n} months and ${d} a year, compared with buying the same car new and selling it after ${n} months.`,
+ leaseRate:"Interest on buying",leaseRateAria:"Interest on buying, percent",
+ lsCol:"Per month",lsLease:"Lease",lsBuy:"Buy",
+ lsFee:d=>`Lease payment, ${d} a year`,lsFees:"Set-up and invoice fees",lsFeesFirst:"Fees and higher first payment",
+ lsRent:r=>`Interest on the money, ${r}%`,lsIncl:"included",lsTotN:n=>`Total over ${n} months`,
+ lsWinL:"Leasing is cheaper",lsWinB:"Buying is cheaper",lsWinS:"About the same",
+ lsDiff:(a,b,n)=>`${a} less a month, ${b} over ${n} months`,lsSame:"The difference is under SEK 100 a month.",
+ lsOffer:(n,v,mo,d,first,svc,fix)=>`${n}: ${v}, ${mo} months, ${d} a year${first?`, ${first} higher first payment`:""}, ${svc?"servicing included":"servicing not included"}, ${fix?"fixed payment":"variable payment that follows interest rates"}.`,
+ lsFeesTxt:(a,b,est)=>`Set-up fee ${a} and invoice fee ${b} a month${est?" (estimated, the offer doesn't state them)":""}.`,
+ lsSrc:(a,d,u)=>`Source: ${a}, read on ${d}${u?`, valid until ${u}`:""}.`,
+ lsMilUp:(d,x,own)=>`You drive ${d} more per year than the offer assumes. ${own?"The brand's":"Estimated"} price for the extra distance: ${x} a month.`,
+ lsMilDown:d=>`The offer is for ${d} a year. Driving less doesn't lower the payment.`,
+ lsBuyTxt:(p,r,y,d,typ)=>`Buying: ${p} for a new car in the same version, and ${r} back when you sell it after ${y} years. The residual value is based on ad prices for ${y}-year-old cars, adjusted because you drive ${d} in ${y} years instead of the typical ${typ}. The interest is what the money costs: interest on a car loan, or the interest you miss on savings.`,
+ lsSameTxt:"Fuel, insurance and tax are the same either way. Excess mileage and abnormal wear are charged when you hand back a leased car, and trading in a car you own at a dealer usually gets you less than the ad price.",
+ leaseChip:v=>`Private lease from ${v}`
 }};
 const t=(k,...a)=>{const d=T[LANG]&&T[LANG][k]!==undefined?T[LANG][k]:T.sv[k];return typeof d==="function"?d(...a):d};
 
@@ -2062,6 +2104,117 @@ const FUEL_SNAPSHOT={pB:17.24,pD:22.89,pE:1.93,updated:"2026-10-22",chains:["Cir
 let PRICES=Object.assign({live:false},FUEL_SNAPSHOT);
 const OWN={pB:false,pD:false,pE:false};
 
+/* ---------- Privatleasing ----------
+   Märkenas egna privatleasingerbjudanden till privatpersoner, avlästa på deras webbplatser 26 oktober 2026.
+   Villkor per märke (LEASE_TERMS): avtalstid i månader (mon), förhöjd första hyra (first), uppläggnings- och aviavgift
+   (setup, adm; null när erbjudandet inte anger beloppen, då gäller LEASE_DEF), service ingår (svc), fast avgift (fix),
+   övermil i kr/mil (over), sista giltighetsdag (until).
+   Erbjudanden (LEASE): avgiften (fee) vid körsträckan mil per år, avgiften vid fler mil när märket anger den (km),
+   versionen erbjudandet gäller (sel = index för valen i modellens grupper) och erbjudandets namn (v). */
+const LEASE_DATE="2026-10-26",LEASE_RATE=5;
+const LEASE_DEF={setup:795,adm:59};
+const LEASE_TERMS={
+ toyota:{n:"Toyota Easy Privatleasing",mon:36,svc:1,fix:1,over:8,setup:null,adm:null,until:"2027-01-11",url:"https://www.toyota.se/kampanjer-personbil"},
+ kia:{n:"Kia Privatleasing",mon:36,svc:1,setup:null,adm:null,url:"https://www.kia.com/se/kopa/privatleasing/"},
+ vw:{n:"Volkswagen Privatleasing",mon:36,svc:1,setup:495,adm:59,until:"2026-10-31",url:"https://privatleasing.volkswagen.se/valjmodell"},
+ skoda:{n:"Škoda Privatleasing",mon:36,svc:1,setup:495,adm:59,url:"https://privatleasing.skoda.se/valjmodell"},
+ audi:{n:"Audi Privatleasing",mon:36,svc:1,setup:495,adm:59,until:"2026-10-31",url:"https://privatleasing.audi.se/valjmodell"},
+ cupra:{n:"Cupra Privatleasing",mon:36,first:10000,svc:1,setup:495,adm:59,until:"2026-10-31",url:"https://privatleasing.cupraofficial.se/valjmodell"},
+ hyundai:{n:"Hyundai Privatleasing",mon:36,svc:1,setup:null,adm:null,until:"2026-10-31",url:"https://www.hyundai.com/se/sv/kop/kop/kampanjer-och-erbjudanden.html"},
+ tesla:{n:"Tesla Privatleasing",mon:36,first:30000,svc:0,fix:1,setup:null,adm:null,until:"2027-03-31",url:"https://www.tesla.com/sv_se/"},
+ polestar:{n:"Polestar Privatleasing",mon:36,svc:0,fix:1,setup:null,adm:null,until:"2026-12-31",url:"https://www.polestar.com/se/offers/private/"},
+ renault:{n:"Renault Privatleasing",mon:36,svc:1,over:11,setup:995,adm:59,until:"2027-01-04",url:"https://www.renault.se/kopa/privatleasing"},
+ dacia:{n:"Dacia Privatleasing",mon:36,svc:1,over:11,setup:995,adm:59,until:"2027-01-04",url:"https://www.dacia.se/kopa/privatleasing"},
+ volvo:{n:"Volvo Privatleasing",mon:36,svc:1,setup:null,adm:null,url:"https://www.volvocars.com/se/car-finance/operating-lease/"},
+ bmw:{n:"BMW Privatleasing",mon:36,svc:1,over:12.5,setup:595,adm:55,until:"2026-10-31",url:"https://www.bmw.se/privaterbjudanden"}
+};
+const LEASE={
+ "toyota-yaris":{t:"toyota",fee:2995,mil:1500,sel:[0,0],v:"Yaris Hybrid 116 Active"},
+ "toyota-yaris-cross":{t:"toyota",fee:3195,mil:1500,sel:[0,0],v:"Yaris Cross Hybrid 116 Active"},
+ "toyota-aygo-x":{t:"toyota",fee:2995,mil:1500,sel:[2,0],v:"Aygo X Hybrid Active"},
+ "toyota-chr":{t:"toyota",fee:3595,mil:1500,sel:[0,0],v:"C-HR Hybrid 140 Active"},
+ "toyota-corolla":{t:"toyota",fee:3995,mil:1500,sel:[0,0],v:"Corolla Hybrid 140 Active"},
+ "toyota-corolla-ts":{t:"toyota",fee:3395,mil:1500,sel:[0,0],v:"Corolla Touring Sports Hybrid 140 Active"},
+ "toyota-corolla-cross":{t:"toyota",fee:4595,mil:1500,sel:[0,0],v:"Corolla Cross Hybrid 140 Active"},
+ "toyota-rav4":{t:"toyota",fee:6295,mil:1500,sel:[1,0],v:"RAV4 Hybrid AWD-i Active"},
+ "kia-ev3":{t:"kia",fee:4495,mil:1000,km:{1500:4757,2000:5150},sel:[0,0],v:"EV3 58 kWh Action"},
+ "kia-picanto":{t:"kia",fee:3145,mil:1000,km:{1500:3252,2000:3502},sel:[0,0],v:"Picanto 1.0 Action"},
+ "kia-sportage":{t:"kia",fee:4695,mil:1000,km:{1500:4956,2000:5452},sel:[2,0],v:"Sportage laddhybrid"},
+ "kia-sorento":{t:"kia",fee:7845,mil:1000,km:{1500:8162,2000:8646},sel:[0,0],v:"Sorento laddhybrid"},
+ "vw-golf":{t:"vw",fee:3495,mil:1000,km:{1500:3800,2000:4080},sel:[1,0],v:"Golf Life Edition 1.5 eTSI 150 DSG"},
+ "vw-golf-sc":{t:"vw",fee:3995,mil:1000,km:{1500:4330,2000:4620},sel:[1,0],v:"Golf Sportscombi Life Edition 1.5 eTSI 150 DSG"},
+ "vw-t-roc":{t:"vw",fee:3495,mil:1000,km:{1500:3855,2000:4155},sel:[1,0],v:"T-Roc Life 1.5 TSI 150 DSG"},
+ "vw-tiguan":{t:"vw",fee:3795,mil:1000,km:{1500:4145,2000:4460},sel:[0,0],v:"Tiguan Life Edition 1.5 eTSI 150 DSG"},
+ "vw-passat":{t:"vw",fee:4995,mil:1000,km:{1500:5510,2000:5870},sel:[2,0],v:"Passat Business Limited Edition eHybrid"},
+ "vw-id3":{t:"vw",fee:3995,mil:1000,km:{1500:4340,2000:4470},sel:[0,0],v:"ID.3 Neo Trend 50 kWh"},
+ "vw-id4":{t:"vw",fee:5495,mil:1000,km:{1500:6075,2000:6295},sel:[2,0],v:"ID.4 GTX SWE Edition (lagerbilar)"},
+ "vw-id7":{t:"vw",fee:6495,mil:1000,km:{1500:7075,2000:7295},sel:[1,0],v:"ID.7 Pro S SWE Edition"},
+ "vw-id7-tourer":{t:"vw",fee:6495,mil:1000,km:{1500:7080,2000:7300},sel:[1,0],v:"ID.7 Tourer Pro S SWE Edition"},
+ "skoda-octavia":{t:"skoda",fee:2945,mil:1000,km:{1500:3290,2000:3595},sel:[0,1],v:"Octavia Combi Selection 1.5 TSI 116"},
+ "skoda-kodiaq":{t:"skoda",fee:4395,mil:1000,km:{1500:4795,2000:5110},sel:[0,0,0],v:"Kodiaq Selection Explore 1.5 TSI 150 DSG"},
+ "skoda-karoq":{t:"skoda",fee:3030,mil:1000,km:{1500:3390,2000:3690},sel:[0,0],v:"Karoq Selection Explore 1.5 TSI 150 DSG"},
+ "skoda-kamiq":{t:"skoda",fee:2815,mil:1000,km:{1500:3110,2000:3395},sel:[0,1],v:"Kamiq Selection Explore 1.0 TSI 116"},
+ "skoda-fabia":{t:"skoda",fee:2995,mil:1000,km:{1500:3260,2000:3535},sel:[1,2],v:"Fabia Monte Carlo Explore 1.0 TSI 116 DSG"},
+ "skoda-superb":{t:"skoda",fee:4995,mil:1000,km:{1500:5490,2000:5845},sel:[2,0],v:"Superb Combi Selection Explore Edition iV 204"},
+ "skoda-elroq":{t:"skoda",fee:3995,mil:1000,km:{1500:4425,2000:4585},sel:[1,0],v:"Elroq 60"},
+ "skoda-enyaq":{t:"skoda",fee:4995,mil:1000,km:{1500:5510,2000:5705},sel:[1,0],v:"Enyaq 85 Solid Edition"},
+ "audi-a3":{t:"audi",fee:3695,mil:1000,km:{1500:4065,2000:4375},sel:[1,0],v:"A3 Sportback Proline 150 hk"},
+ "audi-q4":{t:"audi",fee:5795,mil:1000,km:{1500:6335,2000:6545},sel:[0,0],v:"Q4 e-tron performance Proline"},
+ "cupra-born":{t:"cupra",fee:4095,mil:1000,km:{1500:4495,2000:4640},sel:[0,0],v:"Born 58 kWh 190 hk"},
+ "cupra-formentor":{t:"cupra",fee:2995,mil:1000,km:{1500:3465,2000:3655},sel:[0,0],v:"Formentor 1.5 eTSI 150 DSG"},
+ "cupra-leon-st":{t:"cupra",fee:3595,mil:1000,km:{1500:4085,2000:4270},sel:[0,0],v:"Leon Sportstourer 1.5 eTSI 150 DSG"},
+ "hyundai-kona":{t:"hyundai",fee:3395,mil:1000,sel:[1,0],v:"Kona Hybrid 1.6 GDi Essential"},
+ "hyundai-tucson":{t:"hyundai",fee:3695,mil:1000,sel:[1,0],v:"Tucson Hybrid 1.6T 239 hk Essential"},
+ "hyundai-ioniq5":{t:"hyundai",fee:4795,mil:1000,sel:[1,0],v:"Ioniq 5 RWD 84 kWh Essential"},
+ "hyundai-santa-fe":{t:"hyundai",fee:5995,mil:1000,sel:[1,1],v:"Santa Fe laddhybrid Advanced"},
+ "tesla-model-y":{t:"tesla",fee:4595,mil:1000,km:{1500:4852,2000:5172},sel:[0,0],v:"Model Y bakhjulsdrift",u:"https://www.tesla.com/sv_se/modely/design"},
+ "tesla-model-3":{t:"tesla",fee:4795,mil:1000,km:{1500:5026,2000:5315},sel:[0,0],v:"Model 3 bakhjulsdrift",u:"https://www.tesla.com/sv_se/model3/design"},
+ "polestar-2":{t:"polestar",fee:5495,mil:1500,sel:[1,1],v:"Polestar 2 Business edition",u:"https://www.polestar.com/se/offers/private/polestar-2/"},
+ "polestar-4":{t:"polestar",fee:6995,mil:1500,sel:[0,0],v:"Polestar 4 Rear motor Business edition",u:"https://www.polestar.com/se/offers/private/polestar-4-coupe/"},
+ "renault-5":{t:"renault",fee:3490,mil:1000,sel:[0,0],v:"Renault 5 E-Tech"},
+ "renault-clio":{t:"renault",fee:3990,mil:1000,sel:[0,0],v:"Clio"},
+ "renault-captur":{t:"renault",fee:4490,mil:1000,sel:[1,0],v:"Captur mild hybrid"},
+ "dacia-sandero":{t:"dacia",fee:2290,mil:1000,sel:[0,2],v:"Sandero Stepway Extreme TCe 110"},
+ "dacia-duster":{t:"dacia",fee:3390,mil:1000,sel:[1,0],v:"Duster Expression hybrid"},
+ "dacia-jogger":{t:"dacia",fee:2990,mil:1000,sel:[0,1,1],v:"Jogger Extreme TCe 110, 7 säten"},
+ "dacia-bigster":{t:"dacia",fee:5390,mil:1000,sel:[1,1],v:"Bigster Extreme hybrid 155"},
+ "volvo-ex30":{t:"volvo",fee:3895,mil:1000,sel:[0,0],v:"EX30 Single Motor"},
+ "bmw-1":{t:"bmw",fee:3695,mil:1000,sel:[0,0],v:"BMW 120"},
+ "bmw-x1":{t:"bmw",fee:5995,mil:1000,sel:[1,0],v:"X1 xDrive25e Active Edition"}
+};
+/* Restvärdet ändras med cirka 2 procent per 1 000 mil som bilen gått mer eller mindre än det typiska för åldern: så mycket
+   skiljer annonspriserna för samma modell och årsmodell (1–6 år gamla bilar, 53 grupper med minst 12 annonser, okt 2026). */
+const RESID_MIL=.02;
+/* Utan märkets pris för fler mil: avgiften ökar med 0,065 procent av nypriset per månad för varje 500 mil per år
+   (medianen för erbjudandena som anger det), men högst vad övermilen skulle kosta. */
+const LEASE_SLOPE=.00065;
+function leaseFee(L,p,mil){
+  if(mil<=L.mil)return L.fee;
+  const pts=[[L.mil,L.fee],...Object.keys(L.km||{}).map(Number).sort((a,b)=>a-b).map(x=>[x,L.km[x]])];
+  if(pts.length>1){
+    for(let i=1;i<pts.length;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i];if(mil<=x1)return y0+(y1-y0)*(mil-x0)/(x1-x0)}
+    const[x0,y0]=pts[pts.length-2],[x1,y1]=pts[pts.length-1];return y1+(y1-y0)*(mil-x1)/(x1-x0);
+  }
+  const lt=LEASE_TERMS[L.t],est=LEASE_SLOPE*p*(mil-L.mil)/500;
+  return L.fee+(lt.over?Math.min(est,lt.over*(mil-L.mil)/12):est);
+}
+/* Leasa eller köpa samma nya bil under avtalstiden, kronor per månad. Köpa: dagens pris för nya bilar, restvärdet efter
+   avtalstiden enligt annonserna (justerat för körsträckan) och ränta på pengarna. Drivmedel, försäkring och skatt är desamma. */
+function leaseCmp(m,mil,pr,rate){
+  const L=LEASE[m.id];if(!L)return null;
+  const lt=LEASE_TERMS[L.t],mon=lt.mon,y=mon/12;
+  const s=build(m,L.sel,NOW),k=costs(s,y,mil,pr);
+  const typ=Math.round(milAge(y)*((MKT[m.id]||{}).mf||1)/100)*100;
+  const resid=Math.min(s.p,k.resid*Math.exp(-RESID_MIL*(y*mil-typ)/1000));
+  const same={fuel:k.fuel/mon,ins:k.ins/mon,tax:k.tax/mon};
+  const buy=Object.assign({dep:(s.p-resid)/mon,rent:rate/100*(s.p+resid)/2*y/mon,svc:k.svc/mon},same);
+  const setup=lt.setup??LEASE_DEF.setup,adm=lt.adm??LEASE_DEF.adm;
+  const lease=Object.assign({fee:leaseFee(L,s.pNew,mil),first:(lt.first||0)/mon,fees:setup/mon+adm,svc:(lt.svc?k.rep:k.svc)/mon},same);
+  const tot=o=>Object.keys(o).reduce((a,x)=>a+o[x],0);
+  buy.month=tot(buy);lease.month=tot(lease);
+  return{L,lt,s,k,mon,typ,resid,setup,adm,est:lt.setup==null,buy,lease};
+}
+
 /* ---------- Årsmodeller ---------- */
 const NOW=2026,OLDEST=2005;
 const lastYear=m=>Math.min(NOW,m.to||NOW);
@@ -2094,7 +2247,7 @@ const reduced=()=>window.matchMedia&&window.matchMedia("(prefers-reduced-motion:
 
 /* ---------- Tillstånd ---------- */
 const PAGE=20;
-const S={shown:PAGE,sort:"value",fuels:new Set(),sel:{},year:{},userMotor:new Set(),openId:null,cmpId:null,opener:null,showAllOut:false,tips:[]};
+const S={shown:PAGE,sort:"value",fuels:new Set(),sel:{},year:{},userMotor:new Set(),openId:null,cmpId:null,opener:null,showAllOut:false,tips:[],rate:LEASE_RATE};
 const byModel=Object.fromEntries(MODELS.map(m=>[m.id,m]));
 
 function effSel(m){
@@ -3049,6 +3202,38 @@ function mktSection(m,s){
       <p class="note">${esc(s.age?t("mkNoteUsed",kr(s.p)):t("mkNoteNew",kr(s.p),Math.round((s.nk-1)*100)))}</p>
     </section>`;
 }
+/* Leasa eller köpa: märkets privatleasingerbjudande mot att köpa samma version ny och sälja den när avtalet går ut */
+function leaseSection(m,I){
+  const c=leaseCmp(m,I.mil,I.pr,S.rate);if(!c)return "";
+  const{L,lt,mon,lease:l,buy:b}=c,lm=Math.round(l.month),bm=Math.round(b.month),d=lm-bm,y=mon/12;
+  const url=L.u||lt.url,host=url.replace(/^https?:\/\/(www\.)?/,"").split("/")[0];
+  const dateY=iso=>{try{return new Date(iso+"T12:00:00").toLocaleDateString(LANG==="en"?"en-GB":"sv-SE",{day:"numeric",month:"long",year:"numeric"})}catch(e){return iso}};
+  const cell=v=>v==null?'<td class="n">–</td>':`<td>${kr(v)}</td>`;
+  const dif=(a,v)=>{if(a==null||v==null)return '<td class="n"></td>';const x=a-v;return Math.abs(x)<1?`<td class="n">${t("same")}</td>`:`<td class="${x<0?"g":"b"}">${signKr(x)}</td>`};
+  const row=(label,a,v,txt)=>`<tr><th scope="row">${label}</th>${txt?`<td>${txt}</td>`:cell(a)}${cell(v)}${dif(a,v)}</tr>`;
+  const rows=row(esc(t("lsFee",distTxt(I.mil))),l.fee,null)
+    +row(lt.first?t("lsFeesFirst"):t("lsFees"),l.first+l.fees,null)
+    +row(t("lDep"),null,b.dep)
+    +row(esc(t("lsRent",nf1.format(S.rate))),null,b.rent)
+    +row(t("lSvc"),l.svc,b.svc,lt.svc&&l.svc<1?t("lsIncl"):"")
+    +row(t("lFuel"),l.fuel,b.fuel)+row(t("lIns"),l.ins,b.ins)+row(t("lTax"),l.tax,b.tax)
+    +`<tr class="sum"><th scope="row">${t("totMo")}</th><td>${kr(lm)}</td><td>${kr(bm)}</td>${dif(lm,bm)}</tr>`
+    +`<tr><th scope="row">${t("lsTotN",mon)}</th><td>${kr(lm*mon)}</td><td>${kr(bm*mon)}</td>${dif(lm*mon,bm*mon)}</tr>`;
+  const near=Math.abs(d)<100;
+  const verdict=`<p class="lease-v${near?"":" win"}"><strong>${near?t("lsWinS"):d<0?t("lsWinL"):t("lsWinB")}</strong><span>${esc(near?t("lsSame"):t("lsDiff",kr(Math.abs(d)),kr(Math.abs(d)*mon),mon))}</span></p>`;
+  const mil=I.mil>L.mil?t("lsMilUp",distTxt(I.mil-L.mil),kr(l.fee-L.fee),!!L.km):I.mil<L.mil?t("lsMilDown",distTxt(L.mil)):"";
+  const offer=esc(t("lsOffer",lt.n,L.v,mon,distTxt(L.mil),lt.first?kr(lt.first):"",lt.svc,lt.fix))+" "+esc(t("lsFeesTxt",kr(c.setup),kr(c.adm),c.est))+" "
+    +t("lsSrc",`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(host)}</a>`,esc(dateY(LEASE_DATE)),lt.until?esc(dateY(lt.until)):"");
+  return `<section aria-labelledby="ls-h">
+      <div class="sec-h"><div><h3 id="ls-h">${t("leaseH")}</h3><p>${esc(t("leaseP",L.v,kr(L.fee),mon,distTxt(L.mil)))}</p></div>
+        <label class="cmpsel" for="d-rate">${t("leaseRate")} <input id="d-rate" type="text" inputmode="decimal" value="${nf1.format(S.rate)}" aria-label="${esc(t("leaseRateAria"))}"> %</label></div>
+      ${verdict}
+      <div class="cmphead" aria-hidden="true"><span>${t("lsLease")}</span><span>${t("lsBuy")}</span><span>${t("diff")}</span></div>
+      <div class="twrap"><table><thead><tr><th scope="col"><span class="muted">${t("lsCol")}</span></th><th scope="col">${t("lsLease")}</th><th scope="col">${t("lsBuy")}</th><th scope="col">${t("diff")}</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <p class="note">${mil?esc(mil)+" ":""}${offer}</p>
+      <p class="note">${esc(t("lsBuyTxt",kr(c.s.p),kr(c.resid),y,distTxt(y*I.mil),distTxt(c.typ)))} ${esc(t("lsSameTxt"))}</p>
+    </section>`;
+}
 const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
 
 /* ---------- Lista ---------- */
@@ -3064,7 +3249,7 @@ function card(r,i,I){
       <p class="variant">${t("modelYear",s.year)} · ${esc(names(s))}${isCustom(m.id)?`<span class="tag">${t("custom")}</span>`:""}</p></div>
     <div class="c-cost"><strong>${kr(k.month)}</strong><span>${t("totalPerMonth")}</span>${gradeEl(r.g,false)}</div>
   </div>
-  <div class="c-chips">${top?`<span class="badge">${badgeL(S.sort)}</span>`:""}<span class="chip cond">${condTxt(s)}</span><span class="chip">${fuelL(s.f)}</span><span class="chip">${typeL(m.t)}</span>${I.lux>1?`<span class="chip lvl">${t("luxLbl")}: ${esc(lvlName("lux",lvlN(s.lux)))}</span>`:""}${I.sport>1?`<span class="chip lvl">${t("sportLbl")}: ${esc(lvlName("sport",lvlN(s.sport)))}</span>`:""}${s.awd?`<span class="chip">${t("awd")}</span>`:""}${s.r?`<span class="chip">${t("range",kmTxt(s.r))}</span>`:""}${m.to?`<span class="chip">${t("usedOnly")}</span>`:""}</div>
+  <div class="c-chips">${top?`<span class="badge">${badgeL(S.sort)}</span>`:""}<span class="chip cond">${condTxt(s)}</span><span class="chip">${fuelL(s.f)}</span><span class="chip">${typeL(m.t)}</span>${I.lux>1?`<span class="chip lvl">${t("luxLbl")}: ${esc(lvlName("lux",lvlN(s.lux)))}</span>`:""}${I.sport>1?`<span class="chip lvl">${t("sportLbl")}: ${esc(lvlName("sport",lvlN(s.sport)))}</span>`:""}${s.awd?`<span class="chip">${t("awd")}</span>`:""}${s.r?`<span class="chip">${t("range",kmTxt(s.r))}</span>`:""}${m.to?`<span class="chip">${t("usedOnly")}</span>`:""}${LEASE[m.id]?`<span class="chip">${t("leaseChip",kr(LEASE[m.id].fee))}${t("mo")}</span>`:""}</div>
   <dl class="stats">
     <div><dt>${s.age?t("buyUsed"):t("buyNew")}</dt><dd>${kr(s.p)}</dd></div>
     <div><dt>${t("residAfter",I.years)}</dt><dd>${kr(k.resid)}</dd></div>
@@ -3275,6 +3460,7 @@ function renderDetail(E){
         <p class="note">${t("chNote")}</p>
       </section>
     </div>
+    ${leaseSection(m,I)}
     ${faultSection(m,s,k,I)}
     <section aria-labelledby="cmp-h">
       <div class="sec-h"><h3 id="cmp-h">${t("cmpH")}</h3>
@@ -3483,6 +3669,7 @@ dlg.addEventListener("click",e=>{
 const onDlgChange=e=>{
   const tg=e.target;
   if(tg.id==="d-cmp"){S.cmpId=tg.value;update();return}
+  if(tg.id==="d-rate"){const v=num(tg.value);S.rate=Math.max(0,Math.min(20,Math.round(v*10)/10));update();return}
   if(tg.name==="yr"){S.year[S.openId]=+tg.value;update();return}
   if(tg.name&&tg.name.startsWith("g-")){
     const m=byModel[S.openId],gi=+tg.name.slice(2),oi=+tg.value;
@@ -3605,6 +3792,9 @@ function applyPrices(p){
       `skick ${I.cond}, äldsta årsmodell ${I.minYear}. Bränslepriser: bensin ${I.pr.B} kr/l, diesel ${I.pr.D} kr/l, el ${I.pr.E} kr/kWh. Idag: ${new Date().toISOString().slice(0,10)}.\n`;
     c+=`Topplistan (${E.ok.length} bilar inom ramarna, sorterade på ${S.sort}):\n`+E.ok.slice(0,15).map(row).join("\n");
     if(S.openId&&E.byId&&E.byId[S.openId])c+="\n\nÖppen modell just nu:\n"+row(E.byId[S.openId],0).replace(/^1\. /,"");
+    if(S.openId&&LEASE[S.openId]){const lc=leaseCmp(byModel[S.openId],I.mil,I.pr,S.rate);
+      c+=`\nPrivatleasing jämfört med att köpa ny (${lc.mon} mån, ${I.mil} mil/år, ränta ${S.rate} %): ${lc.lt.n}, ${lc.L.v}, avgift ${krf(lc.lease.fee)}/mån. `+
+         `Leasa totalt ${krf(lc.lease.month)}/mån, köpa och sälja efter ${lc.mon/12} år ${krf(lc.buy.month)}/mån (pris ${krf(lc.s.p)}, restvärde ${krf(lc.resid)}).`}
     return c;
   }
   function bubble(cls,text){const d=document.createElement("div");d.className="msg "+cls;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}

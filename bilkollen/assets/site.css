@@ -110,6 +110,15 @@ main{padding-block:28px 56px}
 .brandlist a{display:block;padding:2px 0}
 .note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:12px 16px;font-size:.92rem;margin:14px 0}
 
+/* Leasa eller köpa */
+.lease-v{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;margin:12px 0 14px;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);max-width:72ch}
+.lease-v strong{font:700 1.05rem var(--f-display)}
+.lease-v span{color:var(--muted);font-size:.92rem}
+.lease-v.win{background:var(--accent-soft);border-color:transparent}
+.lease-v.win strong{color:var(--accent)}
+.tbl.lease{max-width:640px}
+.tbl tr.sum td{font-weight:700}
+
 /* Sidfot */
 .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:28px 34px;font-size:.88rem;color:var(--muted)}
 .foot .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px}
