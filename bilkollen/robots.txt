@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/sitemap.xml
