@@ -19,7 +19,7 @@
 <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-IIBa3wsW2HuhWHNwJuq1lPHyUAwvqdjzKkazcPxjEjM=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-V548VeIBPk6D2qOao89Ag6o7afkC71xhFqBDJQx8VGo=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "en", "alt": "../", "img": "../img/bilar/", "cars": "../en/cars/", "chat": null, "title": "CarDep – what does the car really cost per month?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/en/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "logo": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/icon-512.png"}]}</script>
 <script src="../assets/site.js" defer></script>
@@ -535,7 +535,7 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
       </div>
       <button type="button" class="lang" id="langBtn" data-ta="langAria" aria-label="Switch to English">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
-        <span data-t="langBtn">EN</span>
+        <span data-t="langBtn">SV</span>
       </button>
     </div>
   </div>
@@ -544,10 +544,10 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
 <section class="intro gut" aria-labelledby="introH">
   <div class="shell">
     <div>
-      <h1 id="introH" data-t="h1">Vad kostar bilen egentligen per månad?</h1>
-      <p data-t="intro">Ange hur länge du tänker äga bilen och vad du vill lägga.</p>
+      <h1 id="introH" data-t="h1">What does the car really cost per month?</h1>
+      <p data-t="intro">Tell us how long you&#x27;ll keep the car and what you want to spend. We compare new and used cars using real ad prices and today&#x27;s fuel prices, count depreciation, fuel, tax, insurance and servicing, and give every car a value grade from A to E that weighs the monthly cost against quality, design, comfort, luxury and more. Prices are for the Swedish market.</p>
     </div>
-    <span class="proto" data-t="proto">Annonsdata okt 2026</span>
+    <span class="proto" data-t="proto">Ad data Oct 2026</span>
   </div>
 </section>
 
@@ -555,75 +555,75 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
   <div class="shell">
     <aside class="panel" data-ta="panel" aria-label="Dina ramar">
       <form id="f" novalidate>
-        <div class="ph"><h2 data-t="panel">Dina ramar</h2><button type="button" class="link" id="resetF" data-t="reset">Återställ</button></div>
+        <div class="ph"><h2 data-t="panel">Your limits</h2><button type="button" class="link" id="resetF" data-t="reset">Reset</button></div>
         <div class="field">
-          <div class="yearrow"><label for="years" data-t="yearsQ">Hur länge äger du bilen?</label><output id="yearsOut" for="years">5 år</output></div>
+          <div class="yearrow"><label for="years" data-t="yearsQ">How long will you keep the car?</label><output id="yearsOut" for="years">5 years</output></div>
           <input type="range" id="years" min="1" max="10" step="1" value="5">
-          <div class="ticks" aria-hidden="true"><span data-t="y1">1 år</span><span data-t="y10">10 år</span></div>
+          <div class="ticks" aria-hidden="true"><span data-t="y1">1 year</span><span data-t="y10">10 years</span></div>
         </div>
         <div class="field">
-          <label for="maxPrice" data-t="maxPrice">Max inköpspris</label>
-          <div class="inrow"><input id="maxPrice" inputmode="numeric" value="450 000"><span data-t="cur">kr</span></div>
+          <label for="maxPrice" data-t="maxPrice">Max purchase price</label>
+          <div class="inrow"><input id="maxPrice" inputmode="numeric" value="450 000"><span data-t="cur">SEK</span></div>
         </div>
         <div class="field">
-          <label for="maxMonth" data-t="maxMonth">Max kostnad per månad</label>
-          <div class="inrow"><input id="maxMonth" inputmode="numeric" value="6 500"><span data-t="curMo">kr/mån</span></div>
-          <div class="hint" data-t="maxMonthHint">Allt inräknat: värdeminskning, drift och underhåll.</div>
+          <label for="maxMonth" data-t="maxMonth">Max cost per month</label>
+          <div class="inrow"><input id="maxMonth" inputmode="numeric" value="6 500"><span data-t="curMo">SEK/mo</span></div>
+          <div class="hint" data-t="maxMonthHint">Everything included: depreciation, running costs and upkeep.</div>
         </div>
         <div class="field" role="group" aria-labelledby="typeLbl">
-          <div class="lbl" id="typeLbl" data-t="type">Biltyp</div>
+          <div class="lbl" id="typeLbl" data-t="type">Body type</div>
           <div class="chips" id="types"></div>
-          <div class="hint" data-t="typeHint">Siffran visar hur många som passar dina ramar.</div>
+          <div class="hint" data-t="typeHint">The number shows how many cars fit your limits.</div>
         </div>
         <button type="button" class="mfbtn" id="mfBtn" aria-expanded="false" aria-controls="mf">Avancerade val</button>
         <div class="mf" id="mf">
           <div class="field">
-            <div class="yearrow lvlrow"><label for="lux" data-t="luxQ">Hur lyxig?</label><output id="luxOut" for="lux">Spelar ingen roll</output></div>
+            <div class="yearrow lvlrow"><label for="lux" data-t="luxQ">How luxurious?</label><output id="luxOut" for="lux">Spelar ingen roll</output></div>
             <input type="range" id="lux" min="1" max="5" step="1" value="1">
-            <div class="ticks" aria-hidden="true"><span data-t="luxLo">Enkel</span><span data-t="luxHi">Extremt lyxig</span></div>
+            <div class="ticks" aria-hidden="true"><span data-t="luxLo">Basic</span><span data-t="luxHi">Extremely luxurious</span></div>
           </div>
           <div class="field">
-            <div class="yearrow lvlrow"><label for="sport" data-t="sportQ">Hur sportig?</label><output id="sportOut" for="sport">Spelar ingen roll</output></div>
+            <div class="yearrow lvlrow"><label for="sport" data-t="sportQ">How sporty?</label><output id="sportOut" for="sport">Spelar ingen roll</output></div>
             <input type="range" id="sport" min="1" max="5" step="1" value="1">
-            <div class="ticks" aria-hidden="true"><span data-t="spLo">Lugn</span><span data-t="spHi">Extremt sportig</span></div>
-            <div class="hint" data-t="lvlHint">Vi visar bilar som når nivån och väljer det billigaste utförandet som gör det.</div>
+            <div class="ticks" aria-hidden="true"><span data-t="spLo">Relaxed</span><span data-t="spHi">Extremely sporty</span></div>
+            <div class="hint" data-t="lvlHint">We show cars that reach the level and pick the cheapest version of each car that does.</div>
           </div>
           <div class="field" role="group" aria-labelledby="condLbl">
-            <div class="lbl" id="condLbl" data-t="cond">Ny eller begagnad</div>
+            <div class="lbl" id="condLbl" data-t="cond">New or used</div>
             <div class="chips" id="conds"></div>
           </div>
           <div class="field">
-            <label for="minYear" data-t="minYear">Äldsta årsmodell</label>
+            <label for="minYear" data-t="minYear">Oldest model year</label>
             <div class="inrow"><select id="minYear"></select></div>
-            <div class="hint" data-t="minYearHint">Vi väljer den årsmodell som passar dig bäst för varje bil.</div>
+            <div class="hint" data-t="minYearHint">We pick the model year that suits you best for each car. You can change it on the car&#x27;s page.</div>
           </div>
           <div class="field" role="group" aria-labelledby="fuelLbl">
-            <div class="lbl" id="fuelLbl" data-t="fuel">Drivmedel</div>
+            <div class="lbl" id="fuelLbl" data-t="fuel">Fuel</div>
             <div class="chips" id="fuels"></div>
-            <div class="hint" data-t="fuelHint">Välj inget för att visa alla.</div>
+            <div class="hint" data-t="fuelHint">Select none to show all.</div>
           </div>
           <div class="field">
-            <label for="minGrade" data-t="minGrade">Lägsta betyg</label>
+            <label for="minGrade" data-t="minGrade">Minimum grade</label>
             <div class="inrow"><select id="minGrade"></select></div>
-            <div class="hint" data-t="minGradeHint">Betyget A–E visar hur prisvärd bilen är.</div>
+            <div class="hint" data-t="minGradeHint">The A–E grade shows how much car you get for the money.</div>
           </div>
           <div class="fuelbox" id="fuelbox">
-            <div class="fb-h"><span class="fb-t" data-t="fbTitle">Bränslepriser</span><span class="fb-s" id="fbStatus"></span></div>
+            <div class="fb-h"><span class="fb-t" data-t="fbTitle">Fuel prices</span><span class="fb-s" id="fbStatus"></span></div>
             <dl class="fb-l">
-              <div><dt data-t="fbB">Bensin 95</dt><dd id="fbvB"></dd></div>
+              <div><dt data-t="fbB">Petrol 95</dt><dd id="fbvB"></dd></div>
               <div><dt data-t="fbD">Diesel</dt><dd id="fbvD"></dd></div>
-              <div><dt data-t="fbE">El, hemma</dt><dd id="fbvE"></dd></div>
+              <div><dt data-t="fbE">Home charging</dt><dd id="fbvE"></dd></div>
             </dl>
             <p class="fb-src" id="fbSrc"></p>
-            <div class="fb-a"><button type="button" class="link" id="fbEdit" data-t="fbEdit">Ändra priser</button><button type="button" class="link" id="fbReset" data-t="fbReset" hidden>Använd dagens priser</button></div>
+            <div class="fb-a"><button type="button" class="link" id="fbEdit" data-t="fbEdit">Change prices</button><button type="button" class="link" id="fbReset" data-t="fbReset" hidden>Use today&#x27;s prices</button></div>
           </div>
           <div class="advbox">
-            <div class="lbl" data-t="adv">Körsträcka och egna bränslepriser</div>
+            <div class="lbl" data-t="adv">Distance and your own fuel prices</div>
             <div class="advg">
-              <div class="field wide"><label for="mil" data-t="dist">Körsträcka per år</label><div class="inrow"><input id="mil" inputmode="numeric" value="1 250"><span data-t="distU">mil</span></div><div class="hint" data-t="milHint">Snittet i Sverige är 1 243 mil per år (Trafikanalys 2025).</div></div>
-              <div class="field"><label for="pB" data-t="petrol">Bensin</label><div class="inrow"><input id="pB" inputmode="decimal" value="18,50"><span data-t="curL">kr/l</span></div></div>
-              <div class="field"><label for="pD" data-t="diesel">Diesel</label><div class="inrow"><input id="pD" inputmode="decimal" value="19,20"><span data-t="curL">kr/l</span></div></div>
-              <div class="field wide"><label for="pE" data-t="elec">El, hemmaladdning</label><div class="inrow"><input id="pE" inputmode="decimal" value="2,00"><span data-t="curKwh">kr/kWh</span></div></div>
+              <div class="field wide"><label for="mil" data-t="dist">Distance per year</label><div class="inrow"><input id="mil" inputmode="numeric" value="1 250"><span data-t="distU">km</span></div><div class="hint" data-t="milHint">The Swedish average is 12,430 km per year (Trafikanalys 2025).</div></div>
+              <div class="field"><label for="pB" data-t="petrol">Petrol</label><div class="inrow"><input id="pB" inputmode="decimal" value="18,50"><span data-t="curL">SEK/l</span></div></div>
+              <div class="field"><label for="pD" data-t="diesel">Diesel</label><div class="inrow"><input id="pD" inputmode="decimal" value="19,20"><span data-t="curL">SEK/l</span></div></div>
+              <div class="field wide"><label for="pE" data-t="elec">Electricity, home charging</label><div class="inrow"><input id="pE" inputmode="decimal" value="2,00"><span data-t="curKwh">SEK/kWh</span></div></div>
             </div>
           </div>
         </div>
@@ -636,20 +636,20 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
         <div><h2 id="headline" aria-live="polite">Bilar som passar</h2><p id="subline"></p></div>
         <div class="tools">
           <div class="seg" role="group" data-ta="sortBy" aria-label="Sortera efter">
-            <button type="button" data-sort="value" aria-pressed="true" data-t="sValue">Mest prisvärd</button>
-            <button type="button" data-sort="month" aria-pressed="false" data-t="sMonth">Lägst per månad</button>
-            <button type="button" data-sort="price" aria-pressed="false" data-t="sPrice">Lägst inköp</button>
+            <button type="button" data-sort="value" aria-pressed="true" data-t="sValue">Best value</button>
+            <button type="button" data-sort="month" aria-pressed="false" data-t="sMonth">Lowest monthly</button>
+            <button type="button" data-sort="price" aria-pressed="false" data-t="sPrice">Lowest price</button>
           </div>
-          <button type="button" class="link" id="howBtn" aria-expanded="false" aria-controls="how" data-t="how">Så räknar vi</button>
+          <button type="button" class="link" id="howBtn" aria-expanded="false" aria-controls="how" data-t="how">How we calculate</button>
         </div>
       </div>
       <div class="how" id="how" data-th="howHtml" hidden></div>
       <div class="legendrow" aria-hidden="true">
-        <span><i style="background:var(--c-dep)"></i><span data-t="lDep">Värdeminskning</span></span>
-        <span><i style="background:var(--c-fuel)"></i><span data-t="lFuel">Drivmedel</span></span>
-        <span><i style="background:var(--c-svc)"></i><span data-t="lSvc">Service och reparationer</span></span>
-        <span><i style="background:var(--c-ins)"></i><span data-t="lIns">Försäkring</span></span>
-        <span><i style="background:var(--c-tax)"></i><span data-t="lTax">Fordonsskatt</span></span>
+        <span><i style="background:var(--c-dep)"></i><span data-t="lDep">Depreciation</span></span>
+        <span><i style="background:var(--c-fuel)"></i><span data-t="lFuel">Fuel</span></span>
+        <span><i style="background:var(--c-svc)"></i><span data-t="lSvc">Servicing and repairs</span></span>
+        <span><i style="background:var(--c-ins)"></i><span data-t="lIns">Insurance</span></span>
+        <span><i style="background:var(--c-tax)"></i><span data-t="lTax">Vehicle tax</span></span>
       </div>
       <ol class="cards" id="list"></ol>
       <div class="pager" id="pager" hidden></div>
@@ -662,8 +662,8 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
 <footer class="foot gut">
   <div class="shell">
     <nav class="fnav" aria-label="About the site"><a href="../en/cars/">All cars</a><a href="../en/rankings/">Rankings</a><a href="../en/leasing/">Lease or buy</a><a href="../en/method/">How we calculate</a><a href="../en/about/">About CarDep</a><a href="../en/privacy/">Privacy</a><a href="../en/terms/">Terms</a><a href="../en/image-credits/">Image credits</a><a href="https://github.com/zackmatteo06-droid/Casa-Spel/issues" rel="noopener">Contact</a></nav>
-    <p data-t="foot1">CarDep är en oberoende jämförelsetjänst.</p>
-    <p data-t="foot2">Fotona kommer från Wikimedia Commons.</p>
+    <p data-t="foot1">CarDep is an independent comparison service for the Swedish market. Used prices and depreciation are based on ad data from August–October 2026, but real prices vary with mileage, condition and equipment. New prices, insurance, servicing and fault risks are estimates in Swedish kronor (SEK), not quotes, and design and comfort are our judgement. All model years use today&#x27;s tax rules. Car-loan interest is not included.</p>
+    <p data-t="foot2">The photos come from Wikimedia Commons and are freely licensed. The photographer and licence are shown with each photo and on the Image credits page.</p>
   </div>
 </footer>
 
@@ -754,7 +754,7 @@ sv:{
  stNot:h=>`Inte med i din lista: ${h}`,stOut:w=>`Utanför dina ramar: ${w}`,stPlace:(p,n)=>`Plats ${p} av ${n} i din lista`,
  yearGrp:"Årsmodell",yUsed:(d,w)=>`Begagnad, ca ${d} · ${w}`,warLeft:n=>n?`${n} års garanti kvar`:"ingen garanti kvar",yNew:w=>`Ny bil · ${w} års garanti`,newTag:" · Ny",
  sel:"Valt",outSel:"Utanför ditt urval",fromYear:y=>`Finns från årsmodell ${y}`,toYear:y=>`Såldes ny till och med årsmodell ${y}`,outFuel:"Utanför ditt drivmedelsval",
- taxSame:v=>`Fordonsskatt ${v} per år.`,taxDiff:(a,b)=>`Fordonsskatt ${a} per år de tre första åren, därefter ${b} per år.`,
+ taxSame:v=>`Fordonsskatt ${v} per år.`,taxDiff:(a,b)=>`Fordonsskatt ${a} per år de tre första åren, därefter ${b} per år.`,taxLeft:(a,n,b)=>`Fordonsskatt ${a} per år ${n===1?"det år":"de två år"} som är kvar av bilens tre första, därefter ${b} per år.`,
  close:"Stäng",monthIf:n=>`total kostnad per månad om du äger bilen i ${n} år`,
  newToday:v=>`Nypris i dag ${v}`,newEquiv:v=>`Jämförbart nypris i dag ${v}`,lastNew:v=>`Senaste nypris ${v}`,made:(a,b)=>`Tillverkades ${a}–${b}`,
  priceUsed:"Inköpspris, begagnad",priceNew:"Inköpspris, ny",totalOn:n=>`Total kostnad på ${n} år`,depMo:"Värdeminskning per månad",runMo:"Drift och underhåll per månad",
@@ -855,7 +855,7 @@ en:{
  stNot:h=>`Not in your list: ${h}`,stOut:w=>`Outside your limits: ${w}`,stPlace:(p,n)=>`Number ${p} of ${n} in your list`,
  yearGrp:"Model year",yUsed:(d,w)=>`Used, approx. ${d} · ${w}`,warLeft:n=>n?`${n} ${n===1?"year":"years"} of warranty left`:"no warranty left",yNew:w=>`New car · ${w}-year warranty`,newTag:" · New",
  sel:"Selected",outSel:"Outside your selection",fromYear:y=>`Available from model year ${y}`,toYear:y=>`Sold new up to model year ${y}`,outFuel:"Outside your fuel choice",
- taxSame:v=>`Vehicle tax ${v} per year.`,taxDiff:(a,b)=>`Vehicle tax ${a} per year for the first three years, then ${b} per year.`,
+ taxSame:v=>`Vehicle tax ${v} per year.`,taxDiff:(a,b)=>`Vehicle tax ${a} per year for the first three years, then ${b} per year.`,taxLeft:(a,n,b)=>`Vehicle tax ${a} per year for the ${n===1?"year":"two years"} left of the car's first three, then ${b} per year.`,
  close:"Close",monthIf:n=>`total cost per month if you keep the car for ${n} ${n===1?"year":"years"}`,
  newToday:v=>`New price today ${v}`,newEquiv:v=>`Comparable new price today ${v}`,lastNew:v=>`Last new price ${v}`,made:(a,b)=>`Made ${a}–${b}`,
  priceUsed:"Purchase price, used",priceNew:"Purchase price, new",totalOn:n=>`Total cost over ${n} ${n===1?"year":"years"}`,depMo:"Depreciation per month",runMo:"Running costs per month",
@@ -3439,7 +3439,7 @@ function cmpTable(a,b,I){
    +row(t("rRun"),a.k.runM,b.k.runM,kr,-1)
    +row(t("rFuelMo"),a.k.fuel/a.k.mo,b.k.fuel/b.k.mo,kr,-1)
    +row(t("rSvcMo"),a.k.svc/a.k.mo,b.k.svc/b.k.mo,kr,-1)
-   +row(t("rTax"),A.tax3,B.tax3,v=>kr(v)+t("perYr"),-1,kr)
+   +row(t("rTax"),A.age<3?A.tax3:A.tax,B.age<3?B.tax3:B.tax,v=>kr(v)+t("perYr"),-1,kr)
    +txt(t("rFuel"),fuelL(A.f)+(A.awd?", 4x4":""),fuelL(B.f)+(B.awd?", 4x4":""))
    +txt(t("rCons"),cons(A),cons(B));
   if(A.r||B.r)h+=row(t("rRange"),A.r||null,B.r||null,kmTxt,1);
@@ -3480,7 +3480,8 @@ function renderDetail(E){
   const ref=E.byId[cmpId];
   const inList=E.ok.filter(x=>x.m.id!==m.id),others=E.rows.filter(x=>x.m.id!==m.id&&!inList.includes(x)).sort((a,b)=>fullName(a.m).localeCompare(fullName(b.m),LANG));
   const opt=x=>`<option value="${x.m.id}"${x.m.id===cmpId?" selected":""}>${x.pos?`#${x.pos} `:""}${esc(fullName(x.m))} ${x.s.year}</option>`;
-  const taxNote=s.tax3===s.tax?t("taxSame",kr(s.tax)):t("taxDiff",kr(s.tax3),kr(s.tax));
+  /* malus bara de år som är kvar av bilens tre första */
+  const taxNote=s.tax3===s.tax||s.age>=3?t("taxSame",kr(s.tax)):s.age?t("taxLeft",kr(s.tax3),3-s.age,kr(s.tax)):t("taxDiff",kr(s.tax3),kr(s.tax));
   $("d-in").innerHTML=`
   <div class="d-bar d-wrap">
     <div><p class="brand">${esc(m.b)} · ${typeL(m.t)}</p><h2 id="d-title">${esc(mName(m))}<span class="yr">${s.year}</span></h2></div>

@@ -19,7 +19,7 @@
 <link rel="preload" href="./assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZCYNFQRuQ0u87hpU48O6H7hff/5jPfhF0B7TmoN+RYQ=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1tAMUMrKq7mgdsNhjJl+1cgD4u11kXlJJTr7BYIfYPQ=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "sv", "alt": "en/", "img": "img/bilar/", "cars": "bil/", "chat": null, "title": "CarDep – vad kostar bilen egentligen per månad?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "applicationCategory": "FinanceApplication", "operatingSystem": "Alla", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "logo": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/icon-512.png"}]}</script>
 <script src="assets/site.js" defer></script>
@@ -754,7 +754,7 @@ sv:{
  stNot:h=>`Inte med i din lista: ${h}`,stOut:w=>`Utanför dina ramar: ${w}`,stPlace:(p,n)=>`Plats ${p} av ${n} i din lista`,
  yearGrp:"Årsmodell",yUsed:(d,w)=>`Begagnad, ca ${d} · ${w}`,warLeft:n=>n?`${n} års garanti kvar`:"ingen garanti kvar",yNew:w=>`Ny bil · ${w} års garanti`,newTag:" · Ny",
  sel:"Valt",outSel:"Utanför ditt urval",fromYear:y=>`Finns från årsmodell ${y}`,toYear:y=>`Såldes ny till och med årsmodell ${y}`,outFuel:"Utanför ditt drivmedelsval",
- taxSame:v=>`Fordonsskatt ${v} per år.`,taxDiff:(a,b)=>`Fordonsskatt ${a} per år de tre första åren, därefter ${b} per år.`,
+ taxSame:v=>`Fordonsskatt ${v} per år.`,taxDiff:(a,b)=>`Fordonsskatt ${a} per år de tre första åren, därefter ${b} per år.`,taxLeft:(a,n,b)=>`Fordonsskatt ${a} per år ${n===1?"det år":"de två år"} som är kvar av bilens tre första, därefter ${b} per år.`,
  close:"Stäng",monthIf:n=>`total kostnad per månad om du äger bilen i ${n} år`,
  newToday:v=>`Nypris i dag ${v}`,newEquiv:v=>`Jämförbart nypris i dag ${v}`,lastNew:v=>`Senaste nypris ${v}`,made:(a,b)=>`Tillverkades ${a}–${b}`,
  priceUsed:"Inköpspris, begagnad",priceNew:"Inköpspris, ny",totalOn:n=>`Total kostnad på ${n} år`,depMo:"Värdeminskning per månad",runMo:"Drift och underhåll per månad",
@@ -855,7 +855,7 @@ en:{
  stNot:h=>`Not in your list: ${h}`,stOut:w=>`Outside your limits: ${w}`,stPlace:(p,n)=>`Number ${p} of ${n} in your list`,
  yearGrp:"Model year",yUsed:(d,w)=>`Used, approx. ${d} · ${w}`,warLeft:n=>n?`${n} ${n===1?"year":"years"} of warranty left`:"no warranty left",yNew:w=>`New car · ${w}-year warranty`,newTag:" · New",
  sel:"Selected",outSel:"Outside your selection",fromYear:y=>`Available from model year ${y}`,toYear:y=>`Sold new up to model year ${y}`,outFuel:"Outside your fuel choice",
- taxSame:v=>`Vehicle tax ${v} per year.`,taxDiff:(a,b)=>`Vehicle tax ${a} per year for the first three years, then ${b} per year.`,
+ taxSame:v=>`Vehicle tax ${v} per year.`,taxDiff:(a,b)=>`Vehicle tax ${a} per year for the first three years, then ${b} per year.`,taxLeft:(a,n,b)=>`Vehicle tax ${a} per year for the ${n===1?"year":"two years"} left of the car's first three, then ${b} per year.`,
  close:"Close",monthIf:n=>`total cost per month if you keep the car for ${n} ${n===1?"year":"years"}`,
  newToday:v=>`New price today ${v}`,newEquiv:v=>`Comparable new price today ${v}`,lastNew:v=>`Last new price ${v}`,made:(a,b)=>`Made ${a}–${b}`,
  priceUsed:"Purchase price, used",priceNew:"Purchase price, new",totalOn:n=>`Total cost over ${n} ${n===1?"year":"years"}`,depMo:"Depreciation per month",runMo:"Running costs per month",
@@ -3439,7 +3439,7 @@ function cmpTable(a,b,I){
    +row(t("rRun"),a.k.runM,b.k.runM,kr,-1)
    +row(t("rFuelMo"),a.k.fuel/a.k.mo,b.k.fuel/b.k.mo,kr,-1)
    +row(t("rSvcMo"),a.k.svc/a.k.mo,b.k.svc/b.k.mo,kr,-1)
-   +row(t("rTax"),A.tax3,B.tax3,v=>kr(v)+t("perYr"),-1,kr)
+   +row(t("rTax"),A.age<3?A.tax3:A.tax,B.age<3?B.tax3:B.tax,v=>kr(v)+t("perYr"),-1,kr)
    +txt(t("rFuel"),fuelL(A.f)+(A.awd?", 4x4":""),fuelL(B.f)+(B.awd?", 4x4":""))
    +txt(t("rCons"),cons(A),cons(B));
   if(A.r||B.r)h+=row(t("rRange"),A.r||null,B.r||null,kmTxt,1);
@@ -3480,7 +3480,8 @@ function renderDetail(E){
   const ref=E.byId[cmpId];
   const inList=E.ok.filter(x=>x.m.id!==m.id),others=E.rows.filter(x=>x.m.id!==m.id&&!inList.includes(x)).sort((a,b)=>fullName(a.m).localeCompare(fullName(b.m),LANG));
   const opt=x=>`<option value="${x.m.id}"${x.m.id===cmpId?" selected":""}>${x.pos?`#${x.pos} `:""}${esc(fullName(x.m))} ${x.s.year}</option>`;
-  const taxNote=s.tax3===s.tax?t("taxSame",kr(s.tax)):t("taxDiff",kr(s.tax3),kr(s.tax));
+  /* malus bara de år som är kvar av bilens tre första */
+  const taxNote=s.tax3===s.tax||s.age>=3?t("taxSame",kr(s.tax)):s.age?t("taxLeft",kr(s.tax3),3-s.age,kr(s.tax)):t("taxDiff",kr(s.tax3),kr(s.tax));
   $("d-in").innerHTML=`
   <div class="d-bar d-wrap">
     <div><p class="brand">${esc(m.b)} · ${typeL(m.t)}</p><h2 id="d-title">${esc(mName(m))}<span class="yr">${s.year}</span></h2></div>
