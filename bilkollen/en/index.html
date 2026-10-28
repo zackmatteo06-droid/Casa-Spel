@@ -19,7 +19,7 @@
 <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZGFlNla9b3yPlvoez7RjEZswDK0OZwJmzCkRJNiDLLk=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-2Ydp3AleibwT3Xybikk+pMLWS7+wcxNebM/TjcYstgI=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "en", "alt": "../", "img": "../img/bilar/", "cars": "../en/cars/", "chat": null, "title": "CarDep – what does the car really cost per month?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/en/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/", "logo": "https://zackmatteo06-droid.github.io/Casa-Spel/bilkollen/icon-512.png"}]}</script>
 <script src="../assets/site.js" defer></script>
@@ -82,6 +82,8 @@ button{font:inherit;color:inherit}
 .qlist{position:absolute;right:0;top:calc(100% + 6px);width:max(100%,340px);max-width:calc(100vw - 32px);background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);list-style:none;margin:0;padding:6px;z-index:30}
 .qlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1px 10px;padding:8px 10px;border-radius:8px;cursor:pointer}
 .qlist li[aria-selected="true"],.qlist li:hover{background:var(--accent-soft)}
+.thin{display:inline-block;margin-left:6px;color:var(--warn);font-size:.8em;font-weight:700;line-height:1;vertical-align:.1em;cursor:help}
+.thin-note{margin:4px 0 0;font-size:.85rem;color:var(--muted)}.thin-note .thin{margin:0 2px 0 0}
 .qn{font-weight:600}
 .qm{grid-column:1;font-size:.78rem;color:var(--muted)}
 .qs{grid-column:2;grid-row:1/3;align-self:center;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
@@ -737,7 +739,7 @@ sv:{
  mfMore:"Avancerade val",mfLess:"Dölj avancerade val",mfSel:n=>` (${n} ${n===1?"ändrat":"ändrade"})`,
  or:" eller ",
  wFuel:f=>`valt drivmedel: ${f}`,wUsed:"begagnad",wNew:"ny bil",wOlder:y=>`äldre än ${y}`,wPrice:v=>`${v} över maxpris`,wBudget:v=>`${v}/mån över budget`,
- hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,showOld:(n,y)=>`Visa även äldre bilar (${n} ${n===1?"modell":"modeller"} ner till ${y})`,
+ hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,hThin:"för få annonser för att räkna säkert",thinA:"Osäkert pris: för få annonser",thinNote:y=>`Det finns färre än fem annonser för årsmodell ${y} att räkna på, så priset och restvärdet är osäkra.`,showOld:(n,y)=>`Visa även äldre bilar (${n} ${n===1?"modell":"modeller"} ner till ${y})`,
  moreAbout:n=>`Visa mer om ${n}`,modelYear:y=>`Årsmodell ${y}`,custom:"Anpassad",totalPerMonth:"total kostnad per månad",awd:"Fyrhjulsdrift",awdLow:", fyrhjulsdrift",range:v=>`${v} räckvidd`,rangeUsed:(a,b)=>`ca ${a} räckvidd (${b} som ny)`,
  sohL:"Batterikapacitet kvar",sohV:p=>`ca ${p} %`,bwL:"Batterigaranti",bwV:(y,d,on)=>on?`${y} år/${d}`:"har gått ut",rNowL:"Räckvidd nu, WLTP",rRealL:"Räckvidd i verkligheten",approx:v=>`ca ${v}`,
  battNoteE:(p,r)=>`Batteriet tappar kapacitet med ålder och körsträcka. Vi räknar med att det har ca ${p} % kvar, så räckvidden är kortare än de ${r} bilen hade som ny och förbrukningen något högre. Med vinter och motorvägskörning räcker en laddning ungefär 20 % kortare än enligt WLTP.`,
@@ -838,7 +840,7 @@ en:{
  mfMore:"Advanced options",mfLess:"Hide advanced options",mfSel:n=>` (${n} changed)`,
  or:" or ",
  wFuel:f=>`selected fuel: ${f}`,wUsed:"used",wNew:"new car",wOlder:y=>`older than ${y}`,wPrice:v=>`${v} over max price`,wBudget:v=>`${v}/mo over budget`,
- hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,showOld:(n,y)=>`Show older cars too (${n} ${n===1?"model":"models"} back to ${y})`,
+ hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,hThin:"too few ads to calculate reliably",thinA:"Uncertain price: too few ads",thinNote:y=>`There are fewer than five ads for model year ${y} to go on, so the price and residual value are uncertain.`,showOld:(n,y)=>`Show older cars too (${n} ${n===1?"model":"models"} back to ${y})`,
  moreAbout:n=>`Show more about ${n}`,modelYear:y=>`Model year ${y}`,custom:"Customised",totalPerMonth:"total cost per month",awd:"All-wheel drive",awdLow:", all-wheel drive",range:v=>`${v} range`,rangeUsed:(a,b)=>`approx. ${a} range (${b} when new)`,
  sohL:"Battery capacity left",sohV:p=>`approx. ${p}%`,bwL:"Battery warranty",bwV:(y,d,on)=>on?`${y} yrs/${d}`:"expired",rNowL:"Range now, WLTP",rRealL:"Real-world range",approx:v=>`approx. ${v}`,
  battNoteE:(p,r)=>`The battery loses capacity with age and mileage. We assume about ${p}% is left, so the range is shorter than the ${r} the car had when new and energy use is slightly higher. In winter and on the motorway a charge lasts about 20% less than WLTP says.`,
@@ -2249,6 +2251,9 @@ function val(p,dep,a,a0=99){let v=p;for(let i=0;i<a;i++)v*=1-(i<a0?dep:Math.max(
    tappar 35–40 procent på fyra år i annonserna, så en modell som bara visat låg takt som ny ska inte förlängas rakt fram */
 const DEP_EXT=.08;
 /* äldsta ålder med annonser (minst 3) för modellen */
+/* osäker årsmodell: begagnad med färre än 5 annonser (eller inga) att räkna på */
+const thinYear=(m,y)=>{if(y>=NOW)return false;const o=((MKT[m.id]||{}).obs||[]).find(x=>x[0]===y);return !(o&&o[2]>=5)};
+const thinMark=()=>`<span class="thin" role="img" aria-label="${esc(t("thinA"))}" title="${esc(t("thinA"))}">⚠\uFE0E</span>`;
 const obsAge=mk=>{const a=(mk.obs||[]).filter(o=>o[4]&&o[2]>=3).map(o=>NOW-o[0]);return a.length?Math.max(...a):99};
 /* Restvärdet ändras med cirka 2 procent per 1 000 mil som bilen gått mer eller mindre än det typiska för åldern: så mycket
    skiljer annonspriserna för samma modell och årsmodell (1–6 år gamla bilar, 53 grupper med minst 12 annonser, okt 2026). */
@@ -2825,7 +2830,9 @@ function evaluate(I0){
     const tooOld=!fixed&&!allowed.length&&I.cond!=="ny"&&lastYear(m)<I.minYear;
     const cust=!!(S.sel[m.id]||S.userMotor.has(m.id)),auto=lvlOn&&!cust;
     let luxAny=false,spAny=false;
-    let cands=(fixed?[fixed]:allowed.length?allowed:[allYears(m)[0]]).map(y=>{
+    /* årsmodeller med för få annonser väljs inte automatiskt; har modellen bara sådana döljs den (den går att söka fram) */
+    const sure=allowed.filter(y=>!thinYear(m,y)),thinOnly=!fixed&&allowed.length>0&&!sure.length;
+    let cands=(fixed?[fixed]:sure.length?sure:allowed.length?allowed:[allYears(m)[0]]).map(y=>{
       let sl=sel,lv=true;const why=[];
       if(auto){
         const pv=pickVariant(m,I,y);
@@ -2849,11 +2856,12 @@ function evaluate(I0){
     if(pass.length)cands=pass;
     const fit=cands.filter(c=>!c.why.length);
     const best=fit.length?fit.sort(pickBy[S.sort])[0]:cands.sort((a,b)=>a.k.month-b.k.month)[0];
-    const r={m,sel,s:best.s,k:best.k,g:best.g,why:best.why,hide:null,anyFuel,avail:!!(fixed||allowed.length),lvlHide,tooOld};
+    const r={m,sel,s:best.s,k:best.k,g:best.g,why:best.why,hide:null,anyFuel,avail:!!(fixed||allowed.length),lvlHide,tooOld,thin:thinYear(m,best.s.year)};
     if(I.type!=="Alla"&&m.t!==I.type)r.hide=t("hType",typeL(m.t).toLowerCase());
     else if(!anyFuel)r.hide=t("hFuel",fuelTxt);
     else if(!fixed&&!allowed.length)r.hide=tooOld?t("hOld",lastYear(m)):I.cond==="beg"?t("hNoUsed"):t("hNoNew");
     else if(lvlHide)r.hide=I.lux>1&&!luxAny?t("wLux"):I.sport>1&&!spAny?t("wSport"):t("wBoth");
+    else if(thinOnly)r.hide=t("hThin");
     rows.push(r);
   }
   const ok=rows.filter(r=>!r.hide&&!r.why.length);
@@ -3335,7 +3343,7 @@ function card(r,i,I){
   return `<li class="card${top?" top":""}">
   <button type="button" class="pic" data-open="${m.id}" id="pic-${m.id}" aria-label="${esc(t("moreAbout",fullName(m)))}"><span class="rank">${i+1}</span>${carPic(m,true,false)}</button>
   <div class="c-head">
-    <div class="c-title"><p class="brand">${esc(m.b)}</p><h3><button type="button" class="tlink" data-open="${m.id}" id="t-${m.id}">${esc(mName(m))}<span class="yr">${s.year}</span></button></h3>
+    <div class="c-title"><p class="brand">${esc(m.b)}</p><h3><button type="button" class="tlink" data-open="${m.id}" id="t-${m.id}">${esc(mName(m))}<span class="yr">${s.year}</span>${r.thin?thinMark():""}</button></h3>
       <p class="variant">${t("modelYear",s.year)} · ${esc(names(s))}${isCustom(m.id)?`<span class="tag">${t("custom")}</span>`:""}</p></div>
     <div class="c-cost"><strong>${kr(k.month)}</strong><span>${t("totalPerMonth")}</span>${gradeEl(r.g,false)}</div>
   </div>
@@ -3351,7 +3359,7 @@ function card(r,i,I){
   <div class="c-foot"><span class="muted small">${t("variants",variants,ny)}</span><button type="button" class="more" data-open="${m.id}" id="more-${m.id}">${t("more")}${arrow}</button></div>
 </li>`;
 }
-const outRow=r=>`<li><button type="button" class="orow" id="out-${r.m.id}" data-open="${r.m.id}"><span class="on">${esc(fullName(r.m))} ${r.s.year}<small>${r.s.age?t("usedS"):t("newS")} · ${esc(names(r.s))}</small></span><span class="ow">${r.why.map(w=>`<span>${esc(w)}</span>`).join("")}</span><span class="om">${kr(r.k.month)}<small> ${t("mo")}</small></span></button></li>`;
+const outRow=r=>`<li><button type="button" class="orow" id="out-${r.m.id}" data-open="${r.m.id}"><span class="on">${esc(fullName(r.m))} ${r.s.year}${r.thin?thinMark():""}<small>${r.s.age?t("usedS"):t("newS")} · ${esc(names(r.s))}</small></span><span class="ow">${r.why.map(w=>`<span>${esc(w)}</span>`).join("")}</span><span class="om">${kr(r.k.month)}<small> ${t("mo")}</small></span></button></li>`;
 
 /* Förslag att sänka lyx- eller sportnivån: högsta lägre nivå som ger träffar */
 function lvlTips(I,tips,fits){
@@ -3488,7 +3496,7 @@ function renderDetail(E){
   const yearGrp=`<fieldset class="grp"><legend>${t("yearGrp")}</legend><div class="opts">${allYears(m).map(y=>{
       const as=build(m,s.res,y),ak=costs(as,I.years,I.mil,I.pr),on=s.year===y,off=!allowedY.includes(y);
       const d=as.age?t("yUsed",distTxt(as.mil),t("warLeft",as.warLeft)):t("yNew",m.war);
-      return `<label class="opt${on?" on":""}${off?" off":""}" for="oy-${y}"><input type="radio" name="yr" id="oy-${y}" value="${y}"${on?" checked":""}><span class="o-top"><span class="o-n">${y}${as.age?"":t("newTag")}</span>${on?`<span class="o-sel">${t("sel")}</span>`:""}</span><span class="o-d">${esc(d)}</span><span class="o-x">${optX(as,ak,on)}</span>${off?`<span class="o-off">${t("outSel")}</span>`:""}</label>`;
+      return `<label class="opt${on?" on":""}${off?" off":""}" for="oy-${y}"><input type="radio" name="yr" id="oy-${y}" value="${y}"${on?" checked":""}><span class="o-top"><span class="o-n">${y}${as.age?"":t("newTag")}${thinYear(m,y)?thinMark():""}</span>${on?`<span class="o-sel">${t("sel")}</span>`:""}</span><span class="o-d">${esc(d)}</span><span class="o-x">${optX(as,ak,on)}</span>${off?`<span class="o-off">${t("outSel")}</span>`:""}</label>`;
     }).join("")}</div></fieldset>`;
   const groups=yearGrp+m.g.map((g,gi)=>`<fieldset class="grp"><legend>${esc(grpL(g.k))}</legend><div class="opts">${g.o.map((o,oi)=>{
       if(!availIn(o,s.year))return `<label class="opt off" aria-disabled="true"><span class="o-top"><span class="o-n">${esc(optName(o))}</span></span><span class="o-d">${esc(optDesc(o))}</span><span class="o-off">${o.y&&s.year<o.y?t("fromYear",o.y):t("toYear",o.to)}</span></label>`;
@@ -3507,7 +3515,7 @@ function renderDetail(E){
   const taxNote=s.tax3===s.tax||s.age>=3?t("taxSame",kr(s.tax)):s.age?t("taxLeft",kr(s.tax3),3-s.age,kr(s.tax)):t("taxDiff",kr(s.tax3),kr(s.tax));
   $("d-in").innerHTML=`
   <div class="d-bar d-wrap">
-    <div><p class="brand">${esc(m.b)} · ${typeL(m.t)}</p><h2 id="d-title">${esc(mName(m))}<span class="yr">${s.year}</span></h2></div>
+    <div><p class="brand">${esc(m.b)} · ${typeL(m.t)}</p><h2 id="d-title">${esc(mName(m))}<span class="yr">${s.year}</span>${thinYear(m,s.year)?thinMark():""}</h2>${thinYear(m,s.year)?`<p class="thin-note">${thinMark()} ${esc(t("thinNote",s.year))}</p>`:""}</div>
     <button type="button" class="close" id="d-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>${t("close")}</button>
   </div>
   <div class="d-body d-wrap">
@@ -3665,7 +3673,7 @@ function runSearch(){
     const parts=[typeL(m.t),fu,m.to?t("qUsedOnly",m.from,m.to):t("qNewFrom",kr(newFrom(m)))];
     if(r.s.age)parts.push(t("qShown",r.s.year));
     parts.push(t("gradeShort",r.g.letter));
-    return`<li role="option" id="qo-${i}" data-id="${m.id}" aria-selected="${i===qActive}"><span class="qn">${esc(fullName(m))}</span><span class="qm">${esc(parts.join(" · "))}</span>${qStatus(r)}</li>`;
+    return`<li role="option" id="qo-${i}" data-id="${m.id}" aria-selected="${i===qActive}"><span class="qn">${esc(fullName(m))}${r.thin?thinMark():""}</span><span class="qm">${esc(parts.join(" · "))}</span>${qStatus(r)}</li>`;
   }).join(""):`<li class="qempty" role="presentation">${esc(t("qNone",q.value.trim()))}</li>`;
   ql.hidden=false;q.setAttribute("aria-expanded","true");
   if(qActive>=0)q.setAttribute("aria-activedescendant","qo-"+qActive);else q.removeAttribute("aria-activedescendant");

@@ -126,3 +126,4 @@ main{padding-block:28px 56px}
 .foot a{color:var(--muted)}
 .foot p{max-width:70ch;margin:14px 0 0}
 @media print{.topbar,.foot,.btns{display:none}}
+.thin{display:inline-block;margin-left:5px;color:var(--warn,#a8481b);font-size:.85em;font-weight:700;line-height:1;cursor:help}
