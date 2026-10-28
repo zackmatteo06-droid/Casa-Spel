@@ -127,3 +127,6 @@ main{padding-block:28px 56px}
 .foot p{max-width:70ch;margin:14px 0 0}
 @media print{.topbar,.foot,.btns{display:none}}
 .thin{display:inline-block;margin-left:5px;color:var(--warn,#a8481b);font-size:.85em;font-weight:700;line-height:1;cursor:help}
+.agecurve svg{width:100%;max-width:520px;height:auto;display:block;margin:8px 0 4px}
+.agecurve .ax{stroke:var(--line);stroke-width:1}.agecurve .axt{fill:var(--muted);font-size:10px}
+.agelg{display:flex;flex-wrap:wrap;gap:4px 14px;list-style:none;margin:0;padding:0;font-size:.85rem;color:var(--muted)}.agelg i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
