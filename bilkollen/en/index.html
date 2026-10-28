@@ -201,7 +201,9 @@ button,label,select,a{touch-action:manipulation}
 
 /* Bilkort */
 .cards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;container-type:inline-size}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;grid-template-columns:236px minmax(0,1fr);grid-template-areas:"pic head" "pic chips" "stats stats" "bar bar" "foot foot";gap:10px 18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;grid-template-columns:236px minmax(0,1fr);grid-template-areas:"pic head" "pic chips" "stats stats" "bar bar" "foot foot";grid-template-rows:auto 1fr auto auto auto;align-content:start;gap:10px 18px}
+/* bilden har fast höjd i kortet (16:10 av kolumnbredden): Safari räknar annars fel på radhöjderna när en bild med aspect-ratio spänner över två rader */
+.card>.pic{aspect-ratio:auto;height:148px;align-self:start}
 .card.top{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .pic{grid-area:pic;position:relative;border:0;padding:6px 3px 3px;border-radius:11px;background:linear-gradient(180deg,var(--tile-hi),var(--tile));cursor:pointer;display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;max-width:100%;align-self:start;transition:transform .2s}
 .pic:hover{transform:translateY(-1px)}
@@ -242,11 +244,13 @@ button,label,select,a{touch-action:manipulation}
 .more:hover svg{transform:translateX(2px)}
 @container (max-width:700px){
   .card{grid-template-columns:172px minmax(0,1fr)}
+  .card>.pic{height:108px}
   .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
   .stats div:nth-child(5){grid-column:span 2}
 }
 @container (max-width:520px){
-  .card{grid-template-columns:122px minmax(0,1fr);grid-template-areas:"pic head" "chips chips" "stats stats" "bar bar" "foot foot";padding:14px;gap:10px 12px}
+  .card{grid-template-columns:122px minmax(0,1fr);grid-template-areas:"pic head" "chips chips" "stats stats" "bar bar" "foot foot";grid-template-rows:auto auto auto auto auto;padding:14px;gap:10px 12px}
+  .card>.pic{height:76px}
   .c-head{flex-direction:column;gap:4px}
   .c-cost{text-align:left}
   .c-cost strong{font-size:1.22rem}
