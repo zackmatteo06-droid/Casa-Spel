@@ -19,7 +19,7 @@
 <link rel="preload" href="./assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-zZgogC6gsBSpPBmlRwN/EJzVRQmHzEom1fGWXQkzc8M=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ViFtTG5l9ZMqaXVg7KSsr33qOKwkwWow1hbomYTGvqg=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "sv", "alt": "en/", "img": "img/bilar/", "cars": "bil/", "chat": null, "title": "CarDep – vad kostar bilen egentligen per månad?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://cardep.se/", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://cardep.se/", "applicationCategory": "FinanceApplication", "operatingSystem": "Alla", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://cardep.se/", "logo": "https://cardep.se/icon-512.png"}]}</script>
 <script src="assets/site.js" defer></script>
@@ -84,6 +84,9 @@ button{font:inherit;color:inherit}
 .qlist li[aria-selected="true"],.qlist li:hover{background:var(--accent-soft)}
 .thin{display:inline-block;margin-left:6px;color:var(--warn);font-size:.8em;font-weight:700;line-height:1;vertical-align:.1em;cursor:help}
 .thin-note{margin:4px 0 0;font-size:.85rem;color:var(--muted)}.thin-note .thin{margin:0 2px 0 0}
+.near-h{margin:18px 0 10px;font:700 1.05rem var(--f-display)}.cards.near{margin-bottom:6px}
+.chip.why{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+.qlist .qhint{padding:6px 10px 2px;font-size:.78rem;color:var(--muted);cursor:default}
 .check{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer}.check input{width:18px;height:18px;accent-color:var(--accent);margin:0}
 .agecurve svg{width:100%;max-width:460px;height:auto;display:block;margin:8px 0 4px}
 .agelg{display:flex;flex-wrap:wrap;gap:4px 14px;list-style:none;margin:0;padding:0;font-size:.82rem;color:var(--muted)}.agelg i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
@@ -756,7 +759,7 @@ sv:{
  mfMore:"Avancerade val",mfLess:"Dölj avancerade val",mfSel:n=>` (${n} ${n===1?"ändrat":"ändrade"})`,
  or:" eller ",
  wFuel:f=>`valt drivmedel: ${f}`,wUsed:"begagnad",wNew:"ny bil",wOlder:y=>`äldre än ${y}`,wPrice:v=>`${v} över maxpris`,wBudget:v=>`${v}/mån över budget`,
- hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,hThin:"för få annonser för att räkna säkert",minRange:"Minsta räckvidd för elbilen",kmU:"km",minRangeHint:"Räckvidden i dag enligt WLTP: en äldre elbil har kortare räckvidd eftersom batteriet tappar kapacitet med ålder och körsträcka. Vi väljer den billigaste version och årsmodell som räcker.",awdOnly:"Bara fyrhjulsdrift",awdHint:"Bra på vinterväglag. Vi väljer den billigaste versionen med fyrhjulsdrift.",wRange:v=>`räckvidd under ${v}`,wAwd:"ingen fyrhjulsdrift",hAwd:"finns inte med fyrhjulsdrift",lvlSubRange:v=>`minst ${v} räckvidd`,lvlSubAwd:"fyrhjulsdrift",ageTot:"Totalt per månad",ageAxis:"bilens ålder, år",ageAria:a=>`Månadskostnad, värdeminskning och reparationer efter bilens ålder. Reparationerna kostar mer än värdeminskningen från ${a} år.`,
+ hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,hThin:"för få annonser för att räkna säkert",nearH:"Närmast dina ramar",qNear:"Menade du någon av de här?",minRange:"Minsta räckvidd för elbilen",kmU:"km",minRangeHint:"Räckvidden i dag enligt WLTP: en äldre elbil har kortare räckvidd eftersom batteriet tappar kapacitet med ålder och körsträcka. Vi väljer den billigaste version och årsmodell som räcker.",awdOnly:"Bara fyrhjulsdrift",awdHint:"Bra på vinterväglag. Vi väljer den billigaste versionen med fyrhjulsdrift.",wRange:v=>`räckvidd under ${v}`,wAwd:"ingen fyrhjulsdrift",hAwd:"finns inte med fyrhjulsdrift",lvlSubRange:v=>`minst ${v} räckvidd`,lvlSubAwd:"fyrhjulsdrift",ageTot:"Totalt per månad",ageAxis:"bilens ålder, år",ageAria:a=>`Månadskostnad, värdeminskning och reparationer efter bilens ålder. Reparationerna kostar mer än värdeminskningen från ${a} år.`,
  ageP:(a,d,r,tot,old,n,oa)=>`I snitt slutar en bil bli billigare att äga när den är ungefär ${a} år. Då kostar reparationer och service (${r} i månaden) mer än vad bilen tappar i värde (${d}), och totalkostnaden ligger sedan nästan still, runt ${tot} i månaden och ${old} vid ${oa} år: det du sparar på lägre värdeminskning äter de ökande reparationerna upp. Bilen blir alltså inte dyrare per månad i snitt, men inte heller billigare. Medianen för ${n} modeller som säljs nya, köpta nya och körda 1 250 mil per år.`,thinA:"Osäkert pris: för få annonser",thinNote:y=>`Det finns färre än fem annonser för årsmodell ${y} att räkna på, så priset och restvärdet är osäkra.`,showOld:(n,y)=>`Visa även äldre bilar (${n} ${n===1?"modell":"modeller"} ner till ${y})`,
  moreAbout:n=>`Visa mer om ${n}`,modelYear:y=>`Årsmodell ${y}`,custom:"Anpassad",totalPerMonth:"total kostnad per månad",awd:"Fyrhjulsdrift",awdLow:", fyrhjulsdrift",range:v=>`${v} räckvidd`,rangeUsed:(a,b)=>`ca ${a} räckvidd (${b} som ny)`,
  sohL:"Batterikapacitet kvar",sohV:p=>`ca ${p} %`,bwL:"Batterigaranti",bwV:(y,d,on)=>on?`${y} år/${d}`:"har gått ut",rNowL:"Räckvidd nu, WLTP",rRealL:"Räckvidd i verkligheten",approx:v=>`ca ${v}`,
@@ -859,7 +862,7 @@ en:{
  mfMore:"Advanced options",mfLess:"Hide advanced options",mfSel:n=>` (${n} changed)`,
  or:" or ",
  wFuel:f=>`selected fuel: ${f}`,wUsed:"used",wNew:"new car",wOlder:y=>`older than ${y}`,wPrice:v=>`${v} over max price`,wBudget:v=>`${v}/mo over budget`,
- hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,hThin:"too few ads to calculate reliably",minRange:"Minimum range for the EV",kmU:"km",minRangeHint:"Today's WLTP range: an older EV has less range because the battery loses capacity with age and mileage. We pick the cheapest version and model year that is enough.",awdOnly:"All-wheel drive only",awdHint:"Good on winter roads. We pick the cheapest version with all-wheel drive.",wRange:v=>`range under ${v}`,wAwd:"no all-wheel drive",hAwd:"not available with all-wheel drive",lvlSubRange:v=>`at least ${v} range`,lvlSubAwd:"all-wheel drive",ageTot:"Total per month",ageAxis:"car age, years",ageAria:a=>`Monthly cost, depreciation and repairs by car age. Repairs cost more than depreciation from ${a} years.`,
+ hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,hThin:"too few ads to calculate reliably",nearH:"Closest to your limits",qNear:"Did you mean one of these?",minRange:"Minimum range for the EV",kmU:"km",minRangeHint:"Today's WLTP range: an older EV has less range because the battery loses capacity with age and mileage. We pick the cheapest version and model year that is enough.",awdOnly:"All-wheel drive only",awdHint:"Good on winter roads. We pick the cheapest version with all-wheel drive.",wRange:v=>`range under ${v}`,wAwd:"no all-wheel drive",hAwd:"not available with all-wheel drive",lvlSubRange:v=>`at least ${v} range`,lvlSubAwd:"all-wheel drive",ageTot:"Total per month",ageAxis:"car age, years",ageAria:a=>`Monthly cost, depreciation and repairs by car age. Repairs cost more than depreciation from ${a} years.`,
  ageP:(a,d,r,tot,old,n,oa)=>`On average a car stops getting cheaper to own at about ${a} years. From then on repairs and servicing (${r} a month) cost more than the car loses in value (${d}), and the total cost barely moves, around ${tot} a month and ${old} at ${oa} years: what you save on lower depreciation, the rising repairs eat up. So on average the car does not get more expensive per month, but it no longer gets cheaper either. Median of ${n} models sold new, bought new and driven 12,500 km a year.`,thinA:"Uncertain price: too few ads",thinNote:y=>`There are fewer than five ads for model year ${y} to go on, so the price and residual value are uncertain.`,showOld:(n,y)=>`Show older cars too (${n} ${n===1?"model":"models"} back to ${y})`,
  moreAbout:n=>`Show more about ${n}`,modelYear:y=>`Model year ${y}`,custom:"Customised",totalPerMonth:"total cost per month",awd:"All-wheel drive",awdLow:", all-wheel drive",range:v=>`${v} range`,rangeUsed:(a,b)=>`approx. ${a} range (${b} when new)`,
  sohL:"Battery capacity left",sohV:p=>`approx. ${p}%`,bwL:"Battery warranty",bwV:(y,d,on)=>on?`${y} yrs/${d}`:"expired",rNowL:"Range now, WLTP",rRealL:"Real-world range",approx:v=>`approx. ${v}`,
@@ -3375,8 +3378,8 @@ function leaseSection(m,I){
 const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
 
 /* ---------- Lista ---------- */
-function card(r,i,I){
-  const{m,s,k}=r,top=i===0;
+function card(r,i,I,near){
+  const{m,s,k}=r,top=i===0&&!near;
   const seg=[["dep",t("sDep"),k.dep],["fuel",t("sFuel"),k.fuel],["svc",t("sSvc"),k.svc],["ins",t("sIns"),k.ins],["tax",t("sTax"),k.tax]];
   const variants=m.g.reduce((a,g)=>a*g.o.length,1),ny=allYears(m).length;
   const aria=t("costSplit")+": "+seg.map(([,l,v])=>`${l} ${Math.round(v/k.total*100)} %`).join(", ");
@@ -3387,7 +3390,7 @@ function card(r,i,I){
       <p class="variant">${esc(names(s))}${isCustom(m.id)?`<span class="tag">${t("custom")}</span>`:""}</p></div>
     <div class="c-cost"><strong>${kr(k.month)}</strong><span>${t("totalPerMonth")}</span>${gradeEl(r.g,false)}</div>
   </div>
-  <div class="c-chips">${top?`<span class="badge">${badgeL(S.sort)}</span>`:""}<span class="chip cond">${condTxt(s)}</span><span class="chip">${fuelL(s.f)}</span><span class="chip">${typeL(m.t)}</span>${I.lux>1?`<span class="chip lvl">${t("luxLbl")}: ${esc(lvlName("lux",lvlN(s.lux)))}</span>`:""}${I.sport>1?`<span class="chip lvl">${t("sportLbl")}: ${esc(lvlName("sport",lvlN(s.sport)))}</span>`:""}${s.awd?`<span class="chip">${t("awd")}</span>`:""}${s.r?`<span class="chip">${t("range",kmTxt(s.r))}</span>`:""}${m.to?`<span class="chip">${t("usedOnly")}</span>`:""}${LEASE[m.id]?`<span class="chip">${t("leaseChip",kr(LEASE[m.id].fee))}${t("mo")}</span>`:""}</div>
+  <div class="c-chips">${top?`<span class="badge">${badgeL(S.sort)}</span>`:""}${near?r.why.map(w=>`<span class="chip why">${esc(w)}</span>`).join(""):""}<span class="chip cond">${condTxt(s)}</span><span class="chip">${fuelL(s.f)}</span><span class="chip">${typeL(m.t)}</span>${I.lux>1?`<span class="chip lvl">${t("luxLbl")}: ${esc(lvlName("lux",lvlN(s.lux)))}</span>`:""}${I.sport>1?`<span class="chip lvl">${t("sportLbl")}: ${esc(lvlName("sport",lvlN(s.sport)))}</span>`:""}${s.awd?`<span class="chip">${t("awd")}</span>`:""}${s.r?`<span class="chip">${t("range",kmTxt(s.r))}</span>`:""}${m.to?`<span class="chip">${t("usedOnly")}</span>`:""}${LEASE[m.id]?`<span class="chip">${t("leaseChip",kr(LEASE[m.id].fee))}${t("mo")}</span>`:""}</div>
   <dl class="stats">
     <div><dt>${s.age?t("buyUsed"):t("buyNew")}</dt><dd>${kr(s.p)}</dd></div>
     <div><dt>${t("residAfter",I.years)}</dt><dd>${kr(k.resid)}</dd></div>
@@ -3454,6 +3457,11 @@ function renderSide(E){
   ["lux","sport"].forEach(k=>{const o=lvlOut(k,I[k]);$(k+"Out").textContent=o;$(k).setAttribute("aria-valuetext",o)});
   renderPriceBox(I);
 }
+/* hur långt en bil ligger från dina ramar: hur mycket den går över maxpris och månadsbudget (i andel), plus andra avvikelser */
+function nearest(E){
+  const I=E.I,d=r=>(I.maxP?Math.max(0,r.s.p/I.maxP-1):0)+(I.maxM?Math.max(0,r.k.month/I.maxM-1):0)+.5*r.why.filter(w=>!/kr/.test(w)).length;
+  return E.out.slice().sort((a,b)=>d(a)-d(b)||a.k.month-b.k.month);
+}
 function renderList(E){
   $("list").innerHTML=E.ok.slice(0,S.shown).map((r,i)=>card(r,i,E.I)).join("");
   const rest=E.ok.length-S.shown,pg=$("pager");
@@ -3464,7 +3472,10 @@ function renderList(E){
     em.innerHTML=`<p class="e-t">${esc(sg.t)}</p><p>${esc(sg.p)}</p>${sg.tips.length?`<div class="e-tips">${sg.tips.map((x,i)=>`<button type="button" class="tip" id="tip-${i}" data-tip="${i}">${esc(x.t)}</button>`).join("")}</div>`:""}`;
     em.hidden=false;
   }else{em.hidden=true;em.innerHTML="";S.tips=[]}
-  const out=E.out,show=S.showAllOut?out:out.slice(0,5);
+  /* inget passar: de bilar som ligger närmast dina ramar som kort, och listan utanför ramarna i samma ordning */
+  const near=E.ok.length?[]:nearest(E);
+  if(near.length)em.innerHTML+=`<h3 class="near-h">${esc(t("nearH"))}</h3><ul class="cards near">${near.slice(0,3).map((r,i)=>card(r,i,E.I,true)).join("")}</ul>`;
+  const out=near.length?near.slice(3):E.out,show=S.showAllOut?out:out.slice(0,5);
   const nOld=E.I.minYear>OLDEST?E.rows.filter(r=>r.tooOld&&r.anyFuel&&(E.I.type==="Alla"||r.m.t===E.I.type)).length:0;
   $("out").innerHTML=(out.length?`<h3>${t("outTitle")} <span class="muted">(${out.length})</span></h3><ul class="olist">${show.map(outRow).join("")}</ul>${out.length>5?`<button type="button" class="link" id="outMore">${S.showAllOut?t("fewer"):t("showAll",out.length)}</button>`:""}`:"")
     +(nOld?`<p class="oldhint"><button type="button" class="link" id="showOld">${t("showOld",nOld,OLDEST)}</button></p>`:"");
@@ -3742,14 +3753,24 @@ function runSearch(){
   qItems=MODELS.filter(m=>toks.every(x=>m.hay.includes(x)))
     .sort((a,b)=>(b.nameN.includes(v)-a.nameN.includes(v))||(b.nameN.startsWith(toks[0])-a.nameN.startsWith(toks[0])))
     .slice(0,8);
+  /* ingen träff: modellerna vars namn liknar det du skrev mest (stavfel, eller en modell vi inte har men ett märke vi har) */
+  let fuzzy=false;
+  if(!qItems.length){
+    const bg=w=>{const a=[];for(let i=0;i<w.length-1;i++)a.push(w.slice(i,i+2));return a};
+    const dice=(x,y)=>{const a=bg(x),b=bg(y);if(!a.length||!b.length)return x===y?1:0;let n=0;const c=b.slice();for(const g of a){const j=c.indexOf(g);if(j>=0){n++;c.splice(j,1)}}return 2*n/(a.length+b.length)};
+    const words=m=>m.hay.split(/[^a-z0-9]+/).filter(Boolean);
+    qItems=MODELS.map(m=>{const ws=words(m);return[m,toks.reduce((a,x)=>a+Math.max(...ws.map(w=>dice(x,w))),0)/toks.length]})
+      .filter(([,sc])=>sc>=.5).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([m])=>m);
+    fuzzy=qItems.length>0;
+  }
   if(qActive>=qItems.length)qActive=qItems.length-1;
-  ql.innerHTML=qItems.length?qItems.map((m,i)=>{
+  ql.innerHTML=(fuzzy?`<li class="qhint" role="presentation">${esc(t("qNone",q.value.trim()))}. ${esc(t("qNear"))}</li>`:"")+(qItems.length?qItems.map((m,i)=>{
     const r=E.byId[m.id],fu=[...new Set(m.g[0].o.map(o=>fuelL(o.f)))].join(", ");
     const parts=[typeL(m.t),fu,m.to?t("qUsedOnly",m.from,m.to):t("qNewFrom",kr(newFrom(m)))];
     if(r.s.age)parts.push(t("qShown",r.s.year));
     parts.push(t("gradeShort",r.g.letter));
     return`<li role="option" id="qo-${i}" data-id="${m.id}" aria-selected="${i===qActive}"><span class="qn">${esc(fullName(m))}${r.thin?thinMark():""}</span><span class="qm">${esc(parts.join(" · "))}</span>${qStatus(r)}</li>`;
-  }).join(""):`<li class="qempty" role="presentation">${esc(t("qNone",q.value.trim()))}</li>`;
+  }).join(""):`<li class="qempty" role="presentation">${esc(t("qNone",q.value.trim()))}</li>`);
   ql.hidden=false;q.setAttribute("aria-expanded","true");
   if(qActive>=0)q.setAttribute("aria-activedescendant","qo-"+qActive);else q.removeAttribute("aria-activedescendant");
 }
