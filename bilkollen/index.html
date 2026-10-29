@@ -19,7 +19,7 @@
 <link rel="preload" href="./assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-c85TtxgGnm5hHa89PXA8TXbD8HoeLHolUbCbQp1LdIw=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-r1vp/8GiFfQf1XNbPSRGoE7JF6BPx3qONG2/imXd7L4=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "sv", "alt": "en/", "img": "img/bilar/", "cars": "bil/", "chat": null, "title": "CarDep – vad kostar bilen egentligen per månad?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://cardep.se/", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://cardep.se/", "applicationCategory": "FinanceApplication", "operatingSystem": "Alla", "inLanguage": "sv", "description": "Jämför vad 189 bilmodeller kostar per månad med värdeminskning, drivmedel, service, försäkring och skatt. Begagnat- och nypriser från svenska annonser, och ett prisvärdhetsbetyg från A till E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://cardep.se/", "logo": "https://cardep.se/icon-512.png"}]}</script>
 <script src="assets/site.js" defer></script>
@@ -84,6 +84,8 @@ button{font:inherit;color:inherit}
 .qlist li[aria-selected="true"],.qlist li:hover{background:var(--accent-soft)}
 .thin{display:inline-block;margin-left:6px;color:var(--warn);font-size:.8em;font-weight:700;line-height:1;vertical-align:.1em;cursor:help}
 .thin-note{margin:4px 0 0;font-size:.85rem;color:var(--muted)}.thin-note .thin{margin:0 2px 0 0}
+.qp{font:600 .82rem var(--f-body);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.qp:hover{border-color:var(--accent);color:var(--accent)}.qp:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .check{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer}.check input{width:18px;height:18px;accent-color:var(--accent);margin:0}
 .agecurve svg{width:100%;max-width:460px;height:auto;display:block;margin:8px 0 4px}
 .agelg{display:flex;flex-wrap:wrap;gap:4px 14px;list-style:none;margin:0;padding:0;font-size:.82rem;color:var(--muted)}.agelg i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
@@ -554,9 +556,9 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
   <div class="shell">
     <div>
       <h1 id="introH" data-t="h1">Vad kostar bilen egentligen per månad?</h1>
-      <p data-t="intro">Ange hur länge du tänker äga bilen och vad du vill lägga.</p>
+      <p data-t="intro">Ange vad du vill lägga. All data är anpassad för den svenska marknaden.</p>
     </div>
-    <span class="proto" data-t="proto">Annonsdata okt 2026</span>
+    <span class="proto" data-t="proto">Svensk marknad · annonsdata okt 2026</span>
   </div>
 </section>
 
@@ -566,11 +568,6 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
       <form id="f" novalidate>
         <div class="ph"><h2 data-t="panel">Dina ramar</h2><button type="button" class="link" id="resetF" data-t="reset">Återställ</button></div>
         <div class="field">
-          <div class="yearrow"><label for="years" data-t="yearsQ">Hur länge äger du bilen?</label><output id="yearsOut" for="years">5 år</output></div>
-          <input type="range" id="years" min="1" max="10" step="1" value="5">
-          <div class="ticks" aria-hidden="true"><span data-t="y1">1 år</span><span data-t="y10">10 år</span></div>
-        </div>
-        <div class="field">
           <label for="maxPrice" data-t="maxPrice">Max inköpspris</label>
           <div class="inrow"><input id="maxPrice" inputmode="numeric" value="450 000"><span data-t="cur">kr</span></div>
         </div>
@@ -579,6 +576,11 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
           <div class="inrow"><input id="maxMonth" inputmode="numeric" value="6 500"><span data-t="curMo">kr/mån</span></div>
           <div class="hint" data-t="maxMonthHint">Allt inräknat: värdeminskning, drift och underhåll.</div>
         </div>
+        <div class="field" role="group" aria-labelledby="qpLbl">
+          <div class="lbl" id="qpLbl" data-t="qpLbl">Snabbval</div>
+          <div class="chips"><button type="button" class="qp" id="qp-price" data-t="qpPrice">Under 60 000 kr</button><button type="button" class="qp" id="qp-month" data-t="qpMonth">Under 2 500 kr/mån</button></div>
+          <div class="hint" data-t="qpHint">Visar alla biltyper och äldre årsmodeller, där de billigaste bilarna finns.</div>
+        </div>
         <div class="field" role="group" aria-labelledby="typeLbl">
           <div class="lbl" id="typeLbl" data-t="type">Biltyp</div>
           <div class="chips" id="types"></div>
@@ -586,6 +588,11 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
         </div>
         <button type="button" class="mfbtn" id="mfBtn" aria-expanded="false" aria-controls="mf">Avancerade val</button>
         <div class="mf" id="mf">
+        <div class="field">
+          <div class="yearrow"><label for="years" data-t="yearsQ">Hur länge äger du bilen?</label><output id="yearsOut" for="years">5 år</output></div>
+          <input type="range" id="years" min="1" max="10" step="1" value="5">
+          <div class="ticks" aria-hidden="true"><span data-t="y1">1 år</span><span data-t="y10">10 år</span></div>
+        </div>
           <div class="field">
             <div class="yearrow lvlrow"><label for="lux" data-t="luxQ">Hur lyxig?</label><output id="luxOut" for="lux">Spelar ingen roll</output></div>
             <input type="range" id="lux" min="1" max="5" step="1" value="1">
@@ -679,7 +686,7 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
 
 <footer class="foot gut">
   <div class="shell">
-    <nav class="fnav" aria-label="Om webbplatsen"><a href="bil/">Alla bilar</a><a href="topplistor/">Topplistor</a><a href="leasing/">Leasa eller köpa</a><a href="metod/">Så räknar vi</a><a href="om/">Om CarDep</a><a href="integritet/">Integritet</a><a href="villkor/">Villkor</a><a href="bildkallor/">Bildkällor</a><a href="https://github.com/zackmatteo06-droid/Casa-Spel/issues" rel="noopener">Kontakt</a></nav>
+    <nav class="fnav" aria-label="Om webbplatsen"><a href="bil/">Alla bilar</a><a href="topplistor/">Topplistor</a><a href="leasing/">Leasa eller köpa</a><a href="metod/">Så räknar vi</a><a href="om/">Om CarDep</a><a href="integritet/">Integritet</a><a href="villkor/">Villkor</a><a href="bildkallor/">Bildkällor</a><a href="https://github.com/zackmatteo06-droid/Casa-Spel/issues" rel="noopener">Kontakt</a><a href="tel:+46738723196">+46 73-872 31 96</a></nav>
     <p data-t="foot1">CarDep är en oberoende jämförelsetjänst.</p>
     <p data-t="foot2">Fotona kommer från Wikimedia Commons.</p>
   </div>
@@ -706,8 +713,8 @@ sv:{
  langBtn:"EN",langAria:"Switch to English",
  searchPh:"Sök modell",searchPhS:"Sök",searchAria:"Sök bilmodell",searchList:"Sökförslag",
  h1:"Vad kostar bilen egentligen per månad?",
- intro:"Ange hur länge du tänker äga bilen och vad du vill lägga. Vi jämför nya och begagnade bilar med verkliga annonspriser och dagens bränslepriser, räknar med värdeminskning, drivmedel, skatt, försäkring och service och ger varje bil ett prisvärdhetsbetyg från A till E, där månadskostnaden vägs mot kvalitet, design, komfort, lyx och mer.",
- proto:"Annonsdata okt 2026",factsLink:n=>`Fakta, begagnatpriser och vanliga fel för ${n}`,
+ intro:"Ange vad du vill lägga. Vi jämför nya och begagnade bilar med verkliga annonspriser och dagens bränslepriser, räknar med värdeminskning, drivmedel, skatt, försäkring och service och ger varje bil ett prisvärdhetsbetyg från A till E, där månadskostnaden vägs mot kvalitet, design, komfort, lyx och mer. All data är anpassad för den svenska marknaden: svenska annonser och nypriser, svenska skatter, bränslepriser, försäkrings- och servicekostnader.",
+ proto:"Svensk marknad · annonsdata okt 2026",factsLink:n=>`Fakta, begagnatpriser och vanliga fel för ${n}`,
  panel:"Dina ramar",reset:"Återställ",
  yearsQ:"Hur länge äger du bilen?",y1:"1 år",y10:"10 år",
  maxPrice:"Max inköpspris",cur:"kr",maxMonth:"Max kostnad per månad",curMo:"kr/mån",maxMonthHint:"Allt inräknat: värdeminskning, drift och underhåll.",
@@ -756,7 +763,7 @@ sv:{
  mfMore:"Avancerade val",mfLess:"Dölj avancerade val",mfSel:n=>` (${n} ${n===1?"ändrat":"ändrade"})`,
  or:" eller ",
  wFuel:f=>`valt drivmedel: ${f}`,wUsed:"begagnad",wNew:"ny bil",wOlder:y=>`äldre än ${y}`,wPrice:v=>`${v} över maxpris`,wBudget:v=>`${v}/mån över budget`,
- hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,hThin:"för få annonser för att räkna säkert",minRange:"Minsta räckvidd för elbilen",kmU:"km",minRangeHint:"Räckvidden i dag enligt WLTP: en äldre elbil har kortare räckvidd eftersom batteriet tappar kapacitet med ålder och körsträcka. Vi väljer den billigaste version och årsmodell som räcker.",awdOnly:"Bara fyrhjulsdrift",awdHint:"Bra på vinterväglag. Vi väljer den billigaste versionen med fyrhjulsdrift.",wRange:v=>`räckvidd under ${v}`,wAwd:"ingen fyrhjulsdrift",hAwd:"finns inte med fyrhjulsdrift",lvlSubRange:v=>`minst ${v} räckvidd`,lvlSubAwd:"fyrhjulsdrift",ageTot:"Totalt per månad",ageAxis:"bilens ålder, år",ageAria:a=>`Månadskostnad, värdeminskning och reparationer efter bilens ålder. Reparationerna kostar mer än värdeminskningen från ${a} år.`,
+ hType:x=>`annan biltyp (${x})`,hFuel:f=>`finns inte som ${f}`,hNoUsed:"finns inte begagnad i ditt urval",hNoNew:"finns inte som ny",hOld:y=>`finns bara till årsmodell ${y}`,hThin:"för få annonser för att räkna säkert",qpLbl:"Snabbval",qpPrice:"Under 60 000 kr",qpMonth:"Under 2 500 kr/mån",qpHint:"Visar alla biltyper och äldre årsmodeller, där de billigaste bilarna finns.",minRange:"Minsta räckvidd för elbilen",kmU:"km",minRangeHint:"Räckvidden i dag enligt WLTP: en äldre elbil har kortare räckvidd eftersom batteriet tappar kapacitet med ålder och körsträcka. Vi väljer den billigaste version och årsmodell som räcker.",awdOnly:"Bara fyrhjulsdrift",awdHint:"Bra på vinterväglag. Vi väljer den billigaste versionen med fyrhjulsdrift.",wRange:v=>`räckvidd under ${v}`,wAwd:"ingen fyrhjulsdrift",hAwd:"finns inte med fyrhjulsdrift",lvlSubRange:v=>`minst ${v} räckvidd`,lvlSubAwd:"fyrhjulsdrift",ageTot:"Totalt per månad",ageAxis:"bilens ålder, år",ageAria:a=>`Månadskostnad, värdeminskning och reparationer efter bilens ålder. Reparationerna kostar mer än värdeminskningen från ${a} år.`,
  ageP:(a,d,r,tot,old,n,oa)=>`I snitt slutar en bil bli billigare att äga när den är ungefär ${a} år. Då kostar reparationer och service (${r} i månaden) mer än vad bilen tappar i värde (${d}), och totalkostnaden ligger sedan nästan still, runt ${tot} i månaden och ${old} vid ${oa} år: det du sparar på lägre värdeminskning äter de ökande reparationerna upp. Bilen blir alltså inte dyrare per månad i snitt, men inte heller billigare. Medianen för ${n} modeller som säljs nya, köpta nya och körda 1 250 mil per år.`,thinA:"Osäkert pris: för få annonser",thinNote:y=>`Det finns färre än fem annonser för årsmodell ${y} att räkna på, så priset och restvärdet är osäkra.`,showOld:(n,y)=>`Visa även äldre bilar (${n} ${n===1?"modell":"modeller"} ner till ${y})`,
  moreAbout:n=>`Visa mer om ${n}`,modelYear:y=>`Årsmodell ${y}`,custom:"Anpassad",totalPerMonth:"total kostnad per månad",awd:"Fyrhjulsdrift",awdLow:", fyrhjulsdrift",range:v=>`${v} räckvidd`,rangeUsed:(a,b)=>`ca ${a} räckvidd (${b} som ny)`,
  sohL:"Batterikapacitet kvar",sohV:p=>`ca ${p} %`,bwL:"Batterigaranti",bwV:(y,d,on)=>on?`${y} år/${d}`:"har gått ut",rNowL:"Räckvidd nu, WLTP",rRealL:"Räckvidd i verkligheten",approx:v=>`ca ${v}`,
@@ -809,8 +816,8 @@ en:{
  langBtn:"SV",langAria:"Byt till svenska",
  searchPh:"Search model",searchPhS:"Search",searchAria:"Search car model",searchList:"Search suggestions",
  h1:"What does the car really cost per month?",
- intro:"Tell us how long you'll keep the car and what you want to spend. We compare new and used cars using real ad prices and today's fuel prices, count depreciation, fuel, tax, insurance and servicing, and give every car a value grade from A to E that weighs the monthly cost against quality, design, comfort, luxury and more. Prices are for the Swedish market.",
- proto:"Ad data Oct 2026",factsLink:n=>`Facts, used prices and common faults for ${n}`,
+ intro:"Tell us what you want to spend. We compare new and used cars using real ad prices and today's fuel prices, count depreciation, fuel, tax, insurance and servicing, and give every car a value grade from A to E that weighs the monthly cost against quality, design, comfort, luxury and more. All data is adapted to the Swedish market: Swedish ads and new prices, Swedish taxes, fuel prices, insurance and servicing costs.",
+ proto:"Swedish market · ad data Oct 2026",factsLink:n=>`Facts, used prices and common faults for ${n}`,
  panel:"Your limits",reset:"Reset",
  yearsQ:"How long will you keep the car?",y1:"1 year",y10:"10 years",
  maxPrice:"Max purchase price",cur:"SEK",maxMonth:"Max cost per month",curMo:"SEK/mo",maxMonthHint:"Everything included: depreciation, running costs and upkeep.",
@@ -859,7 +866,7 @@ en:{
  mfMore:"Advanced options",mfLess:"Hide advanced options",mfSel:n=>` (${n} changed)`,
  or:" or ",
  wFuel:f=>`selected fuel: ${f}`,wUsed:"used",wNew:"new car",wOlder:y=>`older than ${y}`,wPrice:v=>`${v} over max price`,wBudget:v=>`${v}/mo over budget`,
- hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,hThin:"too few ads to calculate reliably",minRange:"Minimum range for the EV",kmU:"km",minRangeHint:"Today's WLTP range: an older EV has less range because the battery loses capacity with age and mileage. We pick the cheapest version and model year that is enough.",awdOnly:"All-wheel drive only",awdHint:"Good on winter roads. We pick the cheapest version with all-wheel drive.",wRange:v=>`range under ${v}`,wAwd:"no all-wheel drive",hAwd:"not available with all-wheel drive",lvlSubRange:v=>`at least ${v} range`,lvlSubAwd:"all-wheel drive",ageTot:"Total per month",ageAxis:"car age, years",ageAria:a=>`Monthly cost, depreciation and repairs by car age. Repairs cost more than depreciation from ${a} years.`,
+ hType:x=>`different body type (${x})`,hFuel:f=>`not available as ${f}`,hNoUsed:"no used ones in your selection",hNoNew:"not available new",hOld:y=>`only available up to model year ${y}`,hThin:"too few ads to calculate reliably",qpLbl:"Quick picks",qpPrice:"Under SEK 60,000",qpMonth:"Under SEK 2,500/mo",qpHint:"Shows all body types and older model years, where the cheapest cars are.",minRange:"Minimum range for the EV",kmU:"km",minRangeHint:"Today's WLTP range: an older EV has less range because the battery loses capacity with age and mileage. We pick the cheapest version and model year that is enough.",awdOnly:"All-wheel drive only",awdHint:"Good on winter roads. We pick the cheapest version with all-wheel drive.",wRange:v=>`range under ${v}`,wAwd:"no all-wheel drive",hAwd:"not available with all-wheel drive",lvlSubRange:v=>`at least ${v} range`,lvlSubAwd:"all-wheel drive",ageTot:"Total per month",ageAxis:"car age, years",ageAria:a=>`Monthly cost, depreciation and repairs by car age. Repairs cost more than depreciation from ${a} years.`,
  ageP:(a,d,r,tot,old,n,oa)=>`On average a car stops getting cheaper to own at about ${a} years. From then on repairs and servicing (${r} a month) cost more than the car loses in value (${d}), and the total cost barely moves, around ${tot} a month and ${old} at ${oa} years: what you save on lower depreciation, the rising repairs eat up. So on average the car does not get more expensive per month, but it no longer gets cheaper either. Median of ${n} models sold new, bought new and driven 12,500 km a year.`,thinA:"Uncertain price: too few ads",thinNote:y=>`There are fewer than five ads for model year ${y} to go on, so the price and residual value are uncertain.`,showOld:(n,y)=>`Show older cars too (${n} ${n===1?"model":"models"} back to ${y})`,
  moreAbout:n=>`Show more about ${n}`,modelYear:y=>`Model year ${y}`,custom:"Customised",totalPerMonth:"total cost per month",awd:"All-wheel drive",awdLow:", all-wheel drive",range:v=>`${v} range`,rangeUsed:(a,b)=>`approx. ${a} range (${b} when new)`,
  sohL:"Battery capacity left",sohV:p=>`approx. ${p}%`,bwL:"Battery warranty",bwV:(y,d,on)=>on?`${y} yrs/${d}`:"expired",rNowL:"Range now, WLTP",rRealL:"Real-world range",approx:v=>`approx. ${v}`,
@@ -3786,6 +3793,15 @@ $("fbReset").addEventListener("click",()=>{["pB","pD","pE"].forEach(k=>{OWN[k]=f
 ["change","input"].forEach(ev=>$("types").addEventListener(ev,upd));
 ["lux","sport","minRange"].forEach(id=>$(id).addEventListener("input",upd));
 $("awdOnly").addEventListener("change",upd);
+/* snabbval: billiga bilar finns bland äldre årsmodeller, så alla biltyper och alla årsmodeller visas */
+function quickPick(k){
+  if(k==="price"){$("maxPrice").value=nf.format(60000);$("maxMonth").value=nf.format(DEF.maxMonth)}
+  else{$("maxMonth").value=nf.format(2500);$("maxPrice").value=nf.format(DEF.maxPrice)}
+  $("type-Alla").checked=true;$("cond-alla").checked=true;$("minYear").value=OLDEST;upd();
+  $("headline").scrollIntoView({block:"start",behavior:reduced()?"auto":"smooth"});
+}
+$("qp-price").addEventListener("click",()=>quickPick("price"));
+$("qp-month").addEventListener("click",()=>quickPick("month"));
 $("minRange").addEventListener("blur",()=>{const v=num($("minRange").value);$("minRange").value=v?nf.format(v):""});
 ["change","input"].forEach(ev=>$("fuels").addEventListener(ev,()=>{S.fuels=new Set([...document.querySelectorAll("input[name=fuel]:checked")].map(i=>i.value));upd()}));
 $("f").addEventListener("submit",e=>e.preventDefault());
@@ -3802,7 +3818,7 @@ document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",(
 }));
 $("mfBtn").addEventListener("click",e=>{const o=$("mf").classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",String(o));renderMf()});
 function renderMf(){
-  const I=inputs(),n=(I.cond!=="alla")+(I.minYear!==DEF.minYear)+(S.fuels.size>0)+(Math.round(I.mil)!==DEF.mil)+(I.minGrade!=="E")+(OWN.pB||OWN.pD||OWN.pE)+(I.lux>1)+(I.sport>1)+(I.minRange>0)+I.awd;
+  const I=inputs(),n=(I.cond!=="alla")+(I.minYear!==DEF.minYear)+(S.fuels.size>0)+(Math.round(I.mil)!==DEF.mil)+(I.minGrade!=="E")+(OWN.pB||OWN.pD||OWN.pE)+(I.lux>1)+(I.sport>1)+(I.minRange>0)+I.awd+(I.years!==DEF.years);
   $("rangeF").hidden=!S.fuels.has("E");
   $("mfBtn").textContent=($("mf").classList.contains("open")?t("mfLess"):t("mfMore"))+(n?t("mfSel",n):"");
 }
