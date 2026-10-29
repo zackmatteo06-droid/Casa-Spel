@@ -1,6 +1,6 @@
 /* CarDep service worker: sidan laddar snabbare och fungerar utan uppkoppling.
    Sidor: nätet först, sparad kopia om nätet saknas. Bilder och typsnitt: sparad kopia först. Chatten (/api/) går aldrig via cachen. */
-const V="cardep-bbc09b46b4",IMG="cardep-img-1",CORE=["./", "en/", "bil/", "en/cars/", "assets/site.css", "assets/fonts.css", "assets/site.js", "assets/fonts/archivo.woff2", "assets/fonts/ibm-plex-sans.woff2", "assets/fonts/ibm-plex-mono.woff2", "favicon.svg", "manifest.webmanifest"];
+const V="cardep-26bd16437b",IMG="cardep-img-1",CORE=["./", "en/", "bil/", "en/cars/", "assets/site.css", "assets/fonts.css", "assets/site.js", "assets/fonts/archivo.woff2", "assets/fonts/ibm-plex-sans.woff2", "assets/fonts/ibm-plex-mono.woff2", "favicon.svg", "manifest.webmanifest"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!==IMG).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 async function trim(c,max){const ks=await c.keys();for(let i=0;i<ks.length-max;i++)await c.delete(ks[i])}
