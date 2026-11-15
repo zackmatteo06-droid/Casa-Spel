@@ -267,9 +267,9 @@ def scenario_txt(data, lang):
     sc = data["scenario"]
     if lang == "sv":
         return (f'Räknat på {sc["years"]} års ägande och {nf(sc["mil"], "sv")} mil per år, med bränslepriser från {data["fuel"]["updated"]}. '
-                f'Månadskostnaden innehåller värdeminskning, drivmedel, service och reparationer, försäkring och fordonsskatt.')
+                f'Månadskostnaden innehåller värdeminskning, drivmedel, service, däck och reparationer, försäkring och fordonsskatt.')
     return (f'Based on {sc["years"]} years of ownership and {nf(sc["mil"] * 10, "en")} km a year, with fuel prices from {data["fuel"]["updated"]}. '
-            f'The monthly cost includes depreciation, fuel, servicing and repairs, insurance and road tax.')
+            f'The monthly cost includes depreciation, fuel, servicing, tyres and repairs, insurance and road tax.')
 
 
 SRC_NAME = {"bl": "Blocket", "au": "AutoUncle", "aum": "AutoUncle", "bk": "BilKoll", "dk": {"sv": "Danmark", "en": "Denmark"},
@@ -793,14 +793,14 @@ def method(data, lang):
     if lang == "sv":
         intro = (f'<p class="lead">Så räknar CarDep fram vad en bil kostar per månad, var siffrorna kommer ifrån och hur prisvärdhetsbetyget sätts.</p>'
                  f'<p>Månadskostnaden är allt du betalar för bilen under den tid du äger den, delat med antalet månader: värdeminskning, drivmedel eller el, '
-                 f'service och reparationer, försäkring och fordonsskatt. Ränta på billån ingår inte. På modellsidorna räknar vi med {data["scenario"]["years"]} års ägande '
+                 f'service, däck och reparationer, försäkring och fordonsskatt. Ränta på billån ingår inte. På modellsidorna räknar vi med {data["scenario"]["years"]} års ägande '
                  f'och {nf(data["scenario"]["mil"], "sv")} mil per år. I <a href="{rel(path, P["home"]["sv"])}">kalkylatorn</a> kan du ändra allt.</p>')
         return prose_page("sv", "method", "Så räknar vi: källor och beräkningar | CarDep",
                           "Så räknar CarDep ut månadskostnaden: värdeminskning ur annonspriser på Blocket, drivmedel, skatt, försäkring, service, vanliga fel och batteriåldring.",
                           "Så räknar vi", intro + how, current="method")
     intro = (f'<p class="lead">How CarDep works out what a car costs per month, where the numbers come from and how the value grade is set.</p>'
              f'<p>The monthly cost is everything you pay for the car while you own it, divided by the number of months: depreciation, fuel or electricity, '
-             f'servicing and repairs, insurance and road tax. Loan interest is not included. The model pages assume {data["scenario"]["years"]} years of ownership '
+             f'servicing, tyres and repairs, insurance and road tax. Loan interest is not included. The model pages assume {data["scenario"]["years"]} years of ownership '
              f'and {nf(data["scenario"]["mil"] * 10, "en")} km a year. In the <a href="{rel(path, P["home"]["en"])}">calculator</a> you can change everything.</p>')
     return prose_page("en", "method", "How we calculate: sources and methods | CarDep",
                       "How CarDep works out the monthly cost: depreciation from Blocket ad prices, fuel, tax, insurance, servicing, common faults and battery ageing.",
@@ -813,7 +813,7 @@ def about(data, lang):
     c, src = esc(CFG["kontakt_url"]), esc(CFG["kallkod_url"])
     if lang == "sv":
         body = (f'<p class="lead">CarDep visar vad en bil verkligen kostar per månad, inte bara vad den kostar att köpa.</p>'
-                f'<p>Vi räknar ihop värdeminskning, drivmedel eller el, service och reparationer, försäkring och fordonsskatt för {n} bilmodeller som är vanliga i Sverige, '
+                f'<p>Vi räknar ihop värdeminskning, drivmedel eller el, service, däck och reparationer, försäkring och fordonsskatt för {n} bilmodeller som är vanliga i Sverige, '
                 f'nya och begagnade från 2005 och framåt. Varje bil får också ett prisvärdhetsbetyg från A till E som väger kostnaden mot kvalitet, säkerhet, komfort, utrymme och prestanda.</p>'
                 f'<p>Begagnatpriserna bygger på tiotusentals svenska annonser, i första hand på Blocket, och nypriserna på vad bilarna annonseras för hos svenska bilhandlare och på '
                 f'Skatteverkets nybilsprislista. Exakt hur vi räknar står på sidan <a href="{rel(path, P["method"]["sv"])}">Så räknar vi</a>.</p>'
@@ -825,7 +825,7 @@ def about(data, lang):
                 f'Koden till webbplatsen finns öppet på <a href="{src}" rel="noopener">GitHub</a>.</p>')
         return prose_page("sv", "about", "Om CarDep | CarDep", "CarDep är en oberoende tjänst som visar vad bilar kostar per månad i Sverige, utan reklam och utan affiliatelänkar.", "Om CarDep", body)
     body = (f'<p class="lead">CarDep shows what a car really costs per month, not just what it costs to buy.</p>'
-            f'<p>We add up depreciation, fuel or electricity, servicing and repairs, insurance and road tax for {n} car models that are common in Sweden, '
+            f'<p>We add up depreciation, fuel or electricity, servicing, tyres and repairs, insurance and road tax for {n} car models that are common in Sweden, '
             f'new and used from 2005 onwards. Every car also gets a value grade from A to E that weighs the cost against quality, safety, comfort, space and performance.</p>'
             f'<p>Used prices are based on tens of thousands of Swedish ads, mainly on Blocket, and new prices on what Swedish dealers advertise the cars for and on the '
             f'Swedish Tax Agency\'s new car price list. The page <a href="{rel(path, P["method"]["en"])}">How we calculate</a> explains the details.</p>'
