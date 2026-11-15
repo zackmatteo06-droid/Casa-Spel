@@ -1,0 +1,8 @@
+.env
+.venv
+.cache
+.git
+bildgenerator
+verktyg
+app/bilkalkyl.html
+app/assets/_axe.js

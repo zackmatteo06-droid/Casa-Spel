@@ -1,0 +1,13 @@
+# hemligheter och lokal miljö
+.env
+.venv/
+__pycache__/
+.DS_Store
+.claude/
+# byggcache, chattens underlag och testfiler
+.cache/
+katalog.txt
+bildgenerator/out/
+# app/ byggs av bygg.py; bara källfilen versionshanteras (bilder, ikoner, typsnitt och css hämtas från ../bilkollen)
+app/*
+!app/bilkalkyl.html
