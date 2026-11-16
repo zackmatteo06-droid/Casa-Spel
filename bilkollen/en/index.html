@@ -19,7 +19,7 @@
 <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Md33QNolDNOmMSmu0wztVmWwKJ3fkMG6sbyNucvYg8k=' 'sha256-3z7ENgF4C5fd3SpDC8pdYpKZAnwXWV0TIqfY139+Oks='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-i0kle0b+GBxtW1/22xVZBcy2uEqR7FhYQoRSTjaQdwc=' 'sha256-R8TVIQ7iAfRtS5hJKqOl3D915Waq+xX9p26+ylnaMBE='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <script type="application/json" id="bk-page">{"lang": "en", "alt": "../", "img": "../img/bilar/", "cars": "../en/cars/", "chat": null, "title": "CarDep – what does the car really cost per month?"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "CarDep", "url": "https://cardep.se/", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E."}, {"@type": "WebApplication", "name": "CarDep", "url": "https://cardep.se/en/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Compare what 189 car models cost per month in Sweden: depreciation, fuel, servicing, insurance and tax. Used and new prices from Swedish ads, and a value grade from A to E.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"}}, {"@type": "Organization", "name": "CarDep", "url": "https://cardep.se/", "logo": "https://cardep.se/icon-512.png"}]}</script>
 <script src="../assets/site.js" defer></script>
@@ -32,7 +32,7 @@
   --accent:#0f6b52; --accent-soft:#e3f0ea; --accent-ink:#ffffff;
   --good:#0f7a4c; --good-soft:#e2f2e9; --warn:#a8481b; --warn-soft:#fbeee4;
   --glass:#6f8696; --glass-hi:#c6d3dc; --tyre:#1b2220; --hub:#c9d0cc; --gsh-o:.18;
-  --c-dep:#0f6b52; --c-fuel:#d08a1f; --c-svc:#7f8c86; --c-ins:#4f7cc4; --c-tax:#9a5bb0; --c-run:#5f7895;
+  --c-dep:#0f6b52; --c-fuel:#d08a1f; --c-svc:#7f8c86; --c-ins:#4f7cc4; --c-tax:#9a5bb0; --c-cap:#b5654a; --c-run:#5f7895;
   --shadow:0 14px 40px rgba(16,28,22,.16);
   --f-display:"Archivo",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
 }
@@ -41,14 +41,14 @@
   --accent:#45c79b; --accent-soft:#163329; --accent-ink:#08110d;
   --good:#53d6a0; --good-soft:#123326; --warn:#f0965f; --warn-soft:#3a2418;
   --glass:#3e5361; --glass-hi:#7d95a6; --tyre:#0a0d0c; --hub:#8c9893; --gsh-o:.55;
-  --c-dep:#45c79b; --c-fuel:#e6a64a; --c-svc:#7b8983; --c-ins:#7ea6e6; --c-tax:#c58ed8; --c-run:#86a0c0;
+  --c-dep:#45c79b; --c-fuel:#e6a64a; --c-svc:#7b8983; --c-ins:#7ea6e6; --c-tax:#c58ed8; --c-cap:#e0947a; --c-run:#86a0c0;
   --shadow:0 14px 40px rgba(0,0,0,.55); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0e1311; --surface:#161d1a; --tile:#1d2522; --tile-hi:#27312d; --ink:#e4eae6; --muted:#93a19a; --line:#29332e;
   --accent:#45c79b; --accent-soft:#163329; --accent-ink:#08110d;
   --good:#53d6a0; --good-soft:#123326; --warn:#f0965f; --warn-soft:#3a2418;
   --glass:#3e5361; --glass-hi:#7d95a6; --tyre:#0a0d0c; --hub:#8c9893; --gsh-o:.55;
-  --c-dep:#45c79b; --c-fuel:#e6a64a; --c-svc:#7b8983; --c-ins:#7ea6e6; --c-tax:#c58ed8; --c-run:#86a0c0;
+  --c-dep:#45c79b; --c-fuel:#e6a64a; --c-svc:#7b8983; --c-ins:#7ea6e6; --c-tax:#c58ed8; --c-cap:#e0947a; --c-run:#86a0c0;
   --shadow:0 14px 40px rgba(0,0,0,.55); color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -639,12 +639,14 @@ table.mkt tr.on th,table.mkt tr.on td{font-weight:600}
             <div class="fb-a"><button type="button" class="link" id="fbEdit" data-t="fbEdit">Change prices</button><button type="button" class="link" id="fbReset" data-t="fbReset" hidden>Use today&#x27;s prices</button></div>
           </div>
           <div class="advbox">
-            <div class="lbl" data-t="adv">Distance and your own fuel prices</div>
+            <div class="lbl" data-t="adv">Distance, your own fuel prices and interest</div>
             <div class="advg">
               <div class="field wide"><label for="mil" data-t="dist">Distance per year</label><div class="inrow"><input id="mil" inputmode="numeric" value="1 250"><span data-t="distU">km</span></div><div class="hint" data-t="milHint">The Swedish average is 12,430 km per year (Trafikanalys 2025).</div></div>
               <div class="field"><label for="pB" data-t="petrol">Petrol</label><div class="inrow"><input id="pB" inputmode="decimal" value="18,50"><span data-t="curL">SEK/l</span></div></div>
               <div class="field"><label for="pD" data-t="diesel">Diesel</label><div class="inrow"><input id="pD" inputmode="decimal" value="19,20"><span data-t="curL">SEK/l</span></div></div>
               <div class="field wide"><label for="pE" data-t="elec">Electricity, home charging</label><div class="inrow"><input id="pE" inputmode="decimal" value="2,00"><span data-t="curKwh">SEK/kWh</span></div></div>
+              <div class="field wide"><label for="pub" data-t="pubL">EV: share of public charging</label><div class="inrow"><input id="pub" inputmode="numeric" value="15"><span>%</span></div><div class="hint" data-t="pubHint">Fast charging costs about SEK 5.70 per kWh without a subscription. We assume 15 % of the electricity is charged in public. Enter 0 if you always charge at home.</div></div>
+              <div class="field wide"><label for="rate" data-t="rateL">Interest on the money</label><div class="inrow"><input id="rate" inputmode="decimal" value="0"><span>%</span></div><div class="hint" data-t="rateHint">0 % leaves interest out. With a car loan: enter the loan rate. Paying cash: enter what the money would otherwise earn, for example your savings rate.</div></div>
             </div>
           </div>
         </div>
@@ -726,7 +728,7 @@ sv:{
  cType:"biltypen",cFuel:"drivmedlet",cLux:"lyxnivån",cSport:"sportnivån",noRating:"Ingen uppgift",
  cond:"Ny eller begagnad",minYear:"Äldsta årsmodell",minYearHint:"Vi väljer den årsmodell som passar dig bäst för varje bil. Du kan byta inne på bilen.",
  fuel:"Drivmedel",fuelHint:"Välj inget för att visa alla.",
- adv:"Körsträcka och egna bränslepriser",dist:"Körsträcka per år",distU:"mil",petrol:"Bensin",diesel:"Diesel",curL:"kr/l",elec:"El, hemmaladdning",curKwh:"kr/kWh",
+ adv:"Körsträcka, egna bränslepriser och ränta",pubL:"Elbil: andel publik laddning",pubHint:"Snabbladdning kostar cirka 5,70 kr/kWh utan abonnemang. Vi räknar med att 15 % av elen laddas publikt. Skriv 0 om du alltid laddar hemma.",rateL:"Ränta på pengarna",rateHint:"0 % räknar inte med någon ränta. Har du billån: skriv låneräntan. Betalar du kontant: skriv vad pengarna annars hade gett, till exempel sparräntan.",lCap:"Ränta på pengarna",sCap:"ränta",dist:"Körsträcka per år",distU:"mil",petrol:"Bensin",diesel:"Diesel",curL:"kr/l",elec:"El, hemmaladdning",curKwh:"kr/kWh",
  sortBy:"Sortera efter",sValue:"Mest prisvärd",sMonth:"Lägst per månad",sPrice:"Lägst inköp",how:"Så räknar vi",
  howHtml:`<dl>
   <dt>Värdeminskning</dt><dd>Inköpspriset minus beräknat restvärde. Hur snabbt varje modell tappar i värde räknar vi fram ur vad bilarna kostar i annonser i dag, årsmodell för årsmodell. Första året tappar bilen mest, sedan avtar takten. Restvärdet beror också på hur långt du kör: för varje 1 000 mil som bilen har gått mer än en typisk bil i samma ålder när du säljer den blir den cirka 2 procent mindre värd, och tvärtom. Så mycket skiljer annonspriserna för samma modell och årsmodell.</dd>
@@ -734,13 +736,14 @@ sv:{
   <dt>Nya bilar</dt><dd>Nya bilar räknas med vad de annonseras för hos svenska bilhandlare. För varje modell jämför vi priset i annonserna för nya bilar i oktober 2026, i första hand på Blocket, med listpriset inklusive moms för samma version i <a href="https://www.skatteverket.se/privat/skatter/arbeteinkomst/formaner/bilarmm/foreskriftermednybilspriser.4.d5e04db14b6fef2c8695f6.html" target="_blank" rel="noopener">Skatteverkets nybilsprislista</a> från juni 2026. Annonserna väger tyngre än listpriset ju fler de är: med n annonser får annonsernas median vikten n/(n+4), så redan åtta annonser väger två tredjedelar. Det gäller för alla versioner av modellen. Med färre än tre annonser för nya bilar räknar vi med listpriset, och vi räknar aldrig med mer än listpriset, eftersom annonser över listpriset oftast gäller bilar med extrautrustning. En begagnad årsmodell räknas alltid som minst 3 procent billigare än en ny bil och minst 2 procent billigare per år än en nyare årsmodell. Restvärdet räknas fram ur annonspriserna, precis som för begagnade bilar.</dd>
   <dt>Drivmedel</dt><dd>Körsträcka × verklig förbrukning × pris. Standardvärdet 1 250 mil per år ligger nära snittet i Sverige, som var 1 243 mil år 2025 enligt Trafikanalys. Den officiella förbrukningen räknar vi om till verklig förbrukning. Bensin-, diesel- och hybridbilar drar ungefär 20 procent mer än WLTP-värdet enligt <a href="https://climate.ec.europa.eu/news-other-reads/news/publication-real-world-co2-emissions-and-fuel-consumption-cars-and-vans-collected-2022-2024-07-26_en" target="_blank" rel="noopener">EU-kommissionens data</a> från bilarnas egna förbrukningsmätare. För äldre bilar med NEDC-värden är skillnaden 9 till 40 procent beroende på årsmodell enligt <a href="https://theicct.org/series/from-lab-to-road" target="_blank" rel="noopener">ICCT</a>. Elbilar räknar vi med 25 procent över WLTP, eftersom vinter och motorvägskörning drar mer. Laddhybrider drar i snitt 3,5 gånger så mycket bensin som i testet enligt EU-kommissionen, eftersom de laddas mer sällan än testet antar. Vi räknar med 2,5 gånger så mycket bensin och 20 procent mindre el än testet, för en bil som laddas hemma.</dd>
   <dt>Fordonsskatt</dt><dd>Räknas från koldioxidutsläppet. De tre första åren gäller malus: 107 kr per gram mellan 75 och 125 g/km och 132 kr per gram över 125 g/km, plus grundbeloppet 360 kr. Därefter 22 kr per gram över 111 g/km. Diesel får bränsletillägg (13,52 kr per gram) och miljötillägg (250 kr). För dieselbilar som togs i trafik före juli 2018 multipliceras i stället grundbelopp och koldioxidbelopp med 2,37, och miljötillägget är 500 kr för bilar från före 2008. Elbilar och laddhybrider betalar 360 kr.</dd>
+  <dt>Ränta på pengarna</dt><dd>Ingår inte om du inte väljer det. Under Avancerade val kan du skriva in en ränta. Då räknar vi med räntan på vad bilen är värd, år för år: varje år snittet av värdet i början och slutet av året gånger räntan. Har du billån är det ungefär räntan du betalar, om lånet följer bilens värde. Betalar du kontant är det vad pengarna hade kunnat ge på ett sparkonto eller i fonder. Ett exempel: en bil för 300 000 kr som är värd 180 000 kr efter tre år kostar med 4 procents ränta cirka 800 kr i månaden i ränta. Räntan ingår i drift och underhåll och i betyget. Jämförelsen leasa eller köpa räknar alltid med sin egen ränta.</dd>
   <dt>Försäkring</dt><dd>Uppskattad helförsäkring per modell. Dyrare utföranden kostar mer att försäkra, och premien sjunker när bilen tappar i värde.</dd>
   <dt>Service och reparationer</dt><dd>Service är ett uppskattat belopp per år som ökar med 3 procent för varje år bilen blir äldre, upp till 15 års ålder. Däck ingår: en uppsättning till en vanlig familjebil kostar cirka 7 000 kr med montering och håller cirka 4 500 mil, alltså runt 1,5 kr per mil. Större och dyrare bilar har dyrare däck (SUV cirka 20 procent mer, sportbilar 45 procent), elbilar sliter däcken cirka 25 procent fortare, och även den som kör lite byter sommar- och vinterdäcken minst vart 10:e år. Däckbyte på verkstad ingår inte. Kontrollbesiktningen ingår också: vid 3 och 5 år och sedan var 14:e månad, cirka 450 kr plus en efterkontroll för de cirka 23 procent som underkänns. För Kia bygger beloppet på Kias egna priser för serviceavtal (oktober 2026, <a href="https://www.kia.com/se/aga/service-oversikt/serviceavtal/" target="_blank" rel="noopener">kia.com</a>). Till det kommer väntade reparationer efter att garantin gått ut. Dels märkets genomsnittliga reparationskostnad enligt <a href="https://repairpal.com/reliability" target="_blank" rel="noopener">RepairPal</a>, som ökar med bilens ålder i samma takt som andelen bilar med fel i TÜV-rapporten. Dels kända fel för just den modellen och motorn, främst från <a href="https://minbilkoll.se" target="_blank" rel="noopener">BilKolls köpguider</a>, till exempel kamremmen på PureTech-motorer, DSG-lådor och vinkelväxeln på äldre fyrhjulsdrivna Volvo. Varje fel räknas som risken att det inträffar under din ägartid gånger vad reparationen kostar, utjämnat per månad. Riskerna är våra uppskattningar. Elbilar får hälften så mycket övriga reparationer, eftersom de går sönder mer sällan enligt <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">ADAC:s pannstatistik</a>, men vi räknar med risken för fel på laddsystemet och för att batteriet måste repareras eller bytas (se Batteriåldring).</dd>
   <dt>När slutar bilen bli billigare?</dt><dd><div class="agecurve"></div></dd>
   <dt>Batteriåldring</dt><dd>Batteriet i en elbil eller laddhybrid tappar kapacitet med åldern och körsträckan. En elbil med vätskekylt batteri har enligt vår beräkning cirka 85 procent kvar efter 8 år och 12 000 mil. Det stämmer med snittet på knappt 2 procent per år i <a href="https://www.geotab.com/blog/ev-battery-health/" target="_blank" rel="noopener">Geotabs mätningar</a> av över 10 000 elbilar. Batterier utan vätskekylning, som i Nissan Leaf, VW e-Golf, Renault Zoe och Dacia Spring, åldras 1,3–1,7 gånger så fort. Tesla och BYD:s LFP-batterier åldras något långsammare. Räckvidden minskar i samma takt som kapaciteten, och ett slitet batteri drar lite mer el. För en begagnad bil visar vi uppskattad räckvidd i dag, både enligt WLTP och i verkligheten, där den är cirka 20 procent kortare. Äldre årsmodeller räknas med det batteri de hade då, till exempel 22 eller 41 kWh i en äldre Renault Zoe. I kostnaden ingår risken att batteriet måste repareras eller bytas när batterigarantin har gått ut. Garantin gäller oftast 8 år eller 16 000 mil och täcker också kapacitet under omkring 70 procent. Risken för byte ökar när kapaciteten sjunker under 80 procent, och risken för reparation ökar med åldern. Ett byte kostar cirka 2 500 kr per kWh plus arbete, för en Nissan Leaf med 40 kWh alltså cirka 110 000 kr. En laddhybrid med äldre batteri kör en mindre del på el och drar mer bensin. Riskerna är våra uppskattningar.</dd>
   <dt>Prisvärdhetsbetyg</dt><dd>Betyget A–E väger månadskostnaden mot det du får. Bilen får 0–5 poäng vardera för kvalitet, design, komfort, lyx, säkerhet, utrymme och prestanda, alltså högst 35 poäng. Månadskostnaden ger ett minuspoäng för varje 10 procent den ligger över 1 600 kr. Det du får minus månadskostnadens poäng ger betyget, och A är mest prisvärt. Kvalitet bygger på driftsäkerheten i <a href="https://www.adac.de/news/tuev-report-2026/" target="_blank" rel="noopener">TÜV-rapporten 2026</a> och <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">ADAC:s pannstatistik 2025</a> där modellen finns med, annars på vår uppskattning. Den sjunker med bilens ålder, eftersom andelen bilar med allvarliga fel vid besiktning ökar från omkring 10 procent vid 5 år till 33 procent vid 15 år enligt TÜV-rapporten. Säkerhet är stjärnorna i Euro NCAP (3 poäng om bilen inte är testad), minus ett poäng för bilar från före 2016 och två poäng för bilar från före 2010, som saknar moderna säkerhetssystem. Lyx är samma nivå som i reglaget. Design och komfort är vår bedömning utifrån biltester, och bilar som vunnit <a href="https://en.wikipedia.org/wiki/World_Car_Awards" target="_blank" rel="noopener">World Car Design of the Year</a> får högsta poäng för design. Sportversioner får lägre komfort men högre prestanda. Utrymme räknas på bagaget och prestanda på accelerationen. Sorteringen Mest prisvärd följer poängen.</dd>
   <dt>Lyx och sportighet</dt><dd>Varje utförande får en lyxnivå och en sportighet från 1 till 5. Lyxnivån bygger på märke, modell och utrustningsnivå, mätt mot dagens bilar: efter tre år sjunker den en tiondels steg per år, som mest ett och ett halvt steg, eftersom utrustning och teknik åldras. Sportigheten bygger på acceleration, karosstyp och märke, och sportversioner som GTI, AMG, M och RS ger lite extra. Extremt sportig kräver i praktiken en riktig sportbil eller en av de allra snabbaste versionerna, medan heta halvkombi som Golf GTI och BMW M135 räknas som mycket sportiga. När du väljer en nivå visar vi bilarna som når den och räknar på det billigaste utförandet av varje bil som gör det. Bilar som inte når nivån i något utförande visas inte.</dd>
-  <dt>Bränslepriser</dt><dd>Bensin och diesel är de stora kedjornas listpris. Elpriset för hemmaladdning är spotpriset i SE3 plus elhandelspåslag, nätavgift, energiskatt och moms. Priserna uppdateras automatiskt en gång per dag. Du kan skriva in egna priser under Ändra priser.</dd>
+  <dt>Bränslepriser</dt><dd>Bensin och diesel är de stora kedjornas listpris. Elpriset för hemmaladdning är spotpriset i SE3 plus elhandelspåslag, nätavgift, energiskatt och moms. Priserna uppdateras automatiskt en gång per dag. Du kan skriva in egna priser under Ändra priser. Elbilar laddas inte bara hemma: 87 procent av elbilsägarna laddar oftast hemma enligt <a href="https://via.tt.se/pressmeddelande/4587944/m-sverige-slapper-resultatet-fran-stora-elbilsenkaten-2026?lang=sv" target="_blank" rel="noopener">M Sveriges Stora elbilsenkäten 2026</a>, men även de snabbladdar på längre resor. Vi uppskattar att 15 procent av elen laddas publikt, för cirka 5,70 kr/kWh utan abonnemang (OKQ8, Circle K, Recharge och Ionity tar 5,49–6,09 kr/kWh enligt <a href="https://hurbra.se/basta-laddnatverk-sverige-2026/" target="_blank" rel="noopener">hurbra.se</a>, augusti 2026). Andelen kan du ändra under Avancerade val. Laddhybrider räknar vi som hemmaladdade.</dd>
   <dt>Leasa eller köpa</dt><dd>För bilar som är vanliga att privatleasa jämför vi märkets eget privatleasingerbjudande med att köpa samma version ny och sälja den när avtalet går ut, oftast efter 36 månader. Leasing: avgiften vid din körsträcka (märkets pris för fler mil när det finns, annars en uppskattning), uppläggnings- och aviavgift och eventuell förhöjd första hyra utslagna per månad, och service om den inte ingår. Köpa: värdeminskningen från listpriset för samma version (eller vad nya bilar annonseras för, om det är lägre) till restvärdet enligt annonserna, ränta på pengarna (5 procent om du inte ändrar den) och service. Restvärdet justeras med 2 procent per 1 000 mil som du kör mer eller mindre än vad modellen typiskt går under samma år; så mycket skiljer annonspriserna för samma modell och årsmodell i oktober 2026. Bortom den äldsta årsmodellen i annonserna förlängs kurvan med minst 8 procents årlig värdeminskning, eftersom äldre bilar i annonserna tappar 35–40 procent på fyra år. Drivmedel och skatt är desamma, och försäkringen också om inte leasingbolaget kräver en egen försäkring, som Peugeot. Erbjudandena lästes av på märkenas webbplatser den 26–27 oktober 2026 och kan ha ändrats sedan dess.</dd>
   <dt>Bilder</dt><dd>Fotona visar rätt modell och generation och kommer från <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>, där de är fritt licensierade. Fotograf och licens står på bilden när du öppnar en modell. Utrustning, färg och årsmodell kan skilja sig från versionen i kalkylen. Saknas ett fritt foto visas en datorgenererad bild.</dd>
  </dl>`,
@@ -782,7 +785,7 @@ sv:{
  newToday:v=>`Nypris i dag ${v}`,newEquiv:v=>`Jämförbart nypris i dag ${v}`,lastNew:v=>`Senaste nypris ${v}`,made:(a,b)=>`Tillverkades ${a}–${b}`,
  priceUsed:"Inköpspris, begagnad",priceNew:"Inköpspris, ny",totalOn:n=>`Total kostnad på ${n} år`,depMo:"Värdeminskning per månad",runMo:"Drift och underhåll per månad",
  cfgH:"Välj utförande",cfgP:"Priset, månadskostnaden och rankingen uppdateras direkt.",cfgReset:"Återställ grundutförande",
- brkH:"Vad kostar bilen per månad?",totMo:"Totalt per månad",runNote:"Drift och underhåll är drivmedel, service och reparationer, försäkring och skatt.",
+ brkH:"Vad kostar bilen per månad?",totMo:"Totalt per månad",runNote:"Drift och underhåll är drivmedel, service och reparationer, försäkring och skatt.",capNote:r=>`Ränta på pengarna (${r} %) räknas på vad bilen är värd under året och ingår i drift och underhåll.`,
  chH:"Månadskostnad efter ägartid",chNote:"Ju längre du äger bilen, desto mer sprids värdeminskningen ut. Markerad stapel är din ägartid.",chDesc:l=>`Månadskostnad vid 1 till 10 års ägande. ${l}.`,yrAxis:"år",
  cmpH:"Vad skiljer dem åt?",cmpWith:"Jämför med",inList:"I din lista",others:"Övriga modeller",pro:"Fördel",con:"Nackdel",proCon:"Fördelar och nackdelar",illus:n=>`Illustration av ${n}`,photoOf:n=>`Foto av ${n}`,photoBy:"Foto",photoEdit:"bakgrund borttagen",picNote:"Datorgenererad bild utifrån modellens mått, inte en exakt avbildning.",
  cmp:"Jämförelse",diff:"Skillnad",same:"Lika",rYear:"Årsmodell",usedL:"begagnad",newL:"ny",rMil:"Miltal vid köp",rMonth:"Kostnad per månad",rPrice:"Inköpspris",rResid:n=>`Restvärde efter ${n} år`,
@@ -829,7 +832,7 @@ en:{
  cType:"body type",cFuel:"fuel",cLux:"luxury level",cSport:"sport level",noRating:"No rating",
  cond:"New or used",minYear:"Oldest model year",minYearHint:"We pick the model year that suits you best for each car. You can change it on the car's page.",
  fuel:"Fuel",fuelHint:"Select none to show all.",
- adv:"Distance and your own fuel prices",dist:"Distance per year",distU:"km",petrol:"Petrol",diesel:"Diesel",curL:"SEK/l",elec:"Electricity, home charging",curKwh:"SEK/kWh",
+ adv:"Distance, your own fuel prices and interest",pubL:"EV: share of public charging",pubHint:"Fast charging costs about SEK 5.70 per kWh without a subscription. We assume 15 % of the electricity is charged in public. Enter 0 if you always charge at home.",rateL:"Interest on the money",rateHint:"0 % leaves interest out. With a car loan: enter the loan rate. Paying cash: enter what the money would otherwise earn, for example your savings rate.",lCap:"Interest on the money",sCap:"interest",dist:"Distance per year",distU:"km",petrol:"Petrol",diesel:"Diesel",curL:"SEK/l",elec:"Electricity, home charging",curKwh:"SEK/kWh",
  sortBy:"Sort by",sValue:"Best value",sMonth:"Lowest monthly",sPrice:"Lowest price",how:"How we calculate",
  howHtml:`<dl>
   <dt>Depreciation</dt><dd>Purchase price minus the estimated residual value. How fast each model loses value is worked out from what the cars cost in ads today, model year by model year. The first year has the biggest drop, then the rate slows. The residual value also depends on how far you drive: for every 10,000 km more than a typical car of the same age when you sell, the car is worth about 2 percent less, and the other way round. That is how much ad prices differ for the same model and model year.</dd>
@@ -837,13 +840,14 @@ en:{
   <dt>New cars</dt><dd>New cars use what Swedish dealers advertise them for. For each model we compare the price in ads for new cars in October 2026, mainly on Blocket, with the list price including VAT of the same version in the <a href="https://www.skatteverket.se/privat/skatter/arbeteinkomst/formaner/bilarmm/foreskriftermednybilspriser.4.d5e04db14b6fef2c8695f6.html" target="_blank" rel="noopener">Swedish Tax Agency's new car price list</a> of June 2026. The more ads there are, the more they weigh against the list price: with n ads the median of the ads gets the weight n/(n+4), so eight ads already count for two thirds. This applies to every version of the model. With fewer than three ads for new cars, we use the list price, and we never use more than the list price, since ads above it usually carry extra equipment. A used model year always costs at least 3 percent less than a new car and at least 2 percent less per year than a newer model year. The residual value is worked out from the ad prices, just as for used cars.</dd>
   <dt>Fuel</dt><dd>Distance × real-world consumption × price. The default of 12,500 km per year is close to the Swedish average, which was 12,430 km in 2025 according to Trafikanalys. We convert the official consumption to real-world consumption. Petrol, diesel and hybrid cars use about 20 percent more than the WLTP figure according to <a href="https://climate.ec.europa.eu/news-other-reads/news/publication-real-world-co2-emissions-and-fuel-consumption-cars-and-vans-collected-2022-2024-07-26_en" target="_blank" rel="noopener">European Commission data</a> from the cars' own fuel consumption meters. For older cars with NEDC figures the gap is 9 to 40 percent depending on model year according to <a href="https://theicct.org/series/from-lab-to-road" target="_blank" rel="noopener">the ICCT</a>. For electric cars we add 25 percent to WLTP, since winter and motorway driving use more. Plug-in hybrids use on average 3.5 times as much petrol as in the test according to the European Commission, because they are charged less often than the test assumes. We use 2.5 times as much petrol and 20 percent less electricity than the test, for a car charged at home.</dd>
   <dt>Vehicle tax</dt><dd>Swedish vehicle tax, based on CO₂ emissions. For the first three years a malus applies: SEK 107 per gram between 75 and 125 g/km and SEK 132 per gram above 125 g/km, plus a base amount of SEK 360. After that, SEK 22 per gram above 111 g/km. Diesel cars pay a fuel surcharge (SEK 13.52 per gram) and an environmental surcharge (SEK 250). For diesel cars first registered before July 2018, the base amount and CO₂ amount are instead multiplied by 2.37, and the environmental surcharge is SEK 500 for cars from before 2008. Electric cars and plug-in hybrids pay SEK 360.</dd>
+  <dt>Interest on the money</dt><dd>Left out unless you choose it. Under Advanced options you can enter an interest rate. We then charge interest on what the car is worth, year by year: each year the average of its value at the start and end of the year times the rate. With a car loan this is roughly the interest you pay, if the loan follows the car's value. Paying cash, it is what the money could have earned in a savings account or in funds. An example: a car bought for SEK 300,000 that is worth SEK 180,000 after three years costs about SEK 800 a month in interest at 4 percent. Interest is included in running costs and in the grade. The lease-or-buy comparison always uses its own interest rate.</dd>
   <dt>Insurance</dt><dd>Estimated comprehensive insurance per model. Pricier versions cost more to insure, and the premium drops as the car loses value.</dd>
   <dt>Servicing and repairs</dt><dd>Servicing is an estimated yearly amount that rises 3 percent for each year the car gets older, up to 15 years of age. Tyres are included: a set for an ordinary family car costs about SEK 7,000 fitted and lasts about 45,000 km, roughly SEK 0.15 per km. Bigger and more expensive cars have dearer tyres (SUVs about 20 percent more, sports cars 45 percent), electric cars wear tyres about 25 percent faster, and even low-mileage drivers replace their summer and winter sets at least every 10 years. Seasonal tyre changes at a garage are not included. The roadworthiness test is included too: at 3 and 5 years and then every 14 months, about SEK 450 plus a re-test for the roughly 23 percent that fail. For Kia the amount is based on Kia's own service agreement prices (October 2026, <a href="https://www.kia.com/se/aga/service-oversikt/serviceavtal/" target="_blank" rel="noopener">kia.com</a>). On top of that come expected repairs once the warranty has run out. First, the brand's average repair cost according to <a href="https://repairpal.com/reliability" target="_blank" rel="noopener">RepairPal</a>, rising with the car's age at the same rate as the share of cars with faults in the TÜV Report. Second, known faults for that specific model and engine, mainly from <a href="https://minbilkoll.se" target="_blank" rel="noopener">BilKoll's buying guides</a>, such as the timing belt on PureTech engines, DSG gearboxes and the angle gear on older all-wheel-drive Volvos. Each fault counts as the risk that it happens while you own the car times what the repair costs, spread out per month. The risks are our estimates. Electric cars get half as much in other repairs, since they break down less often according to <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">the ADAC breakdown statistics</a>, but we add the risk of charging faults and of the battery needing repair or replacement (see Battery ageing).</dd>
   <dt>When does a car stop getting cheaper?</dt><dd><div class="agecurve"></div></dd>
   <dt>Battery ageing</dt><dd>The battery in an electric car or plug-in hybrid loses capacity with age and mileage. By our calculation an electric car with a liquid-cooled battery has about 85 percent left after 8 years and 120,000 km. That matches the average of just under 2 percent a year in <a href="https://www.geotab.com/blog/ev-battery-health/" target="_blank" rel="noopener">Geotab's measurements</a> of more than 10,000 electric cars. Batteries without liquid cooling, as in the Nissan Leaf, VW e-Golf, Renault Zoe and Dacia Spring, age 1.3–1.7 times as fast. Tesla batteries and BYD's LFP batteries age a little more slowly. The range drops at the same rate as the capacity, and a worn battery uses a little more electricity. For a used car we show the estimated range today, both by WLTP and in real-world driving, where it is about 20 percent shorter. Older model years are calculated with the battery they had then, for example 22 or 41 kWh in an older Renault Zoe. The cost includes the risk that the battery needs repair or replacement once the battery warranty has run out. The warranty usually covers 8 years or 160,000 km and also covers capacity below about 70 percent. The risk of replacement rises when the capacity drops below 80 percent, and the risk of repair rises with age. A replacement costs about SEK 2,500 per kWh plus labour, so about SEK 110,000 for a 40 kWh Nissan Leaf. A plug-in hybrid with an older battery covers less of its driving on electricity and uses more petrol. The risks are our estimates.</dd>
   <dt>Value grade</dt><dd>The A–E grade weighs the monthly cost against what you get. A car gets 0–5 points each for quality, design, comfort, luxury, safety, space and performance, so at most 35 points. The monthly cost gives one cost point for every 10 percent it is above SEK 1,600. What you get minus the cost points gives the grade, and A is the best value. Quality is based on reliability in the <a href="https://www.adac.de/news/tuev-report-2026/" target="_blank" rel="noopener">TÜV Report 2026</a> and the <a href="https://www.autozeitung.de/adac-pannenstatistik-198310.html" target="_blank" rel="noopener">ADAC breakdown statistics 2025</a> where the model is included, otherwise on our estimate. It drops as the car gets older, since the share of cars with major defects at inspection rises from about 10 percent at 5 years to 33 percent at 15 years according to the TÜV Report. Safety is the Euro NCAP star rating (3 points if the car has not been tested), minus one point for cars from before 2016 and two points for cars from before 2010, which lack modern safety systems. Luxury is the same level as on the slider. Design and comfort are our judgement based on car reviews, and winners of <a href="https://en.wikipedia.org/wiki/World_Car_Awards" target="_blank" rel="noopener">World Car Design of the Year</a> get top marks for design. Sporty versions get lower comfort but higher performance. Space is based on boot volume and performance on acceleration. The Best value sort follows the points.</dd>
   <dt>Luxury and sportiness</dt><dd>Every version gets a luxury level and a sportiness level from 1 to 5. The luxury level is based on brand, model and trim level, measured against today's cars: after three years it drops a tenth of a step a year, at most one and a half steps, since equipment and technology age. Sportiness is based on acceleration, body type and brand, with a little extra for sporty versions such as GTI, AMG, M and RS. Extremely sporty in practice takes a real sports car or one of the very fastest versions, while hot hatches such as the Golf GTI and BMW M135 count as very sporty. When you choose a level, we show the cars that reach it and calculate with the cheapest version of each car that does. Cars that don't reach the level in any version aren't shown.</dd>
-  <dt>Fuel prices</dt><dd>Petrol and diesel are the big chains' list prices. The home-charging price is the SE3 spot price plus the retailer's margin, grid fee, energy tax and VAT. Prices update automatically once a day. You can enter your own prices under Change prices.</dd>
+  <dt>Fuel prices</dt><dd>Petrol and diesel are the big chains' list prices. The home-charging price is the SE3 spot price plus the retailer's margin, grid fee, energy tax and VAT. Prices update automatically once a day. You can enter your own prices under Change prices. Electric cars are not only charged at home: 87 percent of EV owners mostly charge at home according to <a href="https://via.tt.se/pressmeddelande/4587944/m-sverige-slapper-resultatet-fran-stora-elbilsenkaten-2026?lang=sv" target="_blank" rel="noopener">M Sverige's big EV survey 2026</a>, but they too fast-charge on longer trips. We estimate that 15 percent of the electricity is charged in public, at about SEK 5.70 per kWh without a subscription (OKQ8, Circle K, Recharge and Ionity charge SEK 5.49–6.09 per kWh according to <a href="https://hurbra.se/basta-laddnatverk-sverige-2026/" target="_blank" rel="noopener">hurbra.se</a>, August 2026). You can change the share under Advanced options. Plug-in hybrids are counted as charged at home.</dd>
   <dt>Lease or buy</dt><dd>For cars that are commonly leased privately in Sweden we compare the brand's own private lease offer with buying the same version new and selling it when the lease ends, usually after 36 months. Leasing: the payment at your distance (the brand's price for more distance where given, otherwise an estimate), set-up and invoice fees and any higher first payment spread per month, and servicing if it isn't included. Buying: the depreciation from the list price of the same version (or the ad price for new cars, if lower) to the residual value in ads, interest on the money (5 percent unless you change it) and servicing. The residual value is adjusted by 2 percent per 10,000 km you drive more or less than the model typically covers over the same years; that is how much ad prices for the same model and model year differed in October 2026. Beyond the oldest model year in the ads, the curve is extended with at least 8 percent depreciation a year, since older cars in the ads lose 35–40 percent over four years. Fuel and tax are the same, and so is insurance unless the leasing company requires its own, like Peugeot. The offers were read on the brands' websites on 26–27 October 2026 and may have changed since.</dd>
   <dt>Images</dt><dd>The photos show the right model and generation and come from <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>, where they are freely licensed. The photographer and licence are shown on the image when you open a model. Trim, colour and model year can differ from the version in the calculation. Where there is no free photo, a computer-generated image is shown.</dd>
  </dl>`,
@@ -885,7 +889,7 @@ en:{
  newToday:v=>`New price today ${v}`,newEquiv:v=>`Comparable new price today ${v}`,lastNew:v=>`Last new price ${v}`,made:(a,b)=>`Made ${a}–${b}`,
  priceUsed:"Purchase price, used",priceNew:"Purchase price, new",totalOn:n=>`Total cost over ${n} ${n===1?"year":"years"}`,depMo:"Depreciation per month",runMo:"Running costs per month",
  cfgH:"Choose version",cfgP:"The price, monthly cost and ranking update instantly.",cfgReset:"Reset to base version",
- brkH:"What does the car cost per month?",totMo:"Total per month",runNote:"Running costs are fuel, servicing and repairs, insurance and tax.",
+ brkH:"What does the car cost per month?",totMo:"Total per month",runNote:"Running costs are fuel, servicing and repairs, insurance and tax.",capNote:r=>`Interest on the money (${r} %) is charged on what the car is worth during the year and is included in running costs.`,
  chH:"Monthly cost by ownership period",chNote:"The longer you keep the car, the more the depreciation is spread out. The highlighted bar is your ownership period.",chDesc:l=>`Monthly cost for 1 to 10 years of ownership. ${l}.`,yrAxis:"yrs",
  cmpH:"What's the difference?",cmpWith:"Compare with",inList:"In your list",others:"Other models",pro:"Pro",con:"Con",proCon:"Pros and cons",illus:n=>`Illustration of ${n}`,photoOf:n=>`Photo of ${n}`,photoBy:"Photo",photoEdit:"background removed",picNote:"Computer-generated image based on the model's dimensions, not an exact likeness.",
  cmp:"Comparison",diff:"Difference",same:"Same",rYear:"Model year",usedL:"used",newL:"new",rMil:"Mileage at purchase",rMonth:"Cost per month",rPrice:"Purchase price",rResid:n=>`Residual value after ${n} ${n===1?"year":"years"}`,
@@ -2332,7 +2336,7 @@ function leaseCmp(m,mil,pr,rate){
   const L=LEASE[m.id];if(!L)return null;
   const lt=LEASE_TERMS[L.t],mon=lt.mon,y=mon/12;
   const s=build(m,L.sel,NOW);if(s.p>s.pNew)s.p=s.pNew;
-  const k=costs(s,y,mil,pr);
+  const k=costs(s,y,mil,Object.assign({},pr,{R:0}));
   const typ=Math.round(milAge(y)*((MKT[m.id]||{}).mf||1)/100)*100;
   const resid=k.resid;     /* costs() justerar redan restvärdet för körsträckan */
   const same={fuel:k.fuel/mon,ins:k.ins/mon,tax:k.tax/mon};
@@ -2374,6 +2378,12 @@ const TYRE_SET=7000,TYRE_LIFE=4500,TYRE_TYPE={Halvkombi:.85,Sedan:1,Kombi:1,SUV:
 /* kontrollbesiktning: första gången vid 3 år, sedan vid 5 år och därefter var 14:e månad (Transportstyrelsen). Cirka 450 kr, och cirka 23 procent
    underkänns och betalar en efterkontroll för cirka 300 kr (Transportstyrelsen 2025) */
 const INSP=450+.23*300;
+/* publik laddning för elbilar: 87 procent av elbilsägarna laddar oftast hemma (M Sveriges Stora elbilsenkäten 2026, 6 467 svar),
+   men även de snabbladdar på längre resor. Vår uppskattning: 15 procent av elen laddas publikt. Pris utan abonnemang ca 5,70 kr/kWh:
+   OKQ8 5,49, Circle K 5,89, Recharge 5,99 och Ionity 5,79–6,09 kr/kWh (hurbra.se, kontrollerat 26 aug 2026). Laddhybrider räknas
+   som hemmaladdade. Andelen går att ändra i kalkylatorn (pr.U, procent) */
+const PUB_SHARE=15,PUB_EL=5.7;
+const elPrice=(pr,f)=>{if(f!=="E")return pr.E;const u=Math.max(0,Math.min(100,pr.U==null?PUB_SHARE:pr.U))/100;return pr.E*(1-u)+PUB_EL*u};
 /* typiskt miltal per årsmodell: annonsernas median, vägd mot det typiska för modellen och åldern efter hur många annonser det finns
    (10 annonser ger halva vikten), och sedan så att en äldre årsmodell alltid har gått minst 500 mil mer per år äldre än en nyare */
 const MIL_STEP=500,MIL_CACHE={};
@@ -2501,7 +2511,7 @@ function comfortOf(m,opts){
 const qualPts=s=>clamp5(Math.round(s.rel-(defRate(s.age)-6.5)/12));
 const safeOld=y=>y<2010?2:y<2016?1:0;
 function gradeOf(s,k,I){
-  const ePerMil=(s.cr*(s.f==="D"?I.pr.D:I.pr.B)+s.er*I.pr.E)/10;
+  const ePerMil=(s.cr*(s.f==="D"?I.pr.D:I.pr.B)+s.er*elPrice(I.pr,s.f))/10;
   /* 1 600 kr: höjt från 1 500 kr när däck och besiktning kom med i kostnaden (i snitt +5 procent), så att betygen betyder samma sak som förut */
   const N=Math.max(0,Math.round(Math.log(k.month/1600)/Math.log(1.1)));
   const neg=[{k:"gMonth",v:k.month,p:N,max:30}];
@@ -2908,15 +2918,20 @@ function costs(s,y,mil,pr){
   const kk=a?s.p/v0:Math.min(1,s.k||1);
   /* körsträckan medan du äger bilen: varje 1 000 mil mer eller mindre än vad modellen typiskt går under samma år ändrar restvärdet
      med cirka 2 procent (miltalet när du köper ingår redan i inköpspriset) */
-  const milF=Math.min(1.25,Math.max(.6,Math.exp(-RESID_MIL*(y*mil-(milAge(a+y)-milAge(a))*(s.mf||1))/1000)));
-  const resid=Math.min(s.p,val(s.pNew,s.dep,a+y,s.a0)*kk*milF),dep=s.p-resid;
+  const milFn=n=>Math.min(1.25,Math.max(.6,Math.exp(-RESID_MIL*(n*mil-(milAge(a+n)-milAge(a))*(s.mf||1))/1000)));
+  const valAt=n=>n?Math.min(s.p,val(s.pNew,s.dep,a+n,s.a0)*kk*milFn(n)):s.p;
+  const resid=valAt(y),dep=s.p-resid;
+  /* ränta på pengarna (valfri, pr.R procent): räntan på bilens värde, varje år snittet av värdet i början och slutet av året.
+     Med billån är det ungefär räntan om lånet följer bilens värde, med kontanter vad pengarna annars hade gett */
+  const rr=Math.max(0,(pr&&pr.R)||0)/100;let cap=0;
+  if(rr)for(let i=0;i<y;i++)cap+=rr*(valAt(i)+valAt(i+1))/2;
   /* verklig förbrukning; för el- och laddhybrider ökar den år för år när batteriet åldras */
-  const pf=s.f==="D"?pr.D:pr.B,bat=s.f==="E"||s.f==="P";
+  const pf=s.f==="D"?pr.D:pr.B,eP=elPrice(pr,s.f),bat=s.f==="E"||s.f==="P";
   let fuel=0,ins=0,mnt=0,gen=0,tax=0,tyr=0,insp=0;const rk=s.faults.map(()=>0);
   for(let i=0;i<y;i++){
     const ag=a+i,m0=s.mil+i*mil,m1=m0+mil;
     const hb=bat?sohAt(s.bq,ag+.5,m0+mil/2):1,[cr,er]=bat?realCons(null,s,hb):[s.cr,s.er];
-    fuel+=km/100*(cr*pf+er*pr.E);
+    fuel+=km/100*(cr*pf+er*eP);
     ins+=s.ins*Math.max(.35,Math.pow(val(s.pNew,s.dep,ag)/s.pNew,.45));
     mnt+=s.svc*Math.pow(1.03,Math.min(ag,15));
     /* däcken slits med körsträckan, men två uppsättningar byts ändå minst vart 10:e år */
@@ -2937,15 +2952,15 @@ function costs(s,y,mil,pr){
   }
   const risk=rk.map((r,j)=>Math.min(s.faults[j].p,r));
   const flt=risk.reduce((t,r,j)=>t+r*s.faults[j].c,0),repc=gen+flt,svc=mnt+repc+tyr+insp;
-  const run=fuel+ins+tax+svc,total=dep+run;
-  return{dep,fuel,ins,tax,svc,mnt,gen,flt,rep:repc,tyre:tyr,insp,risk,run,total,resid,mo,month:total/mo,depM:dep/mo,runM:run/mo};
+  const run=fuel+ins+tax+svc+cap,total=dep+run;
+  return{dep,fuel,ins,tax,svc,cap,mnt,gen,flt,rep:repc,tyre:tyr,insp,risk,run,total,resid,mo,month:total/mo,depM:dep/mo,runM:run/mo};
 }
 function inputs(){
   const ty=document.querySelector('input[name=type]:checked');
   const cd=document.querySelector('input[name=cond]:checked');
   const d=num($("mil").value);
   return{years:+$("years").value,maxP:num($("maxPrice").value),maxM:num($("maxMonth").value),mil:LANG==="en"?d/10:d,
-    pr:{B:num($("pB").value),D:num($("pD").value),E:num($("pE").value)},type:ty?ty.value:"Alla",
+    pr:{B:num($("pB").value),D:num($("pD").value),E:num($("pE").value),R:Math.max(0,Math.min(20,num($("rate").value))),U:$("pub").value.trim()===""?PUB_SHARE:Math.max(0,Math.min(100,num($("pub").value)))},type:ty?ty.value:"Alla",
     cond:cd?cd.value:"alla",minYear:+$("minYear").value||OLDEST,minGrade:$("minGrade").value||"E",lux:+$("lux").value||1,sport:+$("sport").value||1,
     minRange:S.fuels.has("E")?num($("minRange").value)||0:0,awd:$("awdOnly").checked};
 }
@@ -3477,6 +3492,7 @@ const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 function card(r,i,I,near){
   const{m,s,k}=r,top=i===0&&!near;
   const seg=[["dep",t("sDep"),k.dep],["fuel",t("sFuel"),k.fuel],["svc",t("sSvc"),k.svc],["ins",t("sIns"),k.ins],["tax",t("sTax"),k.tax]];
+  if(k.cap)seg.push(["cap",t("sCap"),k.cap]);
   const variants=m.g.reduce((a,g)=>a*g.o.length,1),ny=allYears(m).length;
   const aria=t("costSplit")+": "+seg.map(([,l,v])=>`${l} ${Math.round(v/k.total*100)} %`).join(", ");
   return `<li class="card${top?" top":""}">
@@ -3687,6 +3703,7 @@ function renderDetail(E){
       return `<label class="opt${on?" on":""}${off?" off":""}" for="o-${gi}-${oi}"><input type="radio" name="g-${gi}" id="o-${gi}-${oi}" value="${oi}"${on?" checked":""}><span class="o-top"><span class="o-n">${esc(optName(o))}</span>${on?`<span class="o-sel">${t("sel")}</span>`:""}</span><span class="o-d">${esc(optDesc(o))}</span><span class="o-x">${optX(as,ak,on)}</span>${off?`<span class="o-off">${t("outFuel")}</span>`:""}</label>`;
     }).join("")}</div></fieldset>`).join("");
   const parts=[["dep",t("lDep"),k.dep],["fuel",t("lFuel"),k.fuel],["svc",t("lSvc"),k.svc],["ins",t("lIns"),k.ins],["tax",t("lTax"),k.tax]];
+  if(k.cap)parts.push(["cap",t("lCap"),k.cap]);
   const pmax=Math.max(...parts.map(p=>p[2]));
   const cmpId=(S.cmpId&&S.cmpId!==m.id&&E.byId[S.cmpId])?S.cmpId:defaultCmp(E,m.id);
   const ref=E.byId[cmpId];
@@ -3731,7 +3748,7 @@ function renderDetail(E){
       <section aria-labelledby="brk-h">
         <div class="sec-h"><h3 id="brk-h">${t("brkH")}</h3></div>
         <div class="brk">${parts.map(([c,l,v])=>`<div class="brow"><span>${l}</span><span class="btr"><i style="width:${(v/pmax*100).toFixed(1)}%;background:var(--c-${c})"></i></span><span class="bv">${kr(v/k.mo)}</span></div>`).join("")}<div class="brow sum"><span>${t("totMo")}</span><span></span><span class="bv">${kr(k.month)}</span></div></div>
-        <p class="note">${taxNote} ${t("runNote")}</p>
+        <p class="note">${taxNote} ${t("runNote")}${k.cap?" "+t("capNote",nf1.format(I.pr.R)):""}</p>
       </section>
       <section aria-labelledby="ch-h">
         <div class="sec-h"><h3 id="ch-h">${t("chH")}</h3></div>
@@ -3818,8 +3835,9 @@ function writeInputs(v){
   $("maxPrice").value=nf.format(v.mp);$("maxMonth").value=nf.format(v.mm);
   $("mil").value=nf.format(Math.round(LANG==="en"?v.mil*10:v.mil));
   $("pB").value=nf2.format(v.pB);$("pD").value=nf2.format(v.pD);$("pE").value=nf2.format(v.pE);
+  $("rate").value=nf1.format(v.rate||0);$("pub").value=nf.format(v.pub==null?PUB_SHARE:v.pub);
 }
-function readInputs(){const I=inputs();return{mp:I.maxP,mm:I.maxM,mil:I.mil,pB:I.pr.B,pD:I.pr.D,pE:I.pr.E}}
+function readInputs(){const I=inputs();return{mp:I.maxP,mm:I.maxM,mil:I.mil,pB:I.pr.B,pD:I.pr.D,pE:I.pr.E,rate:I.pr.R,pub:I.pr.U}}
 function setLang(l){
   if(l===LANG)return;
   if(SITECFG&&SITECFG.alt){location.href=SITECFG.alt+(S.openId?"?bil="+encodeURIComponent(S.openId):"");return}
@@ -3899,7 +3917,7 @@ $("langBtn").addEventListener("click",()=>setLang(LANG==="en"?"sv":"en"));
 ["change","input"].forEach(ev=>$("conds").addEventListener(ev,upd));
 ["change","input"].forEach(ev=>$("minYear").addEventListener(ev,upd));
 ["pB","pD","pE"].forEach(id=>$(id).addEventListener("input",()=>{OWN[id]=Math.abs(num($(id).value)-PRICES[id])>0.004}));
-["years","maxPrice","maxMonth","mil","pB","pD","pE"].forEach(id=>$(id).addEventListener("input",upd));
+["years","maxPrice","maxMonth","mil","pB","pD","pE","rate","pub"].forEach(id=>$(id).addEventListener("input",upd));
 ["change","input"].forEach(ev=>$("minGrade").addEventListener(ev,upd));
 $("fbEdit").addEventListener("click",()=>{
   const mf=$("mf");if(!mf.classList.contains("open")){mf.classList.add("open");$("mfBtn").setAttribute("aria-expanded","true");renderMf()}
@@ -3935,7 +3953,7 @@ document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",(
 }));
 $("mfBtn").addEventListener("click",e=>{const o=$("mf").classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",String(o));renderMf()});
 function renderMf(){
-  const I=inputs(),n=(I.cond!=="alla")+(I.minYear!==DEF.minYear)+(S.fuels.size>0)+(Math.round(I.mil)!==DEF.mil)+(I.minGrade!=="E")+(OWN.pB||OWN.pD||OWN.pE)+(I.lux>1)+(I.sport>1)+(I.minRange>0)+I.awd+(I.years!==DEF.years);
+  const I=inputs(),n=(I.cond!=="alla")+(I.minYear!==DEF.minYear)+(S.fuels.size>0)+(Math.round(I.mil)!==DEF.mil)+(I.minGrade!=="E")+(OWN.pB||OWN.pD||OWN.pE)+(I.pr.R>0)+(I.pr.U!==PUB_SHARE)+(I.lux>1)+(I.sport>1)+(I.minRange>0)+I.awd+(I.years!==DEF.years);
   $("rangeF").hidden=!S.fuels.has("E");
   $("mfBtn").textContent=($("mf").classList.contains("open")?t("mfLess"):t("mfMore"))+(n?t("mfSel",n):"");
 }
@@ -4086,14 +4104,14 @@ function applyPrices(p){
   }
   function row(r,i){
     const ver=(r.s.opts||[]).map(o=>o&&o.n||o).filter(Boolean).join(", ");
-    return `${i+1}. ${fullName(r.m)} ${r.s.year}${ver?" ("+ver+")":""}: pris ${krf(r.s.p)}, ${krf(r.k.month)}/mån totalt (värdeminskning ${krf(r.k.dep/r.k.mo)}, drivmedel ${krf(r.k.fuel/r.k.mo)}, service ${krf(r.k.svc/r.k.mo)}, försäkring ${krf(r.k.ins/r.k.mo)}, skatt ${krf(r.k.tax/r.k.mo)}), betyg ${r.g.letter}`;
+    return `${i+1}. ${fullName(r.m)} ${r.s.year}${ver?" ("+ver+")":""}: pris ${krf(r.s.p)}, ${krf(r.k.month)}/mån totalt (värdeminskning ${krf(r.k.dep/r.k.mo)}, drivmedel ${krf(r.k.fuel/r.k.mo)}, service ${krf(r.k.svc/r.k.mo)}, försäkring ${krf(r.k.ins/r.k.mo)}, skatt ${krf(r.k.tax/r.k.mo)}${r.k.cap?`, ränta ${krf(r.k.cap/r.k.mo)}`:""}), betyg ${r.g.letter}`;
   }
   function context(){
     if(typeof E==="undefined"||!E)return "";
     const I=E.I||inputs();
     const fuels=S.fuels.size?[...S.fuels].map(f=>fuelN[f]).join(", "):"alla";
     let c=`Inställningar: behåller bilen ${I.years} år, kör ${I.mil} mil/år, maxpris ${I.maxP?krf(I.maxP):"inget"}, max per månad ${I.maxM?krf(I.maxM):"inget"}, kaross ${I.type||"alla"}, drivmedel ${fuels}, `+
-      `skick ${I.cond}, äldsta årsmodell ${I.minYear}. Bränslepriser: bensin ${I.pr.B} kr/l, diesel ${I.pr.D} kr/l, el ${I.pr.E} kr/kWh. Idag: ${new Date().toISOString().slice(0,10)}.\n`;
+      `skick ${I.cond}, äldsta årsmodell ${I.minYear}. Bränslepriser: bensin ${I.pr.B} kr/l, diesel ${I.pr.D} kr/l, el ${I.pr.E} kr/kWh hemma (elbilar laddar ${I.pr.U} % publikt för ${PUB_EL} kr/kWh). Idag: ${new Date().toISOString().slice(0,10)}.\n`;
     c+=`Topplistan (${E.ok.length} bilar inom ramarna, sorterade på ${S.sort}):\n`+E.ok.slice(0,15).map(row).join("\n");
     if(S.openId&&E.byId&&E.byId[S.openId])c+="\n\nÖppen modell just nu:\n"+row(E.byId[S.openId],0).replace(/^1\. /,"");
     if(S.openId&&LEASE[S.openId]){const lc=leaseCmp(byModel[S.openId],I.mil,I.pr,S.rate);
