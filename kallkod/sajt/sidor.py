@@ -410,7 +410,7 @@ def model_page(data, m, lang, similar):
     facts = [(L["fType"], typ), (L["fYears"], years_txt(m, lang)),
              (L["fNew"], kr(m["newFrom"], lang)) if m["newFrom"] else (L["fLast"], kr(m["listPrice"], lang)),
              (L["fTrunk"], L["l"](m["trunk"]) if m.get("trunk") else "–"),
-             (L["fNcap"], L["stars"](m["ncap"]) if m.get("ncap") else L["notTested"]), (L["fWar"], L["years"](m["war"]) if m.get("war") else "–"),
+             (L["fNcap"], L["stars"](m["ncap"]) if m.get("ncap") else L["notTested"]), (L["fWar"], (L["years"](m["war"]) + (f' {"eller" if lang == "sv" else "or"} {dist(m["warMil"], lang)}' if m.get("warMil") else "")) if m.get("war") else "–"),
              (L["fRel"], L["rel"](m["rel"]) if m.get("rel") is not None else "–"),
              (L["fIns"], kr(m["ins"], lang) + L["perYear"]), (L["fSvc"], kr(m["svc"], lang) + L["perYear"])]
     body.append(f'<h2>{L["hFacts"]}</h2><dl class="facts">' + "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in facts) + "</dl>")

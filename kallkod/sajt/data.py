@@ -53,7 +53,7 @@ function __export(){
    faults.push({key:key,sv:f.n,en:f.ne||f.n,cost:f.c})});
   var mk=MKT[m.id]||null,ph=PHOTO[m.id]||null;
   out.models.push({id:m.id,brand:m.b,name:m.n,nameEn:m.ne||m.n,type:m.t,from:m.from,to:m.to||null,years:ys,
-   newFrom:m.to?null:newFrom(m),listPrice:m.p,ins:m.ins,svc:m.svc,trunk:m.trunk,ncap:m.ncap,rel:m.rel,war:m.war,
+   newFrom:m.to?null:newFrom(m),listPrice:m.p,ins:m.ins,svc:m.svc,trunk:m.trunk,ncap:m.ncap,rel:m.rel,war:m.war,warMil:WAR_MIL[m.b]||null,
    pro:{sv:m.pro,en:m.pe},con:{sv:m.con,en:m.ce},groups:m.g.map(function(g){return {k:g.k,o:g.o}}),
    design:DESIGN[m.id]||null,comfort:COMF[m.id]||null,
    thin:allYears(m).every(function(y){return thinYear(m,y)}),
