@@ -1,0 +1,113 @@
+<!doctype html><meta charset="utf-8">
+<body style="margin:0;background:#e3e8e4">
+<script type="importmap">{"imports":{"three":"./threejs/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { buildCar } from './gen.js';
+const W = 2400, H = 1000;
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap;
+renderer.setClearColor(0x000000, 0);
+document.body.appendChild(renderer.domElement);
+renderer.domElement.style.width = '1200px';
+
+function studioEnv() {
+  const sc = new THREE.Scene();
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(60, 96, 48), new THREE.ShaderMaterial({
+    side: THREE.BackSide,
+    vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+    fragmentShader: `varying vec3 vP; void main(){ float y = vP.y;
+      vec3 ceil = vec3(0.16), wall = vec3(0.92,0.93,0.95), flo = vec3(0.055);
+      vec3 c = y > 0.0 ? mix(wall, ceil, smoothstep(0.08, 0.55, y)) : mix(wall*0.55, flo, smoothstep(0.0, 0.06, -y));
+      gl_FragColor = vec4(c, 1.0); }`
+  }));
+  sc.add(sky);
+  const panel = (w, h, x, y, z, k, lx = 0, ly = 0.6, lz = 0) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(k, k, k), side: THREE.DoubleSide }));
+    m.position.set(x, y, z); m.lookAt(lx, ly, lz); sc.add(m); return m;
+  };
+  // camera at azimuth ~54deg, elevation ~9deg. Boxes are placed where the main surfaces reflect the view ray.
+  const dirP = (az, el, dist) => { const a = az * Math.PI / 180, e = el * Math.PI / 180; return [Math.cos(e) * Math.cos(a) * dist, Math.sin(e) * dist, Math.cos(e) * Math.sin(a) * dist]; };
+  panel(16, 5, 0, 13, 0, 4.2);                                   // overhead (roof, hood centre)
+  { const [x, y, z] = dirP(126, 3, 16); panel(18, 2.2, x, y + 0.9, z, 1.7); }   // horizon band on the doors
+  { const [x, y, z] = dirP(130, 26, 15); panel(9, 2.4, x, y, z, 1.5); }         // side glass + shoulder line
+  { const [x, y, z] = dirP(-123, 19, 15); panel(8, 3, x, y, z, 1.6); }        // hood
+  { const [x, y, z] = dirP(-106, 34, 15); panel(6, 3.2, x, y, z, 1.3); }          // windshield
+  { const [x, y, z] = dirP(40, 30, 14); panel(5, 3, x, y, z, 1.8); }            // key from camera side (front corner highlights)
+  panel(2.2, 10, 13, 5, -3, 1.6);                              // vertical strip front
+  panel(12, 3, 0, 3, -15, 0.9);                                // far side fill
+  const pm = new THREE.PMREMGenerator(renderer);
+  const rt = pm.fromScene(sc, 0.0);
+  return rt.texture;
+}
+const scene = new THREE.Scene();
+scene.environment = studioEnv();
+const key = new THREE.DirectionalLight(0xffffff, 1.4);
+key.position.set(1.5, 9, 3.5); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.camera.left = -4; key.shadow.camera.right = 4; key.shadow.camera.top = 4; key.shadow.camera.bottom = -4;
+key.shadow.camera.near = 1; key.shadow.camera.far = 20; key.shadow.radius = 14; key.shadow.blurSamples = 24; key.shadow.bias = -0.0005;
+scene.add(key); scene.add(key.target);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.32 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+function contactShadow(d) {
+  const c = document.createElement('canvas'); c.width = 1024; c.height = 512;
+  const x = c.getContext('2d');
+  const sx = 1024 / (d.L + 1.6), sz = 512 / (d.Wd + 1.6);
+  const P = (px, pz) => [512 + px * sx, 256 + pz * sz];
+  x.filter = 'blur(26px)'; x.fillStyle = 'rgba(0,0,0,0.55)';
+  let [a, b] = P(-d.L / 2 + 0.15, -d.Wd / 2 + 0.05), [e, f] = P(d.L / 2 - 0.15, d.Wd / 2 - 0.05);
+  x.beginPath(); x.roundRect(a, b, e - a, f - b, 40); x.fill();
+  x.filter = 'blur(7px)'; x.fillStyle = 'rgba(0,0,0,0.85)';
+  for (const xa of [d.xf, d.xr]) for (const zs of [-1, 1]) {
+    const [cx, cz] = P(xa, zs * (d.hw - d.tw / 2 - 0.018));
+    x.beginPath(); x.ellipse(cx, cz, 0.24 * sx, d.tw * 0.62 * sz, 0, 0, Math.PI * 2); x.fill();
+  }
+  const t = new THREE.CanvasTexture(c);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(d.L + 1.6, d.Wd + 1.6), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false, color: 0xffffff }));
+  m.rotation.x = -Math.PI / 2; m.position.y = 0.002; m.renderOrder = 1;
+  return m;
+}
+const cam = new THREE.PerspectiveCamera(14, W / H, 0.5, 80);
+let view = { az: 54, el: 12, dist: 11.5, ty: 0.8, shift: 0 };
+function placeCam() {
+  const a = view.az * Math.PI / 180, e = view.el * Math.PI / 180;
+  cam.position.set(Math.cos(e) * Math.cos(a) * view.dist, Math.sin(e) * view.dist + view.ty, Math.cos(e) * Math.sin(a) * view.dist);
+  cam.lookAt(0, view.ty, 0); cam.updateProjectionMatrix();
+}
+placeCam();
+let current = null, extras = [];
+function clear() {
+  if (current) { scene.remove(current); current.traverse(o => { if (o.isMesh) { o.geometry.dispose(); const ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach(mm => { (mm.userData.textures || []).forEach(t => t.dispose()); if (mm.map) mm.map.dispose(); mm.dispose(); }); } }); current = null; }
+}
+window.setView = v => { Object.assign(view, v); if (v.fov) { cam.fov = v.fov; cam.updateProjectionMatrix(); } placeCam(); };
+window.renderCar = (spec, opt = {}) => {
+  clear();
+  const t0 = performance.now();
+  const { car, d, views } = buildCar(THREE, spec);
+  const t1 = performance.now();
+  const grp = new THREE.Group(); grp.add(car); grp.add(contactShadow(d));
+  current = grp; scene.add(grp);
+  renderer.render(scene, cam);
+  const t2 = performance.now();
+  window.lastViews = views; window.lastD = d;
+  return { url: renderer.domElement.toDataURL('image/png'), build: t1 - t0, render: t2 - t1 };
+};
+const ocam = new THREE.OrthographicCamera(-3, 3, 1.25, -1.25, 0.1, 50);
+window.renderOrtho = (spec, mode) => {
+  clear();
+  const { car, d, views } = buildCar(THREE, spec);
+  const grp = new THREE.Group(); grp.add(car); current = grp; scene.add(grp);
+  if (mode === 'side') { ocam.position.set(0, 1, 20); ocam.lookAt(0, 1, 0); ocam.left = -3; ocam.right = 3; ocam.top = 1.25 + 0.0; ocam.bottom = -1.25; ocam.position.y = 1.15; ocam.lookAt(0, 1.15, 0); }
+  if (mode === 'front') { ocam.left = -2.4; ocam.right = 2.4; ocam.top = 1.0; ocam.bottom = -1.0; ocam.position.set(20, 0.98, 0); ocam.lookAt(0, 0.98, 0); }
+  if (mode === 'top') { ocam.position.set(0, 20, 0.0001); ocam.lookAt(0, 0, 0); }
+  ocam.updateProjectionMatrix();
+  renderer.render(scene, ocam);
+  return { url: renderer.domElement.toDataURL('image/png') };
+};
+window.viewsURL = () => window.lastViews.C.alb.toDataURL('image/png');
+window.ready = true;
+</script>

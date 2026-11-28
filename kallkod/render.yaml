@@ -1,0 +1,19 @@
+# Render Blueprint för chattservern. På render.com: New → Blueprint, välj repot med den här filen,
+# och fyll i ANTHROPIC_API_KEY när Render frågar. Se DRIFT.md.
+services:
+  - type: web
+    name: cardep-chatt
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://zackmatteo06-droid.github.io
+      - key: TRUST_PROXY
+        value: "1"
+      - key: CHAT_PER_IP_HOUR
+        value: "20"
+      - key: CHAT_PER_DAY
+        value: "500"

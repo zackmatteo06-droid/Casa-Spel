@@ -1,0 +1,3553 @@
+[
+{
+"id": "dacia-duster",
+"b": "Dacia",
+"n": "Duster",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#b8732e",
+"cm": "cross C clad",
+"fuels": [
+"B",
+"H"
+],
+"rims": [
+17,
+18
+],
+"base": "TCe 130",
+"hp": [
+130,
+140,
+130
+]
+},
+{
+"id": "kia-sportage",
+"b": "Kia",
+"n": "Sportage",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#5a6b78",
+"cm": "cross D",
+"fuels": [
+"B",
+"H",
+"P"
+],
+"rims": [
+17,
+19
+],
+"base": "1.6 T-GDI 150",
+"hp": [
+150,
+230,
+252
+]
+},
+{
+"id": "hyundai-tucson",
+"b": "Hyundai",
+"n": "Tucson",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#7d8b84",
+"cm": "cross D",
+"fuels": [
+"B",
+"H",
+"P"
+],
+"rims": [
+17,
+18,
+19
+],
+"base": "1.6 T-GDI 160",
+"hp": [
+160,
+239,
+253
+]
+},
+{
+"id": "toyota-rav4",
+"b": "Toyota",
+"n": "RAV4",
+"t": "SUV",
+"from": 2019,
+"to": null,
+"col": "#a8251f",
+"cm": "suv D",
+"fuels": [
+"H",
+"P"
+],
+"rims": [
+18
+],
+"base": "Hybrid 218",
+"hp": [
+218,
+222,
+306
+]
+},
+{
+"id": "toyota-chr",
+"b": "Toyota",
+"n": "C-HR",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#b23a3a",
+"cm": "suvcoupe C tt",
+"fuels": [
+"H",
+"P"
+],
+"rims": [
+18,
+20
+],
+"base": "Hybrid 140",
+"hp": [
+140,
+197,
+223
+]
+},
+{
+"id": "volvo-xc40",
+"b": "Volvo",
+"n": "XC40",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#2f4a63",
+"cm": "cross C tt",
+"fuels": [
+"B"
+],
+"rims": [
+20
+],
+"base": "B3 163",
+"hp": [
+163,
+197,
+197
+]
+},
+{
+"id": "volvo-ex40",
+"b": "Volvo",
+"n": "EX40",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#6a7d74",
+"cm": "cross C tt",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "Single Motor 69 kWh",
+"hp": [
+238,
+252,
+408
+]
+},
+{
+"id": "volvo-ex30",
+"b": "Volvo",
+"n": "EX30",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#3d7a8c",
+"cm": "cross B tt",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "Single Motor 51 kWh",
+"hp": [
+272,
+272,
+428
+]
+},
+{
+"id": "volvo-xc60",
+"b": "Volvo",
+"n": "XC60",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#4b5560",
+"cm": "suv D lux noclad",
+"fuels": [
+"B",
+"P"
+],
+"rims": [],
+"base": "B4 197",
+"hp": [
+197,
+250,
+350,
+455
+]
+},
+{
+"id": "volvo-xc90",
+"b": "Volvo",
+"n": "XC90",
+"t": "SUV",
+"from": 2016,
+"to": null,
+"col": "#2b2f33",
+"cm": "suv E lux noclad",
+"fuels": [
+"B",
+"P"
+],
+"rims": [],
+"base": "B5 AWD 250",
+"hp": [
+250,
+455
+]
+},
+{
+"id": "tesla-model-y",
+"b": "Tesla",
+"n": "Model Y",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#e5e7e6",
+"cm": "suvcoupe D norails h-2",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "RWD",
+"hp": [
+299,
+378,
+625
+]
+},
+{
+"id": "vw-id4",
+"b": "Volkswagen",
+"n": "ID.4",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#3b5f8f",
+"cm": "cross D",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Pure 52 kWh",
+"hp": [
+170,
+286,
+340
+]
+},
+{
+"id": "skoda-kodiaq",
+"b": "Skoda",
+"n": "Kodiaq",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#4a5a3f",
+"cm": "suv D",
+"fuels": [
+"B",
+"P",
+"D"
+],
+"rims": [
+19
+],
+"base": "1.5 eTSI 150",
+"hp": [
+150,
+204,
+193
+]
+},
+{
+"id": "skoda-enyaq",
+"b": "Skoda",
+"n": "Enyaq",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#3f5a4f",
+"cm": "cross D",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "60 (62 kWh)",
+"hp": [
+204,
+286,
+286
+]
+},
+{
+"id": "skoda-elroq",
+"b": "Skoda",
+"n": "Elroq",
+"t": "SUV",
+"from": 2025,
+"to": null,
+"col": "#5d8a6a",
+"cm": "cross C",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "50 (55 kWh)",
+"hp": [
+170,
+204,
+286
+]
+},
+{
+"id": "kia-ev3",
+"b": "Kia",
+"n": "EV3",
+"t": "SUV",
+"from": 2025,
+"to": null,
+"col": "#7a8b6e",
+"cm": "cross C",
+"fuels": [
+"E"
+],
+"rims": [
+19
+],
+"base": "Standard Range 58 kWh",
+"hp": [
+204,
+204
+]
+},
+{
+"id": "nissan-qashqai",
+"b": "Nissan",
+"n": "Qashqai",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#8c9196",
+"cm": "cross C",
+"fuels": [
+"B",
+"H"
+],
+"rims": [],
+"base": "1.3 mild hybrid 140 manuell",
+"hp": [
+140,
+158,
+190
+]
+},
+{
+"id": "bmw-x1",
+"b": "BMW",
+"n": "X1 / iX1",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#4a6fa5",
+"cm": "cross C lux",
+"fuels": [
+"B",
+"P",
+"E"
+],
+"rims": [],
+"base": "sDrive18i 136",
+"hp": [
+136,
+245,
+204,
+313
+]
+},
+{
+"id": "hyundai-kona",
+"b": "Hyundai",
+"n": "Kona",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#d0a63a",
+"cm": "cross B",
+"fuels": [
+"B",
+"H",
+"E"
+],
+"rims": [
+18
+],
+"base": "1.0 T-GDI 120",
+"hp": [
+120,
+141,
+156,
+218
+]
+},
+{
+"id": "byd-atto3",
+"b": "BYD",
+"n": "Atto 3",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#3a6c9c",
+"cm": "cross C",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "60 kWh",
+"hp": [
+204
+]
+},
+{
+"id": "audi-q4",
+"b": "Audi",
+"n": "Q4 e-tron",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#5a5f66",
+"cm": "cross D",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "45 e-tron 286",
+"hp": [
+286,
+340
+]
+},
+{
+"id": "hyundai-ioniq5",
+"b": "Hyundai",
+"n": "Ioniq 5",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#9aa39a",
+"cm": "cross D norails h-3",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Standard Range 63 kWh",
+"hp": [
+170,
+229,
+325,
+650
+]
+},
+{
+"id": "kia-ev6",
+"b": "Kia",
+"n": "EV6",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#4a5560",
+"cm": "suvcoupe D h-5 g-2",
+"fuels": [
+"E"
+],
+"rims": [
+20
+],
+"base": "RWD 63 kWh",
+"hp": [
+170,
+229,
+325,
+585
+]
+},
+{
+"id": "vw-tiguan",
+"b": "Volkswagen",
+"n": "Tiguan",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#556b7a",
+"cm": "cross D",
+"fuels": [
+"B",
+"P",
+"D"
+],
+"rims": [
+19
+],
+"base": "1.5 eTSI 150 DSG",
+"hp": [
+150,
+204,
+193
+]
+},
+{
+"id": "vw-t-roc",
+"b": "Volkswagen",
+"n": "T-Roc",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#c8a23a",
+"cm": "cross C tt",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "1.0 TSI 115 manuell",
+"hp": [
+115,
+150,
+190
+]
+},
+{
+"id": "toyota-yaris-cross",
+"b": "Toyota",
+"n": "Yaris Cross",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#a0743a",
+"cm": "cross B tt",
+"fuels": [
+"H"
+],
+"rims": [
+18
+],
+"base": "Hybrid 116",
+"hp": [
+116,
+130,
+116
+]
+},
+{
+"id": "toyota-corolla-cross",
+"b": "Toyota",
+"n": "Corolla Cross",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#6e7f8c",
+"cm": "cross C",
+"fuels": [
+"H"
+],
+"rims": [
+18
+],
+"base": "Hybrid 140",
+"hp": [
+140,
+197,
+197
+]
+},
+{
+"id": "toyota-bz4x",
+"b": "Toyota",
+"n": "bZ4X",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#d4d7d8",
+"cm": "cross D",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "FWD 71 kWh",
+"hp": [
+204,
+218
+]
+},
+{
+"id": "ford-kuga",
+"b": "Ford",
+"n": "Kuga",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#3e5872",
+"cm": "cross D",
+"fuels": [
+"B",
+"H",
+"P"
+],
+"rims": [
+19
+],
+"base": "1.5 EcoBoost 186",
+"hp": [
+186,
+183,
+243
+]
+},
+{
+"id": "ford-puma",
+"b": "Ford",
+"n": "Puma",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#7d9a8a",
+"cm": "cross B",
+"fuels": [
+"B",
+"E"
+],
+"rims": [
+18
+],
+"base": "1.0 EcoBoost mild hybrid 125",
+"hp": [
+125,
+155,
+168
+]
+},
+{
+"id": "ford-mach-e",
+"b": "Ford",
+"n": "Mustang Mach-E",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#2f5aa8",
+"cm": "suvcoupe D",
+"fuels": [
+"E"
+],
+"rims": [
+19
+],
+"base": "RWD 73 kWh",
+"hp": [
+269,
+294,
+351,
+487
+]
+},
+{
+"id": "mercedes-glc",
+"b": "Mercedes-Benz",
+"n": "GLC",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#5c6166",
+"cm": "suv D lux noclad",
+"fuels": [
+"D",
+"B",
+"P"
+],
+"rims": [
+20
+],
+"base": "GLC 220 d 4MATIC",
+"hp": [
+197,
+258,
+313
+]
+},
+{
+"id": "mercedes-eqa",
+"b": "Mercedes-Benz",
+"n": "EQA",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#7d8288",
+"cm": "cross C lux",
+"fuels": [
+"E"
+],
+"rims": [
+19
+],
+"base": "EQA 250+",
+"hp": [
+190,
+228,
+292
+]
+},
+{
+"id": "audi-q3",
+"b": "Audi",
+"n": "Q3",
+"t": "SUV",
+"from": 2019,
+"to": null,
+"col": "#6b7378",
+"cm": "cross C",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+19
+],
+"base": "35 TFSI 150 S tronic",
+"hp": [
+150,
+193,
+245
+]
+},
+{
+"id": "mazda-cx30",
+"b": "Mazda",
+"n": "CX-30",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#8f1d24",
+"cm": "cross C",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "e-Skyactiv G 140 manuell",
+"hp": [
+140,
+140,
+186
+]
+},
+{
+"id": "mazda-cx5",
+"b": "Mazda",
+"n": "CX-5",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#5d6a73",
+"cm": "suv D",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "2.0 Skyactiv-G 165",
+"hp": [
+165,
+194
+]
+},
+{
+"id": "skoda-karoq",
+"b": "Skoda",
+"n": "Karoq",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#6b6f4f",
+"cm": "cross C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+19
+],
+"base": "1.5 TSI 150 DSG",
+"hp": [
+150,
+150
+]
+},
+{
+"id": "skoda-kamiq",
+"b": "Skoda",
+"n": "Kamiq",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#8a9aa3",
+"cm": "cross B",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "1.0 TSI 115 manuell",
+"hp": [
+115,
+150
+]
+},
+{
+"id": "renault-captur",
+"b": "Renault",
+"n": "Captur",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#d4813a",
+"cm": "cross B tt",
+"fuels": [
+"B",
+"H"
+],
+"rims": [],
+"base": "TCe 90 manuell",
+"hp": [
+90,
+158,
+145
+]
+},
+{
+"id": "peugeot-2008",
+"b": "Peugeot",
+"n": "2008",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#3d6f8f",
+"cm": "cross B",
+"fuels": [
+"B",
+"H",
+"E"
+],
+"rims": [],
+"base": "PureTech 100 manuell",
+"hp": [
+100,
+136,
+156
+]
+},
+{
+"id": "peugeot-3008",
+"b": "Peugeot",
+"n": "3008",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#4c5a6e",
+"cm": "suvcoupe D",
+"fuels": [
+"H",
+"P",
+"E"
+],
+"rims": [],
+"base": "Hybrid 136",
+"hp": [
+136,
+195,
+213,
+230
+]
+},
+{
+"id": "dacia-bigster",
+"b": "Dacia",
+"n": "Bigster",
+"t": "SUV",
+"from": 2025,
+"to": null,
+"col": "#6f7d5a",
+"cm": "cross D clad",
+"fuels": [
+"B",
+"H"
+],
+"rims": [
+19
+],
+"base": "Mild hybrid 140",
+"hp": [
+140,
+155,
+140
+]
+},
+{
+"id": "lynk-01",
+"b": "Lynk & Co",
+"n": "01",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#1f2328",
+"cm": "cross C",
+"fuels": [
+"P"
+],
+"rims": [],
+"base": "Laddhybrid 261",
+"hp": [
+261,
+276
+]
+},
+{
+"id": "volvo-ex90",
+"b": "Volvo",
+"n": "EX90",
+"t": "SUV",
+"from": 2025,
+"to": null,
+"col": "#3a3f44",
+"cm": "suv E lux noclad",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Twin Motor 408",
+"hp": [
+408,
+517
+]
+},
+{
+"id": "polestar-4",
+"b": "Polestar",
+"n": "Polestar 4",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#5b6168",
+"cm": "suvcoupe D norails",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Long Range Single Motor",
+"hp": [
+272,
+544
+]
+},
+{
+"id": "kia-ev9",
+"b": "Kia",
+"n": "EV9",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#4d5a52",
+"cm": "suv F",
+"fuels": [
+"E"
+],
+"rims": [
+21
+],
+"base": "RWD 99,8 kWh",
+"hp": [
+204,
+385
+]
+},
+{
+"id": "byd-seal-u",
+"b": "BYD",
+"n": "Seal U",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#55636f",
+"cm": "suv D",
+"fuels": [
+"P",
+"E"
+],
+"rims": [],
+"base": "DM-i laddhybrid 218",
+"hp": [
+218,
+218,
+324
+]
+},
+{
+"id": "audi-q5",
+"b": "Audi",
+"n": "Q5",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#5b6670",
+"cm": "suv D lux noclad",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [
+20
+],
+"base": "40 TDI quattro 204",
+"hp": [
+204,
+299,
+367
+]
+},
+{
+"id": "audi-q8-etron",
+"b": "Audi",
+"n": "Q8 e-tron",
+"t": "SUV",
+"from": 2019,
+"to": 2025,
+"col": "#3f474f",
+"cm": "suv E lux noclad",
+"fuels": [
+"E"
+],
+"rims": [
+21
+],
+"base": "50 quattro 340",
+"hp": [
+340,
+408,
+503
+]
+},
+{
+"id": "bmw-x3",
+"b": "BMW",
+"n": "X3",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#45607e",
+"cm": "suv D lux noclad",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [],
+"base": "xDrive20d 197",
+"hp": [
+197,
+299,
+398
+]
+},
+{
+"id": "bmw-x5",
+"b": "BMW",
+"n": "X5",
+"t": "SUV",
+"from": 2019,
+"to": null,
+"col": "#2e3a46",
+"cm": "suv E lux noclad",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [
+22
+],
+"base": "xDrive30d 298",
+"hp": [
+298,
+489,
+530
+]
+},
+{
+"id": "bmw-ix",
+"b": "BMW",
+"n": "iX",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#5a6e80",
+"cm": "suv E lux noclad norails",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "xDrive40",
+"hp": [
+326,
+523,
+619
+]
+},
+{
+"id": "mercedes-gle",
+"b": "Mercedes-Benz",
+"n": "GLE",
+"t": "SUV",
+"from": 2019,
+"to": null,
+"col": "#4b4f55",
+"cm": "suv E lux noclad",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [],
+"base": "GLE 300 d 4MATIC",
+"hp": [
+269,
+381,
+435
+]
+},
+{
+"id": "lexus-nx",
+"b": "Lexus",
+"n": "NX",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#6b5d4f",
+"cm": "cross D lux",
+"fuels": [
+"H",
+"P"
+],
+"rims": [],
+"base": "350h 244",
+"hp": [
+244,
+244,
+309
+]
+},
+{
+"id": "lexus-rx",
+"b": "Lexus",
+"n": "RX",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#3d3a36",
+"cm": "suv E lux noclad",
+"fuels": [
+"H",
+"P"
+],
+"rims": [],
+"base": "350h AWD 250",
+"hp": [
+250,
+309,
+371
+]
+},
+{
+"id": "polestar-3",
+"b": "Polestar",
+"n": "Polestar 3",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#4a5157",
+"cm": "suv E noclad norails h-3",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Long Range Dual Motor 489",
+"hp": [
+489,
+517
+]
+},
+{
+"id": "porsche-macan",
+"b": "Porsche",
+"n": "Macan",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#2a5a7a",
+"cm": "suvcoupe D sp norails noclad",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Macan 4",
+"hp": [
+408,
+516,
+639
+]
+},
+{
+"id": "porsche-cayenne",
+"b": "Porsche",
+"n": "Cayenne",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#1f2a33",
+"cm": "suv E sp noclad",
+"fuels": [
+"P"
+],
+"rims": [],
+"base": "E-Hybrid 470",
+"hp": [
+470,
+519,
+739
+]
+},
+{
+"id": "lr-rr-sport",
+"b": "Land Rover",
+"n": "Range Rover Sport",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#2d3532",
+"cm": "suv E lux tt noclad norails h-2",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [
+23
+],
+"base": "D300 mild hybrid",
+"hp": [
+300,
+460,
+530
+]
+},
+{
+"id": "lr-evoque",
+"b": "Land Rover",
+"n": "Range Rover Evoque",
+"t": "SUV",
+"from": 2019,
+"to": null,
+"col": "#8a7f73",
+"cm": "cross C tt norails h-3",
+"fuels": [
+"D",
+"P"
+],
+"rims": [
+20
+],
+"base": "D165 mild hybrid AWD",
+"hp": [
+163,
+309
+]
+},
+{
+"id": "lr-defender",
+"b": "Land Rover",
+"n": "Defender",
+"t": "SUV",
+"from": 2020,
+"to": null,
+"col": "#5a6a4e",
+"cm": "box E tt",
+"fuels": [
+"D",
+"P"
+],
+"rims": [],
+"base": "110 D250 mild hybrid",
+"hp": [
+249,
+404
+]
+},
+{
+"id": "vw-touareg",
+"b": "Volkswagen",
+"n": "Touareg",
+"t": "SUV",
+"from": 2018,
+"to": null,
+"col": "#35404a",
+"cm": "suv E lux noclad",
+"fuels": [
+"D",
+"P"
+],
+"rims": [
+21
+],
+"base": "V6 TDI 286 4MOTION",
+"hp": [
+286,
+381,
+462
+]
+},
+{
+"id": "toyota-land-cruiser",
+"b": "Toyota",
+"n": "Land Cruiser",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#7a6f5a",
+"cm": "box E",
+"fuels": [
+"D"
+],
+"rims": [],
+"base": "2.8 D-4D 204 automat",
+"hp": [
+204
+]
+},
+{
+"id": "kia-sorento",
+"b": "Kia",
+"n": "Sorento",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#4e5b52",
+"cm": "suv E",
+"fuels": [
+"H",
+"P"
+],
+"rims": [],
+"base": "Hybrid 230 AWD",
+"hp": [
+230,
+265
+]
+},
+{
+"id": "hyundai-santa-fe",
+"b": "Hyundai",
+"n": "Santa Fe",
+"t": "SUV",
+"from": 2024,
+"to": null,
+"col": "#6c7562",
+"cm": "box E",
+"fuels": [
+"H",
+"P"
+],
+"rims": [],
+"base": "Hybrid 215 AWD",
+"hp": [
+215,
+253
+]
+},
+{
+"id": "mazda-cx60",
+"b": "Mazda",
+"n": "CX-60",
+"t": "SUV",
+"from": 2022,
+"to": null,
+"col": "#7d1c25",
+"cm": "suv D lux noclad",
+"fuels": [
+"P",
+"D"
+],
+"rims": [],
+"base": "e-Skyactiv PHEV 327 AWD",
+"hp": [
+327,
+254
+]
+},
+{
+"id": "nissan-x-trail",
+"b": "Nissan",
+"n": "X-Trail",
+"t": "SUV",
+"from": 2023,
+"to": null,
+"col": "#6a7276",
+"cm": "suv D",
+"fuels": [
+"H"
+],
+"rims": [],
+"base": "e-Power 204",
+"hp": [
+204,
+213
+]
+},
+{
+"id": "cupra-formentor",
+"b": "Cupra",
+"n": "Formentor",
+"t": "SUV",
+"from": 2021,
+"to": null,
+"col": "#5e5248",
+"cm": "suvcoupe C sp norails h-3 g-2",
+"fuels": [
+"B",
+"P"
+],
+"rims": [
+19
+],
+"base": "1.5 eTSI 150 DSG",
+"hp": [
+150,
+272,
+333
+]
+},
+{
+"id": "mitsubishi-outlander-phev",
+"b": "Mitsubishi",
+"n": "Outlander PHEV",
+"t": "SUV",
+"from": 2013,
+"to": 2021,
+"col": "#9aa0a3",
+"cm": "suv D",
+"fuels": [
+"P"
+],
+"rims": [],
+"base": "2.4 PHEV 224 4WD",
+"hp": [
+224
+]
+},
+{
+"id": "vw-tiguan-2",
+"b": "Volkswagen",
+"n": "Tiguan II",
+"t": "SUV",
+"from": 2016,
+"to": 2023,
+"col": "#4f5e69",
+"cm": "cross D",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+19
+],
+"base": "1.5 TSI 150 DSG",
+"hp": [
+150,
+150,
+245
+]
+},
+{
+"id": "volvo-xc90-1",
+"b": "Volvo",
+"n": "XC90 I",
+"t": "SUV",
+"from": 2005,
+"to": 2014,
+"col": "#3a4248",
+"cm": "suv E",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D5 AWD 200",
+"hp": [
+200,
+243,
+315
+]
+},
+{
+"id": "volvo-xc60-1",
+"b": "Volvo",
+"n": "XC60 I",
+"t": "SUV",
+"from": 2009,
+"to": 2017,
+"col": "#5d666e",
+"cm": "suv D noclad",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D4 181",
+"hp": [
+181,
+220,
+304
+]
+},
+{
+"id": "skoda-octavia",
+"b": "Skoda",
+"n": "Octavia Kombi",
+"t": "Kombi",
+"from": 2020,
+"to": null,
+"col": "#6d8a9c",
+"cm": "wagon C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+18
+],
+"base": "1.5 TSI 115 manuell",
+"hp": [
+115,
+150,
+150,
+265
+]
+},
+{
+"id": "toyota-corolla-ts",
+"b": "Toyota",
+"n": "Corolla Touring Sports",
+"t": "Kombi",
+"from": 2019,
+"to": null,
+"col": "#c9ccc8",
+"cm": "wagon C",
+"fuels": [
+"H"
+],
+"rims": [
+17
+],
+"base": "Hybrid 140",
+"hp": [
+140,
+196
+]
+},
+{
+"id": "kia-ceed-sw",
+"b": "Kia",
+"n": "Ceed SW",
+"t": "Kombi",
+"from": 2019,
+"to": null,
+"col": "#8a2e38",
+"cm": "wagon C",
+"fuels": [
+"B"
+],
+"rims": [
+16,
+17
+],
+"base": "1.0 T-GDI 100 manuell",
+"hp": [
+100,
+140
+]
+},
+{
+"id": "mg5",
+"b": "MG",
+"n": "MG5 Electric",
+"t": "Kombi",
+"from": 2021,
+"to": null,
+"col": "#5b6370",
+"cm": "wagon C norails",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Standard Range 50 kWh",
+"hp": [
+177,
+156
+]
+},
+{
+"id": "peugeot-308sw",
+"b": "Peugeot",
+"n": "308 SW",
+"t": "Kombi",
+"from": 2022,
+"to": null,
+"col": "#5f6f84",
+"cm": "wagon C norails",
+"fuels": [
+"B",
+"H",
+"P",
+"E"
+],
+"rims": [
+18
+],
+"base": "PureTech 130 automat",
+"hp": [
+130,
+136,
+180,
+156
+]
+},
+{
+"id": "cupra-leon-st",
+"b": "Cupra",
+"n": "Leon Sportstourer",
+"t": "Kombi",
+"from": 2020,
+"to": null,
+"col": "#7a6a55",
+"cm": "wagon C sp norails",
+"fuels": [
+"B",
+"P"
+],
+"rims": [
+19
+],
+"base": "1.5 eTSI 150 DSG",
+"hp": [
+150,
+204,
+300
+]
+},
+{
+"id": "skoda-superb",
+"b": "Skoda",
+"n": "Superb Kombi",
+"t": "Kombi",
+"from": 2024,
+"to": null,
+"col": "#2a2f33",
+"cm": "wagon D",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+19
+],
+"base": "1.5 eTSI 150 DSG",
+"hp": [
+150,
+150,
+204,
+193
+]
+},
+{
+"id": "vw-passat",
+"b": "Volkswagen",
+"n": "Passat",
+"t": "Kombi",
+"from": 2024,
+"to": null,
+"col": "#71777c",
+"cm": "wagon D",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+18
+],
+"base": "1.5 eTSI 150 DSG",
+"hp": [
+150,
+150,
+204,
+193
+]
+},
+{
+"id": "volvo-v60",
+"b": "Volvo",
+"n": "V60",
+"t": "Kombi",
+"from": 2019,
+"to": null,
+"col": "#1f3347",
+"cm": "wagon D lux",
+"fuels": [
+"B",
+"P"
+],
+"rims": [],
+"base": "B4 197",
+"hp": [
+197,
+350
+]
+},
+{
+"id": "vw-id7-tourer",
+"b": "Volkswagen",
+"n": "ID.7 Tourer",
+"t": "Kombi",
+"from": 2024,
+"to": null,
+"col": "#4f5b66",
+"cm": "wagon D norails",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Pro 77 kWh",
+"hp": [
+286,
+286,
+340
+]
+},
+{
+"id": "ford-focus-kombi",
+"b": "Ford",
+"n": "Focus Kombi",
+"t": "Kombi",
+"from": 2018,
+"to": 2025,
+"col": "#3c5c86",
+"cm": "wagon C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+18
+],
+"base": "1.0 EcoBoost 125",
+"hp": [
+125,
+120
+]
+},
+{
+"id": "subaru-outback",
+"b": "Subaru",
+"n": "Outback",
+"t": "Kombi",
+"from": 2021,
+"to": null,
+"col": "#4f6a52",
+"cm": "wagon D clad g+4 h+3",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "2.5i Boxer 169 AWD",
+"hp": [
+169
+]
+},
+{
+"id": "mercedes-e-kombi",
+"b": "Mercedes-Benz",
+"n": "E-klass Kombi",
+"t": "Kombi",
+"from": 2024,
+"to": null,
+"col": "#3b4046",
+"cm": "wagon E lux norails",
+"fuels": [
+"D",
+"P"
+],
+"rims": [
+19
+],
+"base": "E 220 d",
+"hp": [
+197,
+197,
+313
+]
+},
+{
+"id": "dacia-jogger",
+"b": "Dacia",
+"n": "Jogger",
+"t": "Kombi",
+"from": 2022,
+"to": null,
+"col": "#8a7a5a",
+"cm": "wagon C clad h+6 g+2",
+"fuels": [
+"B",
+"H"
+],
+"rims": [],
+"base": "TCe 110 manuell",
+"hp": [
+110,
+140
+]
+},
+{
+"id": "volvo-v90",
+"b": "Volvo",
+"n": "V90",
+"t": "Kombi",
+"from": 2016,
+"to": 2025,
+"col": "#3a4652",
+"cm": "wagon E lux",
+"fuels": [
+"B",
+"P"
+],
+"rims": [],
+"base": "B4 197",
+"hp": [
+197,
+250,
+350
+]
+},
+{
+"id": "audi-a4-avant",
+"b": "Audi",
+"n": "A4 Avant",
+"t": "Kombi",
+"from": 2015,
+"to": 2024,
+"col": "#4a525a",
+"cm": "wagon D lux",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+18
+],
+"base": "35 TFSI 150 S tronic",
+"hp": [
+150,
+204,
+204
+]
+},
+{
+"id": "audi-a6-avant",
+"b": "Audi",
+"n": "A6 Avant",
+"t": "Kombi",
+"from": 2018,
+"to": null,
+"col": "#3c444c",
+"cm": "wagon E lux",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [
+20
+],
+"base": "40 TDI quattro 204",
+"hp": [
+204,
+299,
+630
+]
+},
+{
+"id": "vw-passat-b8",
+"b": "Volkswagen",
+"n": "Passat B8",
+"t": "Kombi",
+"from": 2015,
+"to": 2023,
+"col": "#5b6168",
+"cm": "wagon D",
+"fuels": [
+"D",
+"P"
+],
+"rims": [],
+"base": "2.0 TDI 150 DSG",
+"hp": [
+150,
+218,
+190
+]
+},
+{
+"id": "skoda-octavia-3",
+"b": "Skoda",
+"n": "Octavia Kombi III",
+"t": "Kombi",
+"from": 2013,
+"to": 2020,
+"col": "#7c8a93",
+"cm": "wagon C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "1.4 TSI 150",
+"hp": [
+150,
+150,
+184
+]
+},
+{
+"id": "toyota-auris-ts",
+"b": "Toyota",
+"n": "Auris Touring Sports",
+"t": "Kombi",
+"from": 2013,
+"to": 2018,
+"col": "#b9bdbf",
+"cm": "wagon C norails",
+"fuels": [
+"H"
+],
+"rims": [],
+"base": "Hybrid 136",
+"hp": [
+136
+]
+},
+{
+"id": "volvo-v70",
+"b": "Volvo",
+"n": "V70",
+"t": "Kombi",
+"from": 2008,
+"to": 2016,
+"col": "#5c6a76",
+"cm": "wagon E",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D4 181",
+"hp": [
+181,
+190
+]
+},
+{
+"id": "vw-id-buzz",
+"b": "Volkswagen",
+"n": "ID. Buzz",
+"t": "Kombi",
+"from": 2022,
+"to": null,
+"col": "#e2a73c",
+"cm": "mpv E tt",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Pro 77 kWh 204",
+"hp": [
+204,
+286,
+340
+]
+},
+{
+"id": "skoda-superb-3",
+"b": "Skoda",
+"n": "Superb Kombi III",
+"t": "Kombi",
+"from": 2015,
+"to": 2023,
+"col": "#3e464c",
+"cm": "wagon D",
+"fuels": [
+"D",
+"P"
+],
+"rims": [],
+"base": "2.0 TDI 150 DSG",
+"hp": [
+150,
+218,
+200
+]
+},
+{
+"id": "bmw-5-touring",
+"b": "BMW",
+"n": "5-serie Touring",
+"t": "Kombi",
+"from": 2017,
+"to": 2023,
+"col": "#30465e",
+"cm": "wagon E lux",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [],
+"base": "520d xDrive 190",
+"hp": [
+190,
+292,
+340
+]
+},
+{
+"id": "mercedes-e-kombi-w213",
+"b": "Mercedes-Benz",
+"n": "E-klass Kombi W213",
+"t": "Kombi",
+"from": 2016,
+"to": 2023,
+"col": "#555b61",
+"cm": "wagon E lux norails",
+"fuels": [
+"D",
+"P",
+"B"
+],
+"rims": [
+19
+],
+"base": "E 220 d 4MATIC",
+"hp": [
+194,
+320,
+435
+]
+},
+{
+"id": "volvo-v70-2",
+"b": "Volvo",
+"n": "V70 II",
+"t": "Kombi",
+"from": 2005,
+"to": 2007,
+"col": "#596775",
+"cm": "wagon D",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "2.4 140",
+"hp": [
+140,
+185,
+210
+]
+},
+{
+"id": "volvo-xc70",
+"b": "Volvo",
+"n": "XC70",
+"t": "Kombi",
+"from": 2008,
+"to": 2016,
+"col": "#6b6358",
+"cm": "wagon E clad g+4 h+3",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D4 AWD 181",
+"hp": [
+181,
+220,
+304
+]
+},
+{
+"id": "volvo-v60-1",
+"b": "Volvo",
+"n": "V60 I",
+"t": "Kombi",
+"from": 2011,
+"to": 2018,
+"col": "#46525e",
+"cm": "wagon D norails",
+"fuels": [
+"D",
+"B",
+"P"
+],
+"rims": [],
+"base": "D4 181",
+"hp": [
+181,
+190,
+283
+]
+},
+{
+"id": "volvo-v50",
+"b": "Volvo",
+"n": "V50",
+"t": "Kombi",
+"from": 2005,
+"to": 2012,
+"col": "#6d7a84",
+"cm": "wagon C norails",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "1.8 125",
+"hp": [
+125,
+136,
+230
+]
+},
+{
+"id": "saab-93-sc",
+"b": "Saab",
+"n": "9-3 SportCombi",
+"t": "Kombi",
+"from": 2005,
+"to": 2011,
+"col": "#55606a",
+"cm": "wagon D",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+17
+],
+"base": "1.8t 150",
+"hp": [
+150,
+150,
+255
+]
+},
+{
+"id": "saab-95-sc",
+"b": "Saab",
+"n": "9-5 SportCombi",
+"t": "Kombi",
+"from": 2005,
+"to": 2010,
+"col": "#4a5560",
+"cm": "wagon D",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "2.3t 185",
+"hp": [
+185,
+150,
+260
+]
+},
+{
+"id": "tesla-model-3",
+"b": "Tesla",
+"n": "Model 3",
+"t": "Sedan",
+"from": 2019,
+"to": null,
+"col": "#b3202a",
+"cm": "fastback D",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "RWD",
+"hp": [
+283,
+498,
+625
+]
+},
+{
+"id": "polestar-2",
+"b": "Polestar",
+"n": "Polestar 2",
+"t": "Sedan",
+"from": 2020,
+"to": null,
+"col": "#8a8f93",
+"cm": "fastback D h+4 g+2",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Standard Range Single Motor",
+"hp": [
+272,
+299,
+421
+]
+},
+{
+"id": "byd-seal",
+"b": "BYD",
+"n": "Seal",
+"t": "Sedan",
+"from": 2023,
+"to": null,
+"col": "#2d4a6b",
+"cm": "fastback D",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Design RWD 82,5 kWh",
+"hp": [
+313,
+530
+]
+},
+{
+"id": "toyota-camry",
+"b": "Toyota",
+"n": "Camry",
+"t": "Sedan",
+"from": 2019,
+"to": null,
+"col": "#d6d3cc",
+"cm": "sedan D",
+"fuels": [
+"H"
+],
+"rims": [
+18
+],
+"base": "Hybrid 230",
+"hp": [
+230,
+233
+]
+},
+{
+"id": "hyundai-ioniq6",
+"b": "Hyundai",
+"n": "Ioniq 6",
+"t": "Sedan",
+"from": 2023,
+"to": null,
+"col": "#4e6b5e",
+"cm": "fastback D h-1",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Standard Range 53 kWh",
+"hp": [
+151,
+229,
+325
+]
+},
+{
+"id": "bmw-3",
+"b": "BMW",
+"n": "3-serie",
+"t": "Sedan",
+"from": 2019,
+"to": null,
+"col": "#1d3d73",
+"cm": "sedan D lux",
+"fuels": [
+"B",
+"P",
+"D"
+],
+"rims": [],
+"base": "320i 184",
+"hp": [
+184,
+292,
+190,
+374
+]
+},
+{
+"id": "bmw-i4",
+"b": "BMW",
+"n": "i4",
+"t": "Sedan",
+"from": 2022,
+"to": null,
+"col": "#2e4d7a",
+"cm": "fastback D lux",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "eDrive35",
+"hp": [
+286,
+340,
+544
+]
+},
+{
+"id": "vw-id7",
+"b": "Volkswagen",
+"n": "ID.7",
+"t": "Sedan",
+"from": 2024,
+"to": null,
+"col": "#556574",
+"cm": "fastback E",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Pro 77 kWh",
+"hp": [
+286,
+286,
+340
+]
+},
+{
+"id": "mercedes-c",
+"b": "Mercedes-Benz",
+"n": "C-klass",
+"t": "Sedan",
+"from": 2021,
+"to": null,
+"col": "#9aa0a4",
+"cm": "sedan D lux",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+18
+],
+"base": "C 200",
+"hp": [
+204,
+200,
+313,
+408
+]
+},
+{
+"id": "bmw-5",
+"b": "BMW",
+"n": "5-serie / i5",
+"t": "Sedan",
+"from": 2024,
+"to": null,
+"col": "#2a3b55",
+"cm": "sedan E lux",
+"fuels": [
+"D",
+"P",
+"E"
+],
+"rims": [],
+"base": "520d xDrive",
+"hp": [
+197,
+299,
+340
+]
+},
+{
+"id": "volvo-s60",
+"b": "Volvo",
+"n": "S60",
+"t": "Sedan",
+"from": 2019,
+"to": 2024,
+"col": "#1f3a52",
+"cm": "sedan D lux",
+"fuels": [
+"B",
+"P"
+],
+"rims": [],
+"base": "B4 197",
+"hp": [
+197,
+350
+]
+},
+{
+"id": "porsche-taycan",
+"b": "Porsche",
+"n": "Taycan",
+"t": "Sedan",
+"from": 2020,
+"to": null,
+"col": "#2a3f5f",
+"cm": "fastback E sp h-5 g-2",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Taycan RWD 408",
+"hp": [
+408,
+598,
+884
+]
+},
+{
+"id": "volvo-s60-2",
+"b": "Volvo",
+"n": "S60 II",
+"t": "Sedan",
+"from": 2011,
+"to": 2018,
+"col": "#2f4458",
+"cm": "sedan D",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D4 181",
+"hp": [
+181,
+190,
+306
+]
+},
+{
+"id": "volvo-s80",
+"b": "Volvo",
+"n": "S80",
+"t": "Sedan",
+"from": 2007,
+"to": 2016,
+"col": "#3d3f44",
+"cm": "sedan E",
+"fuels": [
+"D",
+"B"
+],
+"rims": [],
+"base": "D4 181",
+"hp": [
+181,
+215,
+304
+]
+},
+{
+"id": "volvo-s40",
+"b": "Volvo",
+"n": "S40",
+"t": "Sedan",
+"from": 2005,
+"to": 2012,
+"col": "#384b5c",
+"cm": "sedan C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "1.8 125",
+"hp": [
+125,
+136,
+230
+]
+},
+{
+"id": "saab-93",
+"b": "Saab",
+"n": "9-3 Sport Sedan",
+"t": "Sedan",
+"from": 2005,
+"to": 2011,
+"col": "#3b4652",
+"cm": "sedan D",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+17
+],
+"base": "1.8t 150",
+"hp": [
+150,
+150,
+255
+]
+},
+{
+"id": "saab-95",
+"b": "Saab",
+"n": "9-5 Sedan",
+"t": "Sedan",
+"from": 2005,
+"to": 2009,
+"col": "#2e3338",
+"cm": "sedan E",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "2.3t 185",
+"hp": [
+185,
+150,
+260
+]
+},
+{
+"id": "dacia-sandero",
+"b": "Dacia",
+"n": "Sandero",
+"t": "Halvkombi",
+"from": 2021,
+"to": null,
+"col": "#c26a3a",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "TCe 90 manuell",
+"hp": [
+90,
+90
+]
+},
+{
+"id": "toyota-aygo-x",
+"b": "Toyota",
+"n": "Aygo X",
+"t": "Halvkombi",
+"from": 2022,
+"to": null,
+"col": "#b0322e",
+"cm": "city A tt clad",
+"fuels": [
+"B",
+"H"
+],
+"rims": [
+18
+],
+"base": "1.0 72 manuell",
+"hp": [
+72,
+72,
+116
+]
+},
+{
+"id": "renault-clio",
+"b": "Renault",
+"n": "Clio",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#2c5aa0",
+"cm": "hatch B",
+"fuels": [
+"B",
+"H"
+],
+"rims": [
+17
+],
+"base": "TCe 90",
+"hp": [
+90,
+145
+]
+},
+{
+"id": "peugeot-208",
+"b": "Peugeot",
+"n": "208",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#d8b23e",
+"cm": "hatch B",
+"fuels": [
+"B",
+"H",
+"E"
+],
+"rims": [
+17
+],
+"base": "PureTech 100 manuell",
+"hp": [
+100,
+110,
+156
+]
+},
+{
+"id": "toyota-yaris",
+"b": "Toyota",
+"n": "Yaris",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#d4b23a",
+"cm": "hatch B",
+"fuels": [
+"H"
+],
+"rims": [
+17
+],
+"base": "Hybrid 116",
+"hp": [
+116,
+130
+]
+},
+{
+"id": "vw-polo",
+"b": "Volkswagen",
+"n": "Polo",
+"t": "Halvkombi",
+"from": 2018,
+"to": null,
+"col": "#b33a3a",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [
+17
+],
+"base": "1.0 TSI 95 manuell",
+"hp": [
+95,
+115
+]
+},
+{
+"id": "mini-cooper",
+"b": "Mini",
+"n": "Cooper",
+"t": "Halvkombi",
+"from": 2024,
+"to": null,
+"col": "#2f5d50",
+"cm": "hatch3 A tt",
+"fuels": [
+"B",
+"E"
+],
+"rims": [],
+"base": "Cooper C 156",
+"hp": [
+156,
+184,
+204,
+218,
+231
+]
+},
+{
+"id": "vw-golf",
+"b": "Volkswagen",
+"n": "Golf",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#3e4a52",
+"cm": "hatch C",
+"fuels": [
+"B",
+"P"
+],
+"rims": [
+18
+],
+"base": "1.5 TSI 116 manuell",
+"hp": [
+116,
+150,
+204,
+265,
+333
+]
+},
+{
+"id": "renault-5",
+"b": "Renault",
+"n": "5 E-Tech",
+"t": "Halvkombi",
+"from": 2025,
+"to": null,
+"col": "#e2c23b",
+"cm": "hatch B",
+"fuels": [
+"E"
+],
+"rims": [
+18
+],
+"base": "40 kWh 120",
+"hp": [
+120,
+150
+]
+},
+{
+"id": "mg4",
+"b": "MG",
+"n": "MG4",
+"t": "Halvkombi",
+"from": 2023,
+"to": null,
+"col": "#4d8a8a",
+"cm": "hatch C h-2",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Standard 51 kWh",
+"hp": [
+170,
+204,
+245
+]
+},
+{
+"id": "cupra-born",
+"b": "Cupra",
+"n": "Born",
+"t": "Halvkombi",
+"from": 2022,
+"to": null,
+"col": "#5a6670",
+"cm": "hatch C",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "58 kWh 204",
+"hp": [
+204,
+231,
+326
+]
+},
+{
+"id": "vw-id3",
+"b": "Volkswagen",
+"n": "ID.3",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#c7cfd4",
+"cm": "hatch C h+2",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Pure 52 kWh",
+"hp": [
+170,
+204,
+231
+]
+},
+{
+"id": "kia-niro",
+"b": "Kia",
+"n": "Niro",
+"t": "Halvkombi",
+"from": 2022,
+"to": null,
+"col": "#3f6e5a",
+"cm": "cross C norails",
+"fuels": [
+"H",
+"P",
+"E"
+],
+"rims": [],
+"base": "Hybrid 141",
+"hp": [
+141,
+183,
+204
+]
+},
+{
+"id": "ford-fiesta",
+"b": "Ford",
+"n": "Fiesta",
+"t": "Halvkombi",
+"from": 2017,
+"to": 2023,
+"col": "#5c7da8",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [
+17
+],
+"base": "1.0 EcoBoost 100 manuell",
+"hp": [
+100,
+125
+]
+},
+{
+"id": "hyundai-ioniq",
+"b": "Hyundai",
+"n": "Ioniq",
+"t": "Halvkombi",
+"from": 2016,
+"to": 2022,
+"col": "#6f7a80",
+"cm": "fastback C",
+"fuels": [
+"H",
+"P",
+"E"
+],
+"rims": [],
+"base": "Hybrid 141",
+"hp": [
+141,
+141,
+136
+]
+},
+{
+"id": "bmw-i3",
+"b": "BMW",
+"n": "i3",
+"t": "Halvkombi",
+"from": 2013,
+"to": 2022,
+"col": "#2f6f8f",
+"cm": "city B h+5",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "i3 120Ah",
+"hp": [
+170,
+184
+]
+},
+{
+"id": "toyota-corolla",
+"b": "Toyota",
+"n": "Corolla",
+"t": "Halvkombi",
+"from": 2019,
+"to": null,
+"col": "#7a1f2b",
+"cm": "hatch C",
+"fuels": [
+"H"
+],
+"rims": [
+17,
+18
+],
+"base": "Hybrid 140",
+"hp": [
+140,
+196
+]
+},
+{
+"id": "toyota-prius",
+"b": "Toyota",
+"n": "Prius",
+"t": "Halvkombi",
+"from": 2023,
+"to": null,
+"col": "#e6e6e3",
+"cm": "fastback C h-3",
+"fuels": [
+"P"
+],
+"rims": [],
+"base": "Laddhybrid 223",
+"hp": [
+223
+]
+},
+{
+"id": "hyundai-i10",
+"b": "Hyundai",
+"n": "i10",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#c43c3c",
+"cm": "city A",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "1.0 67 manuell",
+"hp": [
+67,
+67,
+100
+]
+},
+{
+"id": "kia-picanto",
+"b": "Kia",
+"n": "Picanto",
+"t": "Halvkombi",
+"from": 2018,
+"to": null,
+"col": "#e2a03a",
+"cm": "city A",
+"fuels": [
+"B"
+],
+"rims": [
+16
+],
+"base": "1.0 67 manuell",
+"hp": [
+67,
+67
+]
+},
+{
+"id": "hyundai-i20",
+"b": "Hyundai",
+"n": "i20",
+"t": "Halvkombi",
+"from": 2021,
+"to": null,
+"col": "#4a7ab0",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "1.2 MPi 79 manuell",
+"hp": [
+79,
+100
+]
+},
+{
+"id": "skoda-fabia",
+"b": "Skoda",
+"n": "Fabia",
+"t": "Halvkombi",
+"from": 2022,
+"to": null,
+"col": "#b85a2b",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "1.0 MPI 80 manuell",
+"hp": [
+80,
+116
+]
+},
+{
+"id": "skoda-scala",
+"b": "Skoda",
+"n": "Scala",
+"t": "Halvkombi",
+"from": 2019,
+"to": null,
+"col": "#5e7480",
+"cm": "hatch C",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "1.0 TSI 115 manuell",
+"hp": [
+115,
+150
+]
+},
+{
+"id": "opel-corsa",
+"b": "Opel",
+"n": "Corsa",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#c9a227",
+"cm": "hatch B",
+"fuels": [
+"B",
+"H",
+"E"
+],
+"rims": [
+17
+],
+"base": "1.2 75 manuell",
+"hp": [
+75,
+100,
+156
+]
+},
+{
+"id": "fiat-500e",
+"b": "Fiat",
+"n": "500e",
+"t": "Halvkombi",
+"from": 2021,
+"to": null,
+"col": "#7fb5a8",
+"cm": "city A",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "24 kWh 95",
+"hp": [
+95,
+118
+]
+},
+{
+"id": "mercedes-a",
+"b": "Mercedes-Benz",
+"n": "A-klass",
+"t": "Halvkombi",
+"from": 2018,
+"to": null,
+"col": "#9aa3ab",
+"cm": "hatch C lux",
+"fuels": [
+"B",
+"D",
+"P"
+],
+"rims": [
+18
+],
+"base": "A 180",
+"hp": [
+136,
+150,
+218
+]
+},
+{
+"id": "audi-a3",
+"b": "Audi",
+"n": "A3 Sportback",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#3d4a57",
+"cm": "hatch C lux",
+"fuels": [
+"B",
+"P"
+],
+"rims": [
+18
+],
+"base": "30 TFSI 116",
+"hp": [
+116,
+150,
+272,
+333
+]
+},
+{
+"id": "bmw-1",
+"b": "BMW",
+"n": "1-serie",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#2b4c7e",
+"cm": "hatch C lux",
+"fuels": [
+"B",
+"D"
+],
+"rims": [],
+"base": "118i 136",
+"hp": [
+136,
+190,
+306
+]
+},
+{
+"id": "seat-ibiza",
+"b": "Seat",
+"n": "Ibiza",
+"t": "Halvkombi",
+"from": 2018,
+"to": null,
+"col": "#a8323a",
+"cm": "hatch B",
+"fuels": [
+"B"
+],
+"rims": [
+17
+],
+"base": "1.0 TSI 95 manuell",
+"hp": [
+95,
+115
+]
+},
+{
+"id": "suzuki-swift",
+"b": "Suzuki",
+"n": "Swift",
+"t": "Halvkombi",
+"from": 2024,
+"to": null,
+"col": "#2f6fb0",
+"cm": "hatch A",
+"fuels": [
+"B"
+],
+"rims": [
+16
+],
+"base": "1.2 mild hybrid 83 manuell",
+"hp": [
+83,
+83
+]
+},
+{
+"id": "honda-jazz",
+"b": "Honda",
+"n": "Jazz",
+"t": "Halvkombi",
+"from": 2020,
+"to": null,
+"col": "#c7c9c4",
+"cm": "city B h+3",
+"fuels": [
+"H"
+],
+"rims": [],
+"base": "e:HEV 122",
+"hp": [
+122,
+122
+]
+},
+{
+"id": "byd-dolphin",
+"b": "BYD",
+"n": "Dolphin",
+"t": "Halvkombi",
+"from": 2023,
+"to": null,
+"col": "#7b9fb5",
+"cm": "hatch C",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Active 45 kWh",
+"hp": [
+95,
+204
+]
+},
+{
+"id": "dacia-spring",
+"b": "Dacia",
+"n": "Spring",
+"t": "Halvkombi",
+"from": 2021,
+"to": null,
+"col": "#9ab0a0",
+"cm": "city A clad",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "Electric 45",
+"hp": [
+45,
+65
+]
+},
+{
+"id": "nissan-leaf",
+"b": "Nissan",
+"n": "Leaf",
+"t": "Halvkombi",
+"from": 2018,
+"to": 2024,
+"col": "#d9dcde",
+"cm": "hatch C",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "40 kWh 150",
+"hp": [
+150,
+217
+]
+},
+{
+"id": "renault-zoe",
+"b": "Renault",
+"n": "Zoe",
+"t": "Halvkombi",
+"from": 2012,
+"to": 2024,
+"col": "#4b8fb0",
+"cm": "hatch B",
+"fuels": [
+"E"
+],
+"rims": [
+16
+],
+"base": "R110 52 kWh",
+"hp": [
+108,
+135
+]
+},
+{
+"id": "vw-e-golf",
+"b": "Volkswagen",
+"n": "e-Golf",
+"t": "Halvkombi",
+"from": 2014,
+"to": 2020,
+"col": "#e8eaeb",
+"cm": "hatch C",
+"fuels": [
+"E"
+],
+"rims": [],
+"base": "35,8 kWh 136",
+"hp": [
+136
+]
+},
+{
+"id": "volvo-v40",
+"b": "Volvo",
+"n": "V40",
+"t": "Halvkombi",
+"from": 2012,
+"to": 2019,
+"col": "#3a5068",
+"cm": "hatch C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+18
+],
+"base": "T3 152 automat",
+"hp": [
+152,
+120
+]
+},
+{
+"id": "vw-golf-7",
+"b": "Volkswagen",
+"n": "Golf 7",
+"t": "Halvkombi",
+"from": 2013,
+"to": 2019,
+"col": "#41505c",
+"cm": "hatch C",
+"fuels": [
+"B",
+"P"
+],
+"rims": [
+17
+],
+"base": "1.4 TSI 125",
+"hp": [
+125,
+204,
+245
+]
+},
+{
+"id": "mazda-3",
+"b": "Mazda",
+"n": "Mazda3",
+"t": "Halvkombi",
+"from": 2019,
+"to": null,
+"col": "#8b1e2a",
+"cm": "hatch C h-2",
+"fuels": [
+"B"
+],
+"rims": [
+18
+],
+"base": "e-Skyactiv G 140 manuell",
+"hp": [
+140,
+186
+]
+},
+{
+"id": "volvo-c30",
+"b": "Volvo",
+"n": "C30",
+"t": "Halvkombi",
+"from": 2007,
+"to": 2013,
+"col": "#b05a2e",
+"cm": "hatch3 C",
+"fuels": [
+"B",
+"D"
+],
+"rims": [
+17
+],
+"base": "1.6 100",
+"hp": [
+100,
+115,
+230
+]
+},
+{
+"id": "porsche-911",
+"b": "Porsche",
+"n": "911",
+"t": "Sportbil",
+"from": 2019,
+"to": null,
+"col": "#c7c3b8",
+"cm": "coupe C sp",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "Carrera 394",
+"hp": [
+394,
+480,
+650
+]
+},
+{
+"id": "mazda-mx5",
+"b": "Mazda",
+"n": "MX-5",
+"t": "Sportbil",
+"from": 2015,
+"to": null,
+"col": "#a51f2c",
+"cm": "roadster A sp",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "1.5 Skyactiv-G 132",
+"hp": [
+132,
+184
+]
+},
+{
+"id": "bmw-z4",
+"b": "BMW",
+"n": "Z4",
+"t": "Sportbil",
+"from": 2019,
+"to": null,
+"col": "#2f5a8c",
+"cm": "roadster B sp",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "sDrive20i 197",
+"hp": [
+197,
+340
+]
+},
+{
+"id": "ford-mustang",
+"b": "Ford",
+"n": "Mustang",
+"t": "Sportbil",
+"from": 2024,
+"to": null,
+"col": "#c23a2b",
+"cm": "coupe E sp",
+"fuels": [
+"B"
+],
+"rims": [
+19
+],
+"base": "GT 5.0 V8 446",
+"hp": [
+446
+]
+},
+{
+"id": "bmw-m2",
+"b": "BMW",
+"n": "M2",
+"t": "Sportbil",
+"from": 2023,
+"to": null,
+"col": "#3a78b5",
+"cm": "coupe B sp h+3",
+"fuels": [
+"B"
+],
+"rims": [],
+"base": "M2 460 automat",
+"hp": [
+460,
+460
+]
+},
+{
+"id": "audi-tt",
+"b": "Audi",
+"n": "TT",
+"t": "Sportbil",
+"from": 2015,
+"to": 2023,
+"col": "#9aa1a6",
+"cm": "coupe B sp",
+"fuels": [
+"B"
+],
+"rims": [
+19
+],
+"base": "45 TFSI quattro 245",
+"hp": [
+245,
+320,
+400
+]
+}
+]
